@@ -1,24 +1,24 @@
-#Capa de Conexión:
+## Capa de Conexión:
 
 - Desarrollar ConexionBD.java - gestión centralizada de conexiones a la base de datos
 - Implementar LogsError.java - sistema de registro de errores y operaciones
 
 
-#Clases de Usuario:
+## Clases de Usuario:
 
 - Clase Usuario.java - modelo para usuarios del sistema
 - Clase TipoUsuario.java - modelos para tipos de usuario (Administrador, Profesor, Alumno)
 
 
-#Acceso a datos de usuarios:
+## Acceso a datos de usuarios:
 
 - Implementar UsuarioDAO.java - operaciones CRUD para usuarios
 - Implementar TipoUsuarioDAO.java - operaciones para tipos de usuario
 
 
-#Lógica de autenticación:
+## Lógica de autenticación:
  
-###Desarrollar ServicioUsuario.java con:
+### Desarrollar ServicioUsuario.java con:
 
 - Login de usuarios
 - Validación de credenciales
@@ -31,7 +31,7 @@
 - Implementar UsuarioException.java - manejo de errores específicos de autenticación
 --- 
 
-#Clases de Modelo para documentos y préstamos:
+## Clases de Modelo para documentos y préstamos:
 
 - Documento.java - información de libros, revistas, etc.
 - TipoDocumento.java - tipos (libro, revista, tesis, etc.)
@@ -41,7 +41,7 @@
 - ConfiguracionSistema.java - parámetros configurables
 
 
-#Acceso a datos (DAOs):
+## Acceso a datos (DAOs):
 
 - DocumentoDAO.java - operaciones CRUD para documentos
 - TipoDocumentoDAO.java - operaciones para tipos de documento
@@ -50,7 +50,7 @@
 - DevolucionDAO.java - registro y consulta de devoluciones
 - ConfiguracionSistemaDAO.java - gestión de parámetros configurables
   
-##Lógica de negocio de biblioteca:
+## Lógica de negocio de biblioteca:
 
 ### ServicioBiblioteca.java con:
 
