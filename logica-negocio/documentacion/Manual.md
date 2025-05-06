@@ -1,3 +1,4 @@
+# PARTE 1
 ## Capa de Conexión:
 
 - Desarrollar ConexionBD.java - gestión centralizada de conexiones a la base de datos
@@ -30,6 +31,7 @@
 
 - Implementar UsuarioException.java - manejo de errores específicos de autenticación
 --- 
+# Parte 2
 
 ## Clases de Modelo para documentos y préstamos:
 
