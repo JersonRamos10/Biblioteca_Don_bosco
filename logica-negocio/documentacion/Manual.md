@@ -68,5 +68,5 @@
 
 > NOTA:
 > Los dos usaremos la misma clase de conexión que yo desarrollaré. No es necesario que crees tus propias conexiones.
-Para verificar préstamos o moras, tu código llamará a métodos de ServicioBiblioteca que yo desarrollare.
+Para verificar préstamos o moras, tu código llamará a métodos de ServicioBiblioteca.
 Para verificar privilegios de usuario, utilizarás métodos de ServicioUsuario que yo implementaré.
