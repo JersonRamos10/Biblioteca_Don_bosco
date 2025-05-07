@@ -20,7 +20,7 @@
 
 ## Paso 2: La Conexión Personal (`config.properties`)
 
-Para que el código Java se conecte a **Nuestra** base de datos local, necesitamos decirle cuál es el usuario y contraseña de MySQL o herramienta utilizada.
+Para que el codigo Java se conecte a **Nuestra** base de datos local, necesitamos decirle cuál es el usuario y contraseña de MySQL o herramienta utilizada.
 
 1.  **Buscar el Archivo:** Dentro del código fuente, ir a `src/bibliotecaudb/conexion/config.properties`.
 2.  **Edítalor:** Abrir ese archivo. se vera esto:
