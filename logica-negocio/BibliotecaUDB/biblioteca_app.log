@@ -1,0 +1,113 @@
+2025-05-07 14:18:09 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de login para el correo: admin@udb.com
+2025-05-07 14:18:09 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuración cargada: URL=[jdbc:mysql://localhost:3306/biblioteca], User=[root]
+2025-05-07 14:18:09 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión es null o está cerrada. Intentando establecer conexión...
+2025-05-07 14:18:09 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a URL=[jdbc:mysql://localhost:3306/biblioteca] con User=[root]
+2025-05-07 14:18:10 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión establecida exitosamente a: jdbc:mysql://localhost:3306/biblioteca
+2025-05-07 14:18:10 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Login exitoso para el usuario: admin (admin@udb.com)
+2025-05-07 14:18:10 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de login para el correo: alumno1@udb.com
+2025-05-07 14:18:10 [main] WARN  bibliotecaudb.servicio.ServicioUsuario - Servicio: Login fallido - Contraseña incorrecta para: alumno1@udb.com
+2025-05-07 14:18:10 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de login para el correo: noexiste@udb.com
+2025-05-07 14:18:10 [main] WARN  bibliotecaudb.dao.usuario.UsuarioDAO - No se encontró usuario activo con correo: noexiste@udb.com
+2025-05-07 14:18:10 [main] WARN  bibliotecaudb.servicio.ServicioUsuario - Servicio: Login fallido - Usuario no encontrado: noexiste@udb.com
+2025-05-07 14:18:10 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de registrar nuevo usuario con correo: profesor.nuevo1746649090561@udb.com
+2025-05-07 14:18:10 [main] WARN  bibliotecaudb.dao.usuario.UsuarioDAO - No se encontró usuario activo con correo: profesor.nuevo1746649090561@udb.com
+2025-05-07 14:18:10 [main] INFO  bibliotecaudb.dao.usuario.UsuarioDAO - Usuario creado exitosamente con ID: 5 para el correo: profesor.nuevo1746649090561@udb.com
+2025-05-07 14:18:10 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Usuario registrado exitosamente: profesor.nuevo1746649090561@udb.com con ID: 5
+2025-05-07 14:18:10 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de login para el correo: profesor.nuevo1746649090561@udb.com
+2025-05-07 14:18:10 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Login exitoso para el usuario: Profe Nuevo Ejemplo (profesor.nuevo1746649090561@udb.com)
+2025-05-07 14:18:10 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de registrar nuevo usuario con correo: admin@udb.com
+2025-05-07 14:18:10 [main] WARN  bibliotecaudb.servicio.ServicioUsuario - Servicio: Registro fallido - El correo admin@udb.com ya existe.
+2025-05-07 14:18:10 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de restablecer contraseña para: profesor.nuevo1746649090561@udb.com
+2025-05-07 14:18:10 [main] INFO  bibliotecaudb.dao.usuario.UsuarioDAO - Contraseña actualizada para el usuario: profesor.nuevo1746649090561@udb.com
+2025-05-07 14:18:10 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Contraseña restablecida exitosamente para: profesor.nuevo1746649090561@udb.com
+2025-05-07 14:18:10 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de login para el correo: profesor.nuevo1746649090561@udb.com
+2025-05-07 14:18:10 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Login exitoso para el usuario: Profe Nuevo Ejemplo (profesor.nuevo1746649090561@udb.com)
+2025-05-07 14:18:10 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de login para el correo: alumno1@udb.com
+2025-05-07 14:18:10 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Login exitoso para el usuario: Alumno1 (alumno1@udb.com)
+2025-05-07 14:18:10 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de gestionar datos para usuario ID: 3
+2025-05-07 14:18:10 [main] INFO  bibliotecaudb.dao.usuario.UsuarioDAO - Usuario actualizado: alumno1@udb.com
+2025-05-07 14:18:10 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Datos actualizados para usuario ID: 3
+2025-05-07 14:18:10 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de gestionar datos para usuario ID: 3
+2025-05-07 14:18:10 [main] INFO  bibliotecaudb.dao.usuario.UsuarioDAO - Usuario actualizado: alumno1@udb.com
+2025-05-07 14:18:10 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Datos actualizados para usuario ID: 3
+2025-05-07 14:18:10 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando la conexión a la BD...
+2025-05-07 14:18:10 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión cerrada correctamente.
+2025-05-07 15:27:35 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- INICIO DE PRUEBAS MANUALES ---
+2025-05-07 15:27:35 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuración cargada: URL=[jdbc:mysql://localhost:3306/biblioteca], User=[root]
+2025-05-07 15:27:35 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión es null o está cerrada. Intentando establecer conexión...
+2025-05-07 15:27:35 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a URL=[jdbc:mysql://localhost:3306/biblioteca] con User=[root]
+2025-05-07 15:27:36 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión establecida exitosamente a: jdbc:mysql://localhost:3306/biblioteca
+2025-05-07 15:27:36 [main] INFO  bibliotecaudb.dao.usuario.TipoUsuarioDAO - Se obtuvieron 3 tipos de usuario.
+2025-05-07 15:27:36 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- FIN DE PRUEBAS MANUALES ---
+2025-05-07 15:27:36 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando la conexión a la BD...
+2025-05-07 15:27:36 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión cerrada correctamente.
+2025-05-07 15:30:14 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- INICIO DE PRUEBAS MANUALES ---
+2025-05-07 15:30:14 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de login para el correo: admin@udb.com
+2025-05-07 15:30:14 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuración cargada: URL=[jdbc:mysql://localhost:3306/biblioteca], User=[root]
+2025-05-07 15:30:14 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión es null o está cerrada. Intentando establecer conexión...
+2025-05-07 15:30:14 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a URL=[jdbc:mysql://localhost:3306/biblioteca] con User=[root]
+2025-05-07 15:30:15 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión establecida exitosamente a: jdbc:mysql://localhost:3306/biblioteca
+2025-05-07 15:30:15 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Login exitoso para el usuario: admin (admin@udb.com)
+2025-05-07 15:30:15 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de login para el correo: alumno1@udb.com
+2025-05-07 15:30:15 [main] WARN  bibliotecaudb.servicio.ServicioUsuario - Servicio: Login fallido - Contraseña incorrecta para: alumno1@udb.com
+2025-05-07 15:30:15 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de login para el correo: noexiste@udb.com
+2025-05-07 15:30:15 [main] WARN  bibliotecaudb.dao.usuario.UsuarioDAO - No se encontró usuario activo con correo: noexiste@udb.com
+2025-05-07 15:30:15 [main] WARN  bibliotecaudb.servicio.ServicioUsuario - Servicio: Login fallido - Usuario no encontrado: noexiste@udb.com
+2025-05-07 15:30:15 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- FIN DE PRUEBAS MANUALES ---
+2025-05-07 15:30:15 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando la conexión a la BD...
+2025-05-07 15:30:15 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión cerrada correctamente.
+2025-05-07 15:33:21 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- INICIO DE PRUEBAS MANUALES ---
+2025-05-07 15:33:21 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de registrar nuevo usuario con correo: profe.test.1746653601535@udb.com
+2025-05-07 15:33:21 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuración cargada: URL=[jdbc:mysql://localhost:3306/biblioteca], User=[root]
+2025-05-07 15:33:21 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión es null o está cerrada. Intentando establecer conexión...
+2025-05-07 15:33:21 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a URL=[jdbc:mysql://localhost:3306/biblioteca] con User=[root]
+2025-05-07 15:33:22 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión establecida exitosamente a: jdbc:mysql://localhost:3306/biblioteca
+2025-05-07 15:33:22 [main] WARN  bibliotecaudb.dao.usuario.UsuarioDAO - No se encontró usuario activo con correo: profe.test.1746653601535@udb.com
+2025-05-07 15:33:22 [main] INFO  bibliotecaudb.dao.usuario.UsuarioDAO - Usuario creado exitosamente con ID: 6 para el correo: profe.test.1746653601535@udb.com
+2025-05-07 15:33:22 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Usuario registrado exitosamente: profe.test.1746653601535@udb.com con ID: 6
+2025-05-07 15:33:22 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de login para el correo: profe.test.1746653601535@udb.com
+2025-05-07 15:33:22 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Login exitoso para el usuario: Profesor De Prueba (profe.test.1746653601535@udb.com)
+2025-05-07 15:33:22 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de registrar nuevo usuario con correo: admin@udb.com
+2025-05-07 15:33:22 [main] WARN  bibliotecaudb.servicio.ServicioUsuario - Servicio: Registro fallido - El correo admin@udb.com ya existe.
+2025-05-07 15:33:22 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- FIN DE PRUEBAS MANUALES ---
+2025-05-07 15:33:22 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando la conexión a la BD...
+2025-05-07 15:33:22 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión cerrada correctamente.
+2025-05-07 15:35:05 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- INICIO DE PRUEBAS MANUALES ---
+2025-05-07 15:35:05 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de restablecer contraseña para: admin@udb.com
+2025-05-07 15:35:05 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuración cargada: URL=[jdbc:mysql://localhost:3306/biblioteca], User=[root]
+2025-05-07 15:35:05 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión es null o está cerrada. Intentando establecer conexión...
+2025-05-07 15:35:05 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a URL=[jdbc:mysql://localhost:3306/biblioteca] con User=[root]
+2025-05-07 15:35:06 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión establecida exitosamente a: jdbc:mysql://localhost:3306/biblioteca
+2025-05-07 15:35:06 [main] INFO  bibliotecaudb.dao.usuario.UsuarioDAO - Contraseña actualizada para el usuario: admin@udb.com
+2025-05-07 15:35:06 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Contraseña restablecida exitosamente para: admin@udb.com
+2025-05-07 15:35:06 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de login para el correo: admin@udb.com
+2025-05-07 15:35:06 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Login exitoso para el usuario: admin (admin@udb.com)
+2025-05-07 15:35:06 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de restablecer contraseña para: admin@udb.com
+2025-05-07 15:35:06 [main] INFO  bibliotecaudb.dao.usuario.UsuarioDAO - Contraseña actualizada para el usuario: admin@udb.com
+2025-05-07 15:35:06 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Contraseña restablecida exitosamente para: admin@udb.com
+2025-05-07 15:35:06 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- FIN DE PRUEBAS MANUALES ---
+2025-05-07 15:35:06 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando la conexión a la BD...
+2025-05-07 15:35:06 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión cerrada correctamente.
+2025-05-07 15:35:54 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- INICIO DE PRUEBAS MANUALES ---
+2025-05-07 15:35:54 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de gestionar datos para usuario ID: 3
+2025-05-07 15:35:54 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuración cargada: URL=[jdbc:mysql://localhost:3306/biblioteca], User=[root]
+2025-05-07 15:35:54 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión es null o está cerrada. Intentando establecer conexión...
+2025-05-07 15:35:54 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a URL=[jdbc:mysql://localhost:3306/biblioteca] con User=[root]
+2025-05-07 15:35:54 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión establecida exitosamente a: jdbc:mysql://localhost:3306/biblioteca
+2025-05-07 15:35:55 [main] INFO  bibliotecaudb.dao.usuario.UsuarioDAO - Usuario actualizado: alumno1@udb.com
+2025-05-07 15:35:55 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Datos actualizados para usuario ID: 3
+2025-05-07 15:35:55 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de gestionar datos para usuario ID: 3
+2025-05-07 15:35:55 [main] INFO  bibliotecaudb.dao.usuario.UsuarioDAO - Usuario actualizado: alumno1@udb.com
+2025-05-07 15:35:55 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Datos actualizados para usuario ID: 3
+2025-05-07 15:35:55 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- FIN DE PRUEBAS MANUALES ---
+2025-05-07 15:35:55 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando la conexión a la BD...
+2025-05-07 15:35:55 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión cerrada correctamente.
+2025-05-07 18:04:20 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- INICIO DE PRUEBAS MANUALES ---
+2025-05-07 18:04:20 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuración cargada: URL=[jdbc:mysql://localhost:3306/biblioteca], User=[root]
+2025-05-07 18:04:20 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión es null o está cerrada. Intentando establecer conexión...
+2025-05-07 18:04:20 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a URL=[jdbc:mysql://localhost:3306/biblioteca] con User=[root]
+2025-05-07 18:04:21 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión establecida exitosamente a: jdbc:mysql://localhost:3306/biblioteca
+2025-05-07 18:04:21 [main] INFO  bibliotecaudb.dao.usuario.TipoUsuarioDAO - Se obtuvieron 3 tipos de usuario.
+2025-05-07 18:04:21 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- FIN DE PRUEBAS MANUALES ---
+2025-05-07 18:04:21 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando la conexión a la BD...
+2025-05-07 18:04:21 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión cerrada correctamente.

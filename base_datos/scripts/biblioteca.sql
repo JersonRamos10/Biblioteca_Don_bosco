@@ -163,7 +163,7 @@ CREATE TRIGGER `tg_update_ejemplar_estado_prestado` AFTER INSERT ON `prestamos` 
 declare id_ultimo_prestamo int;
 set id_ultimo_prestamo = (select max(id) from prestamos);
 update ejemplares set estado = "Prestado"
-where id = (select id_ejemplar from prestamo where id = id_ultimo_prestamo);
+WHERE id = (select id_ejemplar from prestamos where id = id_ultimo_prestamo);
 end
 $$
 DELIMITER ;
