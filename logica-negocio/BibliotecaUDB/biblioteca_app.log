@@ -111,3 +111,12 @@
 2025-05-07 18:04:21 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- FIN DE PRUEBAS MANUALES ---
 2025-05-07 18:04:21 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando la conexión a la BD...
 2025-05-07 18:04:21 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión cerrada correctamente.
+2025-05-07 21:17:32 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- INICIO DE PRUEBAS MANUALES ---
+2025-05-07 21:17:32 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuración cargada: URL=[jdbc:mysql://localhost:3306/biblioteca], User=[root]
+2025-05-07 21:17:32 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión es null o está cerrada. Intentando establecer conexión...
+2025-05-07 21:17:32 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a URL=[jdbc:mysql://localhost:3306/biblioteca] con User=[root]
+2025-05-07 21:17:33 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión establecida exitosamente a: jdbc:mysql://localhost:3306/biblioteca
+2025-05-07 21:17:33 [main] INFO  bibliotecaudb.dao.usuario.TipoUsuarioDAO - Se obtuvieron 3 tipos de usuario.
+2025-05-07 21:17:33 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- FIN DE PRUEBAS MANUALES ---
+2025-05-07 21:17:33 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando la conexión a la BD...
+2025-05-07 21:17:33 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión cerrada correctamente.
