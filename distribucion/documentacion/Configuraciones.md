@@ -35,7 +35,7 @@ Para que el codigo Java se conecte a **Nuestra** base de datos local, necesitamo
     * Si  se usa un usuario MySQL diferente a `root`, cámbiarlo también en `db.user`.
     * El `db.url` normalmente no se toca.
 
-- Despues de hacer editar el archivo properties, hagan click derecho sobre el proyecto BibliotecaUBD y seleccionar clean and build
+- Despues de editar el archivo properties, hagan click derecho sobre el proyecto BibliotecaUBD y seleccionar clean and build
 - AL hacer esto hagan las prueabas necearias para saber si hay conexion.
 - en el proyecto hay un paquete que se llama **bibliotecaudb.pruebas** ahi hay una clase llamda **PruebasModuloUsuarios** descomenten o comenten los codigos de prueba que necesiten ver, y ejecuten la clase con click derecho sobre ella y seleccionar **"Run file"**.
     
