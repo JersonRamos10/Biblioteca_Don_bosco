@@ -31,9 +31,11 @@ Para que el codigo Java se conecte a **Nuestra** base de datos local, necesitamo
     db.password=""
     ```
 
-     * **¡Acción Clave!:** Cambia `cambiar las comillas dobles ""` por **la contraseña real** de MySQL o la herramienta usada.
+     * **¡Clave!:** Cambiar `cambiar las comillas dobles ""` por **la contraseña real** de MySQL o la herramienta usada.
     * Si  se usa un usuario MySQL diferente a `root`, cámbiarlo también en `db.user`.
     * El `db.url` normalmente no se toca.
+  
+    
 4.  **¡¡IMPORTANTE!!** Este archivo es **local**. **NO subir ni compartir las contraseñas solo usarlos mientras se trabaje el proyecto.** El código Java está hecho para leer las credenciales desde aquí, **no modifiques el código Java en ninguna clases ** para poner contraseñas.
 
 ## Paso 3: Las Librerías y Logs (¡Ya están en el proyecto!)
