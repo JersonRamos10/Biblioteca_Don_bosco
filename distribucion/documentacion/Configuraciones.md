@@ -15,7 +15,7 @@
     ```
     
 3.  **Importar el Script Principal:** Buscar el archivo `biblioteca.sql` en el proyecto. Este archivo tiene TODAS las tablas (`usuarios`, `tipo_usuario`, `documentos`, `prestamos`, etc.) y datos iniciales.
-    * **¡Acción Clave!:** Ejecutar **todo** el script `biblioteca.sql` en la base de datos `biblioteca`. Usar la opción "Importar" de la herramienta utilizada o ejecútarlo como script.
+    *  **Ejecutar todo** el script `biblioteca.sql` en la base de datos `biblioteca`. Usar la opción "Importar" de la herramienta utilizada o ejecútarlo como script.
     * *(El archivo `ConsultasComunes.sql` es solo para ver ejemplos de SQL, no lo ejecutes para configurar).*
 
 ## Paso 2: La Conexión Personal (`config.properties`)
@@ -31,10 +31,13 @@ Para que el codigo Java se conecte a **Nuestra** base de datos local, necesitamo
     db.password=""
     ```
 
-     * **¡Clave!:** Cambiar `cambiar las comillas dobles ""` por **la contraseña real** de MySQL o la herramienta usada.
+     * ** Cambiar:** `cambiar las comillas dobles ""` por **la contraseña real** de MySQL o la herramienta usada.
     * Si  se usa un usuario MySQL diferente a `root`, cámbiarlo también en `db.user`.
     * El `db.url` normalmente no se toca.
-  
+
+- Despues de editar el archivo properties, hagan click derecho sobre el proyecto BibliotecaUBD y seleccionar clean and build
+- AL hacer esto hagan las prueabas necearias para saber si hay conexion.
+- en el proyecto hay un paquete que se llama **bibliotecaudb.pruebas** ahi hay una clase llamda **PruebasModuloUsuarios** descomenten o comenten los codigos de prueba que necesiten ver, y ejecuten la clase con click derecho sobre ella y seleccionar **"Run file"**.
     
 4.  **¡¡IMPORTANTE!!** Este archivo es **local**. **NO subir ni compartir las contraseñas solo usarlos mientras se trabaje el proyecto.** El código Java está hecho para leer las credenciales desde aquí, **no modifiques el código Java en ninguna clases ** para poner contraseñas.
 

@@ -4,7 +4,7 @@
 
 Toda la funcionalidad relacionada con usuarios (iniciar sesión, crear cuentas, etc.) se maneja a través de una única clase: `ServicioUsuario`.
 
-* **Ubicación:** `edu.udb.biblioteca.servicio.ServicioUsuario` (o `bibliotecaudb.servicio.ServicioUsuario` si ese es el paquete base).
+* **Ubicación:** `bibliotecaudb.servicio.ServicioUsuario` si ese es el paquete base).
 
 ## Obtener una Instancia del Servicio
 
