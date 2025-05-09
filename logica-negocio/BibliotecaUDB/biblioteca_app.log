@@ -120,3 +120,117 @@
 2025-05-07 21:17:33 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- FIN DE PRUEBAS MANUALES ---
 2025-05-07 21:17:33 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando la conexión a la BD...
 2025-05-07 21:17:33 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión cerrada correctamente.
+2025-05-07 22:47:56 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- INICIO DE PRUEBAS MANUALES ---
+2025-05-07 22:47:56 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuración cargada: URL=[jdbc:mysql://localhost:3306/biblioteca], User=[root]
+2025-05-07 22:47:56 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión es null o está cerrada. Intentando establecer conexión...
+2025-05-07 22:47:56 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a URL=[jdbc:mysql://localhost:3306/biblioteca] con User=[root]
+2025-05-07 22:47:57 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión establecida exitosamente a: jdbc:mysql://localhost:3306/biblioteca
+2025-05-07 22:47:57 [main] INFO  bibliotecaudb.dao.usuario.TipoUsuarioDAO - Se obtuvieron 3 tipos de usuario.
+2025-05-07 22:47:57 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- FIN DE PRUEBAS MANUALES ---
+2025-05-07 22:47:57 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando la conexión a la BD...
+2025-05-07 22:47:57 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión cerrada correctamente.
+2025-05-07 22:50:45 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- INICIO DE PRUEBAS MANUALES ---
+2025-05-07 22:50:45 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuración cargada: URL=[jdbc:mysql://localhost:3306/biblioteca], User=[root]
+2025-05-07 22:50:45 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión es null o está cerrada. Intentando establecer conexión...
+2025-05-07 22:50:45 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a URL=[jdbc:mysql://localhost:3306/biblioteca] con User=[root]
+2025-05-07 22:50:45 [main] ERROR bibliotecaudb.conexion.ConexionBD - Error SQL al conectar a la BD. SQLState: 28000, ErrorCode: 1045
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:416)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:238)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at bibliotecaudb.conexion.ConexionBD.establishConnection(ConexionBD.java:69)
+	at bibliotecaudb.conexion.ConexionBD.getConexion(ConexionBD.java:52)
+	at bibliotecaudb.dao.usuario.TipoUsuarioDAO.obtenerTodos(TipoUsuarioDAO.java:63)
+	at bibliotecaudb.pruebas.PruebasModuloUsuario.main(PruebasModuloUsuario.java:40)
+2025-05-07 22:50:45 [main] ERROR bibliotecaudb.dao.usuario.TipoUsuarioDAO - Error al obtener todos los tipos de usuario
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:416)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:238)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at bibliotecaudb.conexion.ConexionBD.establishConnection(ConexionBD.java:69)
+	at bibliotecaudb.conexion.ConexionBD.getConexion(ConexionBD.java:52)
+	at bibliotecaudb.dao.usuario.TipoUsuarioDAO.obtenerTodos(TipoUsuarioDAO.java:63)
+	at bibliotecaudb.pruebas.PruebasModuloUsuario.main(PruebasModuloUsuario.java:40)
+2025-05-07 22:50:45 [main] ERROR bibliotecaudb.pruebas.PruebasModuloUsuario - Error en prueba básica de conexión
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:416)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:238)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at bibliotecaudb.conexion.ConexionBD.establishConnection(ConexionBD.java:69)
+	at bibliotecaudb.conexion.ConexionBD.getConexion(ConexionBD.java:52)
+	at bibliotecaudb.dao.usuario.TipoUsuarioDAO.obtenerTodos(TipoUsuarioDAO.java:63)
+	at bibliotecaudb.pruebas.PruebasModuloUsuario.main(PruebasModuloUsuario.java:40)
+2025-05-07 22:50:45 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- FIN DE PRUEBAS MANUALES ---
+2025-05-07 22:50:45 [main] INFO  bibliotecaudb.conexion.ConexionBD - La conexión ya era null, no se necesita cerrar.
+2025-05-07 23:01:49 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- INICIO DE PRUEBAS MANUALES ---
+2025-05-07 23:01:49 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuración cargada: URL=[jdbc:mysql://localhost:3306/biblioteca], User=[root]
+2025-05-07 23:01:49 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión es null o está cerrada. Intentando establecer conexión...
+2025-05-07 23:01:49 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a URL=[jdbc:mysql://localhost:3306/biblioteca] con User=[root]
+2025-05-07 23:01:50 [main] ERROR bibliotecaudb.conexion.ConexionBD - Error SQL al conectar a la BD. SQLState: 28000, ErrorCode: 1045
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:416)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:238)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at bibliotecaudb.conexion.ConexionBD.establishConnection(ConexionBD.java:69)
+	at bibliotecaudb.conexion.ConexionBD.getConexion(ConexionBD.java:52)
+	at bibliotecaudb.dao.usuario.TipoUsuarioDAO.obtenerTodos(TipoUsuarioDAO.java:63)
+	at bibliotecaudb.pruebas.PruebasModuloUsuario.main(PruebasModuloUsuario.java:40)
+2025-05-07 23:01:50 [main] ERROR bibliotecaudb.dao.usuario.TipoUsuarioDAO - Error al obtener todos los tipos de usuario
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:416)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:238)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at bibliotecaudb.conexion.ConexionBD.establishConnection(ConexionBD.java:69)
+	at bibliotecaudb.conexion.ConexionBD.getConexion(ConexionBD.java:52)
+	at bibliotecaudb.dao.usuario.TipoUsuarioDAO.obtenerTodos(TipoUsuarioDAO.java:63)
+	at bibliotecaudb.pruebas.PruebasModuloUsuario.main(PruebasModuloUsuario.java:40)
+2025-05-07 23:01:50 [main] ERROR bibliotecaudb.pruebas.PruebasModuloUsuario - Error en prueba básica de conexión
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:416)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:238)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at bibliotecaudb.conexion.ConexionBD.establishConnection(ConexionBD.java:69)
+	at bibliotecaudb.conexion.ConexionBD.getConexion(ConexionBD.java:52)
+	at bibliotecaudb.dao.usuario.TipoUsuarioDAO.obtenerTodos(TipoUsuarioDAO.java:63)
+	at bibliotecaudb.pruebas.PruebasModuloUsuario.main(PruebasModuloUsuario.java:40)
+2025-05-07 23:01:50 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- FIN DE PRUEBAS MANUALES ---
+2025-05-07 23:01:50 [main] INFO  bibliotecaudb.conexion.ConexionBD - La conexión ya era null, no se necesita cerrar.
+2025-05-07 23:02:38 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- INICIO DE PRUEBAS MANUALES ---
+2025-05-07 23:02:38 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuración cargada: URL=[jdbc:mysql://localhost:3306/biblioteca], User=[root]
+2025-05-07 23:02:38 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión es null o está cerrada. Intentando establecer conexión...
+2025-05-07 23:02:38 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a URL=[jdbc:mysql://localhost:3306/biblioteca] con User=[root]
+2025-05-07 23:02:39 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión establecida exitosamente a: jdbc:mysql://localhost:3306/biblioteca
+2025-05-07 23:02:39 [main] INFO  bibliotecaudb.dao.usuario.TipoUsuarioDAO - Se obtuvieron 3 tipos de usuario.
+2025-05-07 23:02:39 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- FIN DE PRUEBAS MANUALES ---
+2025-05-07 23:02:39 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando la conexión a la BD...
+2025-05-07 23:02:39 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión cerrada correctamente.
