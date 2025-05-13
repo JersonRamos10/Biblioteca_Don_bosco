@@ -1,215 +1,207 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package bibliotecaudb.pruebas;
+package bibliotecaudb.pruebas; // O el paquete donde quieras poner tu clase de pruebas
 
-import bibliotecaudb.modelo.usuario.Usuario;
-import bibliotecaudb.modelo.usuario.TipoUsuario;
-import bibliotecaudb.servicio.ServicioUsuario;
-import bibliotecaudb.excepciones.UsuarioException;
+// Importa las clases necesarias
 import bibliotecaudb.conexion.ConexionBD;
-import bibliotecaudb.conexion.LogsError; // Importa tu clase de logs
-/**
- *
- * @author jerson_ramos
- */
-public class PruebasModuloUsuario {
-    
-    // --- INSTRUCCIONES ---
-        // 1. Asegurarse de haber configurado la BD local y el archivo config.properties del proyecto
-        //    (ver README_Configuracion_Usuario.md).
-        // 2. Descomenta UNO de los bloques de prueba a la vez (entre // --- BLOQUE ... y // --- FIN BLOQUE...).
-        // 3. Ejecuta este archivo (Run File).
-        // 4. Observa la salida en la consola y los logs en biblioteca_app.log.
-        // 5. Vuelve a comentar el bloque antes de probar otro.
-        // ---------------------
-    
-    public static void main(String[] args) {
-    
-    
-    LogsError.info(PruebasModuloUsuario.class, "--- INICIO DE PRUEBAS MANUALES ---");
-        ServicioUsuario servicioUsuario = new ServicioUsuario();
+import bibliotecaudb.conexion.LogsError;
+import bibliotecaudb.modelo.usuario.TipoUsuario;
+import bibliotecaudb.modelo.usuario.Usuario;
+import bibliotecaudb.servicio.ServicioUsuario; // El servicio que vamos a probar
+import bibliotecaudb.dao.usuario.TipoUsuarioDAO; // Para obtener un tipo de usuario válido
 
-        //<editor-fold defaultstate="collapsed" desc="BLOQUE: Prueba de Conexión Básica (Obtener Tipos Usuario)">
-        
-        //descomentar o comentar desde aqui! 
-        System.out.println("\n--- BLOQUE: Prueba de Conexión Básica (Obtener Tipos Usuario) ---");
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
+
+public class PruebasModuloUsuario {
+
+    public static void main(String[] args) {
+        // Instancia del servicio
+        ServicioUsuario usuarioService = new ServicioUsuario();
+        // Instancia del DAO de TipoUsuario (necesaria para crear usuarios)
+        TipoUsuarioDAO tipoUsuarioDAO = new TipoUsuarioDAO();
+
+        // --- 1. PRUEBA DE CONEXIÓN A LA BASE DE DATOS ---
+        System.out.println("--- INICIANDO PRUEBA DE CONEXIÓN ---");
+        Connection connTest = null;
         try {
-            // Intenta obtener la conexión y leer los tipos de usuario
-            java.util.List<TipoUsuario> tipos = new bibliotecaudb.dao.usuario.TipoUsuarioDAO().obtenerTodos();
-            if (tipos != null && !tipos.isEmpty()) {
-                System.out.println("Conexión y lectura de Tipos de Usuario OK. Encontrados: " + tipos.size());
-                for(TipoUsuario tu : tipos) {
-                    System.out.println(" -> ID: " + tu.getId() + ", Tipo: " + tu.getTipo());
+            connTest = ConexionBD.getConexion();
+            if (connTest != null && !connTest.isClosed()) {
+                System.out.println("=> ÉXITO: Conexión a la base de datos establecida correctamente.");
+                LogsError.info(PruebasModuloUsuario.class, "Prueba de conexión exitosa.");
+                // OJO: No cerramos la conexión aquí todavía si vamos a seguir usándola
+                // a través del servicio y DAO que comparten la conexión estática.
+                // La cerraremos al final de todas las pruebas.
+            } else {
+                System.err.println("=> ERROR: No se pudo obtener una conexión válida.");
+                LogsError.error(PruebasModuloUsuario.class, "Prueba de conexión fallida.");
+                // Si la conexión falla aquí, probablemente no tenga sentido continuar.
+                return;
+            }
+        } catch (SQLException e) {
+            System.err.println("=> ERROR SQL al intentar conectar: " + e.getMessage());
+            e.printStackTrace(); // Muestra el stack trace completo del error
+            return; // Salir si no hay conexión
+        }
+        System.out.println("-------------------------------------\n");
+
+
+        // --- 2. PRUEBAS DEL UsuarioService ---
+        System.out.println("--- INICIANDO PRUEBAS UsuarioService ---");
+
+        try {
+            // A. Listar usuarios iniciales
+            System.out.println("\n[Prueba Listar Usuarios Iniciales]");
+            List<Usuario> usuariosIniciales = usuarioService.obtenerTodosLosUsuarios();
+            if (usuariosIniciales.isEmpty()) {
+                System.out.println("No hay usuarios iniciales en la BD.");
+            } else {
+                System.out.println("Usuarios actuales (" + usuariosIniciales.size() + "):");
+                for (Usuario u : usuariosIniciales) {
+                    System.out.println("  " + u.toString()); // Usa el toString() de Usuario
+                }
+            }
+
+            // B. Buscar usuarios específicos
+            System.out.println("\n[Prueba Buscar Usuarios Específicos]");
+            Usuario admin = usuarioService.buscarUsuarioPorCorreo("admin@udb.com");
+            System.out.println("Buscando admin@udb.com: " + (admin != null ? admin.toString() : "No encontrado"));
+            Usuario noExiste = usuarioService.buscarUsuarioPorCorreo("noexiste@udb.com");
+            System.out.println("Buscando noexiste@udb.com: " + (noExiste != null ? noExiste.toString() : "No encontrado"));
+            Usuario porId = usuarioService.buscarUsuarioPorId(2); // Buscar Profesor1
+            System.out.println("Buscando usuario con ID 2: " + (porId != null ? porId.toString() : "No encontrado"));
+
+
+            // C. Probar Login
+            System.out.println("\n[Prueba Login]");
+            Usuario loginOk = usuarioService.login("admin@udb.com", "AdminUdb2025.");
+            System.out.println("Login admin@udb.com (correcto): " + (loginOk != null ? "ÉXITO - " + loginOk.getNombre() : "FALLO"));
+            Usuario loginPassErr = usuarioService.login("admin@udb.com", "contraseñamal");
+            System.out.println("Login admin@udb.com (pass mal): " + (loginPassErr != null ? "ÉXITO (ERROR!)" : "FALLO (esperado)"));
+            Usuario loginCorreoErr = usuarioService.login("error@udb.com", "AdminUdb2025.");
+            System.out.println("Login error@udb.com: " + (loginCorreoErr != null ? "ÉXITO (ERROR!)" : "FALLO (esperado)"));
+
+
+            // D. Crear Nuevo Usuario
+            System.out.println("\n[Prueba Crear Usuario]");
+            // Primero obtenemos un TipoUsuario válido (ej: Alumno con ID 3)
+            TipoUsuario tipoAlumno = tipoUsuarioDAO.obtenerPorId(3);
+            if (tipoAlumno != null) {
+                Usuario nuevo = new Usuario(0, "Nuevo Alumno", "nuevo@udb.com", "NuevoPass123", tipoAlumno, true);
+                try {
+                    usuarioService.crearUsuario(nuevo);
+                    System.out.println("Usuario nuevo@udb.com creado exitosamente.");
+                    // Verificación
+                    Usuario creado = usuarioService.buscarUsuarioPorCorreo("nuevo@udb.com");
+                    System.out.println("Verificación de creación: " + (creado != null ? creado.toString() : "No encontrado!"));
+                } catch (Exception e) {
+                    System.err.println("ERROR al crear usuario nuevo@udb.com: " + e.getMessage());
                 }
             } else {
-                System.err.println("La conexión parece funcionar, pero no se encontraron tipos de usuario.");
+                 System.err.println("No se pudo encontrar TipoUsuario con ID 3 para crear el nuevo usuario.");
             }
-        } catch (Exception e) {
-            System.err.println("FALLO la prueba de conexión básica:");
-            LogsError.error(PruebasModuloUsuario.class, "Error en prueba básica de conexión", e);
-        }
-        System.out.println("--- FIN BLOQUE: Prueba de Conexión Básica ---");
-        
-        
-        //</editor-fold>
 
-        //<editor-fold defaultstate="collapsed" desc="BLOQUE: Pruebas de Login">
-        
-        //comentar o descomentar desde aqui!!
-        
-        /*System.out.println("\n--- BLOQUE: Pruebas de Login ---");
-        // --- 1. Login Correcto (Admin) ---
-        System.out.println("[1. Probando login admin@udb.com...]");
-        try {
-            Usuario admin = servicioUsuario.login("admin@udb.com", "AdminUdb2025.");
-            System.out.println("   -> ÉXITO: Bienvenido " + admin.getNombre() + " (" + admin.getTipoUsuario().getTipo() + ")");
-        } catch (UsuarioException e) {
-            System.err.println("   -> FALLO (INESPERADO): " + e.getMessage());
-        } catch (Exception e) { System.err.println("   -> ERROR INESPERADO: "); e.printStackTrace(); }
+            // D.1 Intentar crear con correo duplicado
+            System.out.println("\n[Prueba Crear Usuario Duplicado]");
+             if (tipoAlumno != null) {
+                Usuario duplicado = new Usuario(0, "Otro Nombre", "admin@udb.com", "OtraPass", tipoAlumno, true);
+                try {
+                    usuarioService.crearUsuario(duplicado);
+                    System.err.println("ERROR: Se permitió crear usuario con correo duplicado admin@udb.com");
+                } catch (Exception e) {
+                    System.out.println("ÉXITO: No se permitió crear usuario duplicado (Esperado). Mensaje: " + e.getMessage());
+                }
+             }
 
-        // --- 2. Login Contraseña Incorrecta (Alumno) ---
-        System.out.println("[2. Probando login alumno1@udb.com con contraseña incorrecta...]");
-         try {
-            Usuario alumno = servicioUsuario.login("alumno1@udb.com", "incorrecta123");
-            System.out.println("   -> ÉXITO (ERROR, no debería pasar)");
-        } catch (UsuarioException e) {
-            System.err.println("   -> FALLO (ESPERADO): " + e.getMessage());
-        } catch (Exception e) { System.err.println("   -> ERROR INESPERADO: "); e.printStackTrace(); }
 
-        // --- 3. Login Usuario No Existente ---
-         System.out.println("[3. Probando login con usuario no existente...]");
-        try {
-            Usuario noExiste = servicioUsuario.login("noexiste@udb.com", "cualquiera");
-            System.out.println("   -> ÉXITO (ERROR, no debería pasar)");
-        } catch (UsuarioException e) {
-            System.err.println("   -> FALLO (ESPERADO): " + e.getMessage());
-        } catch (Exception e) { System.err.println("   -> ERROR INESPERADO: "); e.printStackTrace(); }
-        System.out.println("--- FIN BLOQUE: Pruebas de Login ---");
-        */
-        
-        //</editor-fold>
+            // E. Actualizar Usuario
+            System.out.println("\n[Prueba Actualizar Usuario]");
+            Usuario aActualizar = usuarioService.buscarUsuarioPorCorreo("nuevo@udb.com");
+            if (aActualizar != null) {
+                aActualizar.setNombre("Alumno Nuevo Actualizado");
+                aActualizar.setEstado(false); // Cambiamos también el estado
+                try {
+                    usuarioService.actualizarUsuario(aActualizar);
+                    System.out.println("Usuario nuevo@udb.com actualizado.");
+                    // Verificación
+                    Usuario actualizado = usuarioService.buscarUsuarioPorId(aActualizar.getId());
+                    System.out.println("Verificación de actualización: " + (actualizado != null ? actualizado.toString() : "No encontrado!"));
+                } catch (Exception e) {
+                    System.err.println("ERROR al actualizar usuario nuevo@udb.com: " + e.getMessage());
+                }
+            } else {
+                System.out.println("No se encontró el usuario nuevo@udb.com para actualizar.");
+            }
 
-        //<editor-fold defaultstate="collapsed" desc="BLOQUE: Prueba de Registro">
-        
-        //comentar o descomentar desde aqui!!
-        /*
-        System.out.println("\n--- BLOQUE: Prueba de Registro ---");
-        // --- 1. Registrar Nuevo Usuario (Profesor) ---
-        System.out.println("[1. Registrando nuevo profesor...]");
-        String nuevoCorreoProf = "profe.test." + System.currentTimeMillis() + "@udb.com";
-        try {
-            Usuario nuevoProfesor = servicioUsuario.registrarUsuario(
-                    "Profesor De Prueba", nuevoCorreoProf, "ProfeTestPass1!", 2 // ID 2 = Profesor
-            );
-            System.out.println("   -> ÉXITO: Registrado " + nuevoProfesor.getNombre() + " con ID " + nuevoProfesor.getId());
 
-            // Intenta hacer login con el nuevo usuario para confirmar
-            System.out.println("   Intentando login con el nuevo profesor...");
-            Usuario logueado = servicioUsuario.login(nuevoCorreoProf, "ProfeTestPass1!");
-            System.out.println("   -> Login post-registro EXITOSO: " + logueado.getNombre());
+            // F. Restablecer Contraseña
+            System.out.println("\n[Prueba Restablecer Contraseña]");
+            Usuario adminUser = usuarioService.login("admin@udb.com", "AdminUdb2025."); // Obtenemos al admin
+            Usuario profesorUser = usuarioService.login("profesor1@udb.com","ProfesorUDB2025."); //Obtenemos al profesor
 
-        } catch (UsuarioException e) {
-            System.err.println("   -> FALLO REGISTRO (INESPERADO): " + e.getMessage());
-        } catch (Exception e) { System.err.println("   -> ERROR INESPERADO: "); e.printStackTrace(); }
+            if (adminUser != null) {
+                // F.1 Intento válido por Admin
+                try {
+                    usuarioService.restablecerContrasena(adminUser, "alumno1@udb.com", "PassCambiado123");
+                    System.out.println("ÉXITO: Contraseña restablecida para alumno1@udb.com por admin.");
+                    // Verificación (opcional, intentar login con nueva pass)
+                    Usuario alumnoLogin = usuarioService.login("alumno1@udb.com", "PassCambiado123");
+                    System.out.println("Verificación login alumno1 con nueva pass: " + (alumnoLogin != null ? "ÉXITO" : "FALLO"));
+                } catch (Exception e) {
+                    System.err.println("ERROR al restablecer contraseña (admin): " + e.getMessage());
+                }
 
-        // --- 2. Registrar Correo Duplicado ---
-        System.out.println("[2. Intentando registrar admin@udb.com otra vez...]");
-         try {
-            servicioUsuario.registrarUsuario("Otro Admin", "admin@udb.com", "pass", 1);
-            System.out.println("   -> ÉXITO (ERROR, no debería pasar)");
-        } catch (UsuarioException e) {
-            System.err.println("   -> FALLO (ESPERADO - Correo duplicado): " + e.getMessage());
-        } catch (Exception e) { System.err.println("   -> ERROR INESPERADO: "); e.printStackTrace(); }
-        System.out.println("--- FIN BLOQUE: Prueba de Registro ---");
-        
-        */
-        //</editor-fold>
-
-        //<editor-fold defaultstate="collapsed" desc="BLOQUE: Prueba Restablecer Contraseña">
-        
-        //comentar o descomentar desde aqui
-        
-        /*
-        System.out.println("\n--- BLOQUE: Prueba Restablecer Contraseña ---");
-        // Usa un correo que sepas que existe (ej. el admin o uno creado antes)
-        String correoARestablecer = "admin@udb.com"; // O usa el 'nuevoCorreoProf' si descomentaste el bloque anterior
-        String nuevaPass = "NuevaAdminPass" + System.currentTimeMillis(); // Nueva contraseña única
-        String passOriginal = "AdminUdb2025."; // Contraseña original para restaurarla después
-
-        System.out.println("[1. Intentando restablecer contraseña para " + correoARestablecer + "...]");
-        try {
-            boolean exito = servicioUsuario.restablecerContrasena(correoARestablecer, nuevaPass);
-            if (exito) {
-                 System.out.println("   -> ÉXITO: Contraseña cambiada.");
-                 // Intenta login con la NUEVA contraseña
-                 System.out.println("   Intentando login con nueva contraseña...");
-                 Usuario user = servicioUsuario.login(correoARestablecer, nuevaPass);
-                 System.out.println("   -> Login con nueva contraseña EXITOSO: " + user.getNombre());
-
-                 // Restaurar contraseña original (para no dejarla cambiada)
-                 System.out.println("   Restaurando contraseña original...");
-                 servicioUsuario.restablecerContrasena(correoARestablecer, passOriginal);
-                 System.out.println("   Contraseña original restaurada.");
+                // F.2 Intento para usuario inexistente
+                 try {
+                    usuarioService.restablecerContrasena(adminUser, "noexiste@udb.com", "OtraPass");
+                    System.err.println("ERROR: Se permitió restablecer contraseña para usuario inexistente.");
+                } catch (Exception e) {
+                     System.out.println("ÉXITO: No se permitió restablecer contraseña a usuario inexistente (Esperado). Mensaje: " + e.getMessage());
+                }
 
             } else {
-                System.err.println("   -> FALLO: El servicio devolvió false.");
+                 System.err.println("No se pudo obtener el usuario admin para la prueba de restablecer contraseña.");
             }
-        } catch (UsuarioException e) {
-            System.err.println("   -> FALLO RESTABLECIENDO: " + e.getMessage());
-        } catch (Exception e) { System.err.println("   -> ERROR INESPERADO: "); e.printStackTrace(); }
-        System.out.println("--- FIN BLOQUE: Prueba Restablecer Contraseña ---");
-        */
-        //</editor-fold>
 
-        
-        //<editor-fold defaultstate="collapsed" desc="BLOQUE: Prueba Gestionar/Actualizar Usuario">
-        
-        //comentar o descomentar desde aqui!!
-        /*
-        System.out.println("\n--- BLOQUE: Prueba Gestionar/Actualizar Usuario ---");
-        // Vamos a modificar 'alumno1@udb.com' (ID 3)
-        int idAlumno = 3;
-        String correoAlumno = "alumno1@udb.com";
-        String passAlumno = "AlumnoUDB2025."; // Necesaria para obtener el objeto inicial si se modifica correo
-        String nombreOriginal = "Alumno1"; // Para restaurar
-        int idTipoOriginal = 3;           // Para restaurar
+             // F.3 Intento inválido por No-Admin (Profesor)
+             if(profesorUser != null) {
+                 try {
+                     usuarioService.restablecerContrasena(profesorUser, "alumno1@udb.com", "IntentoFallido");
+                     System.err.println("ERROR: Se permitió restablecer contraseña por usuario no admin (profesor).");
+                 } catch (Exception e) {
+                     System.out.println("ÉXITO: No se permitió restablecer contraseña por no-admin (Esperado). Mensaje: " + e.getMessage());
+                 }
+             } else {
+                 System.err.println("No se pudo obtener el usuario profesor para la prueba de restablecer contraseña.");
+             }
 
-        System.out.println("[1. Intentando actualizar datos del Alumno ID " + idAlumno + "...]");
-        try {
-             // Los datos a cambiar:
-             String nombreNuevo = "Alumno Uno Actualizado";
-             int idTipoNuevo = 3; // Sigue siendo Alumno
-             boolean estadoNuevo = true; // Sigue activo
-             // String correoNuevo = "alumno1.cambiado@udb.com"; // Opcional cambiar correo
 
-             Usuario actualizado = servicioUsuario.gestionarUsuario(
-                idAlumno, nombreNuevo, correoAlumno, idTipoNuevo, estadoNuevo // Mantenemos correo y tipo
-             );
-             System.out.println("   -> ÉXITO: Usuario actualizado: " + actualizado.getNombre() + 
-                                " (" + actualizado.getTipoUsuario().getTipo() + ")");
-             
-             // Verificar los cambios (opcional, requiere obtenerPorId)
-             // Usuario verificado = new UsuarioDAO().obtenerPorId(idAlumno);
-             // System.out.println("   Datos verificados: " + verificado);
+            // G. Eliminar Usuario
+            System.out.println("\n[Prueba Eliminar Usuario]");
+            Usuario aEliminar = usuarioService.buscarUsuarioPorCorreo("nuevo@udb.com");
+            if (aEliminar != null) {
+                try {
+                    usuarioService.eliminarUsuario(aEliminar.getId());
+                    System.out.println("Usuario nuevo@udb.com eliminado.");
+                     // Verificación
+                    Usuario eliminado = usuarioService.buscarUsuarioPorCorreo("nuevo@udb.com");
+                    System.out.println("Verificación de eliminación: " + (eliminado == null ? "ÉXITO (No encontrado)" : "FALLO (Aún existe)"));
+                } catch (Exception e) {
+                     System.err.println("ERROR al eliminar usuario nuevo@udb.com: " + e.getMessage());
+                }
+            } else {
+                System.out.println("No se encontró el usuario nuevo@udb.com para eliminar (quizás falló la actualización).");
+            }
 
-             // Restaurar datos originales
-             System.out.println("   Restaurando datos originales...");
-             servicioUsuario.gestionarUsuario(idAlumno, nombreOriginal, correoAlumno, idTipoOriginal, true);
-             System.out.println("   Datos originales restaurados.");
 
-        } catch (UsuarioException e) {
-             System.err.println("   -> FALLO ACTUALIZANDO: " + e.getMessage());
-        } catch (Exception e) { System.err.println("   -> ERROR INESPERADO: "); e.printStackTrace(); }
-        System.out.println("--- FIN BLOQUE: Prueba Gestionar/Actualizar Usuario ---");
-        */
-        //</editor-fold>
-
-        // --- Limpieza Final ---
-        LogsError.info(PruebasModuloUsuario.class, "--- FIN DE PRUEBAS MANUALES ---");
-        ConexionBD.cerrarConexion(); // Cierra la conexión de BD al final
+        } catch (Exception e) {
+            // Captura general por si alguna operación del servicio lanza Exception
+            System.err.println("\n!!! ERROR INESPERADO DURANTE LAS PRUEBAS DEL SERVICIO: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            // --- 3. CIERRE FINAL DE CONEXIÓN ---
+            System.out.println("\n--- FINALIZANDO PRUEBAS Y CERRANDO CONEXIÓN ---");
+            ConexionBD.cerrarConexion(); // Cierra la conexión estática
+            System.out.println("----------------------------------------------");
+        }
     }
-    
-    
 }

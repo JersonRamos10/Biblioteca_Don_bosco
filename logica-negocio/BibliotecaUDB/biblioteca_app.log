@@ -234,3 +234,567 @@ java.sql.SQLException: Access denied for user 'root'@'localhost' (using password
 2025-05-07 23:02:39 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- FIN DE PRUEBAS MANUALES ---
 2025-05-07 23:02:39 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando la conexión a la BD...
 2025-05-07 23:02:39 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión cerrada correctamente.
+2025-05-11 12:03:27 [main] INFO  bibliotecaudb.pruebas.PruebasModuloBiblioteca - --- INICIO DE PRUEBAS DEL MODULO BIBLIOTECA ---
+2025-05-11 12:03:27 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de login para el correo: alumno1@udb.com
+2025-05-11 12:03:27 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuración cargada: URL=[jdbc:mysql://localhost:3306/biblioteca], User=[root]
+2025-05-11 12:03:27 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión es null o está cerrada. Intentando establecer conexión...
+2025-05-11 12:03:27 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a URL=[jdbc:mysql://localhost:3306/biblioteca] con User=[root]
+2025-05-11 12:03:28 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión establecida exitosamente a: jdbc:mysql://localhost:3306/biblioteca
+2025-05-11 12:03:28 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Login exitoso para el usuario: Alumno1 (alumno1@udb.com)
+2025-05-11 12:03:28 [main] INFO  bibliotecaudb.pruebas.PruebasModuloBiblioteca - Usuario de prueba para préstamos obtenido: Alumno1
+2025-05-11 12:03:28 [main] INFO  bibliotecaudb.pruebas.PruebasModuloBiblioteca - --- FIN DE PRUEBAS DEL MODULO BIBLIOTECA ---
+2025-05-11 12:03:28 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando la conexión a la BD...
+2025-05-11 12:03:28 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión cerrada correctamente.
+2025-05-11 12:04:29 [main] INFO  bibliotecaudb.pruebas.PruebasModuloBiblioteca - --- INICIO DE PRUEBAS DEL MODULO BIBLIOTECA ---
+2025-05-11 12:04:29 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de login para el correo: alumno1@udb.com
+2025-05-11 12:04:29 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuración cargada: URL=[jdbc:mysql://localhost:3306/biblioteca], User=[root]
+2025-05-11 12:04:29 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión es null o está cerrada. Intentando establecer conexión...
+2025-05-11 12:04:29 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a URL=[jdbc:mysql://localhost:3306/biblioteca] con User=[root]
+2025-05-11 12:04:30 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión establecida exitosamente a: jdbc:mysql://localhost:3306/biblioteca
+2025-05-11 12:04:30 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Login exitoso para el usuario: Alumno1 (alumno1@udb.com)
+2025-05-11 12:04:30 [main] INFO  bibliotecaudb.pruebas.PruebasModuloBiblioteca - Usuario de prueba para préstamos obtenido: Alumno1
+2025-05-11 12:04:30 [main] INFO  bibliotecaudb.dao.biblioteca.ConfiguracionSistemaDAO - Configuración del sistema actualizada.
+2025-05-11 12:04:30 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Configuracion del sistema actualizada.
+2025-05-11 12:04:30 [main] INFO  bibliotecaudb.dao.biblioteca.ConfiguracionSistemaDAO - Configuración del sistema actualizada.
+2025-05-11 12:04:30 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Configuracion del sistema actualizada.
+2025-05-11 12:04:30 [main] INFO  bibliotecaudb.pruebas.PruebasModuloBiblioteca - --- FIN DE PRUEBAS DEL MODULO BIBLIOTECA ---
+2025-05-11 12:04:30 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando la conexión a la BD...
+2025-05-11 12:04:30 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión cerrada correctamente.
+2025-05-11 12:05:16 [main] INFO  bibliotecaudb.pruebas.PruebasModuloBiblioteca - --- INICIO DE PRUEBAS DEL MODULO BIBLIOTECA ---
+2025-05-11 12:05:16 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de login para el correo: alumno1@udb.com
+2025-05-11 12:05:16 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuración cargada: URL=[jdbc:mysql://localhost:3306/biblioteca], User=[root]
+2025-05-11 12:05:16 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión es null o está cerrada. Intentando establecer conexión...
+2025-05-11 12:05:16 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a URL=[jdbc:mysql://localhost:3306/biblioteca] con User=[root]
+2025-05-11 12:05:17 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión establecida exitosamente a: jdbc:mysql://localhost:3306/biblioteca
+2025-05-11 12:05:17 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Login exitoso para el usuario: Alumno1 (alumno1@udb.com)
+2025-05-11 12:05:17 [main] INFO  bibliotecaudb.pruebas.PruebasModuloBiblioteca - Usuario de prueba para préstamos obtenido: Alumno1
+2025-05-11 12:05:17 [main] INFO  bibliotecaudb.dao.biblioteca.ConfiguracionSistemaDAO - Configuración del sistema actualizada.
+2025-05-11 12:05:17 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Configuracion del sistema actualizada.
+2025-05-11 12:05:17 [main] INFO  bibliotecaudb.dao.biblioteca.ConfiguracionSistemaDAO - Configuración del sistema actualizada.
+2025-05-11 12:05:17 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Configuracion del sistema actualizada.
+2025-05-11 12:05:17 [main] INFO  bibliotecaudb.dao.biblioteca.TipoDocumentoDAO - Se obtuvieron 6 tipos de documento.
+2025-05-11 12:05:17 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Documento creado con ID: 7, Título: El Gran Libro de Java 1746986717894
+2025-05-11 12:05:17 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Documento ingresado: El Gran Libro de Java 1746986717894
+2025-05-11 12:05:17 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Búsqueda por 'Gran Libro de Java' encontró 1 documentos.
+2025-05-11 12:05:17 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar creado con ID: 9 para Documento ID: 7
+2025-05-11 12:05:17 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Ejemplar ingresado ID: 9 para Documento ID: 7
+2025-05-11 12:05:17 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Se obtuvieron 1 ejemplares para el documento ID: 7
+2025-05-11 12:05:18 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Intento de préstamo: Usuario ID 3, Ejemplar ID 9
+2025-05-11 12:05:18 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Se obtuvieron 0 prestamos activos para el usuario ID: 3
+2025-05-11 12:05:18 [main] ERROR bibliotecaudb.dao.biblioteca.PrestamoDAO - Error al crear Prestamo
+java.sql.SQLSyntaxErrorException: Table 'biblioteca.prestamo' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1103)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1450)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1086)
+	at bibliotecaudb.dao.biblioteca.PrestamoDAO.crear(PrestamoDAO.java:126)
+	at bibliotecaudb.servicio.ServicioBiblioteca.realizarPrestamo(ServicioBiblioteca.java:361)
+	at bibliotecaudb.pruebas.PruebasModuloBiblioteca.main(PruebasModuloBiblioteca.java:221)
+2025-05-11 12:05:18 [main] ERROR bibliotecaudb.servicio.ServicioBiblioteca - Error de BD al realizar préstamo
+java.sql.SQLSyntaxErrorException: Table 'biblioteca.prestamo' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1103)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1450)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1086)
+	at bibliotecaudb.dao.biblioteca.PrestamoDAO.crear(PrestamoDAO.java:126)
+	at bibliotecaudb.servicio.ServicioBiblioteca.realizarPrestamo(ServicioBiblioteca.java:361)
+	at bibliotecaudb.pruebas.PruebasModuloBiblioteca.main(PruebasModuloBiblioteca.java:221)
+2025-05-11 12:05:18 [main] INFO  bibliotecaudb.pruebas.PruebasModuloBiblioteca - --- FIN DE PRUEBAS DEL MODULO BIBLIOTECA ---
+2025-05-11 12:05:18 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando la conexión a la BD...
+2025-05-11 12:05:18 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión cerrada correctamente.
+2025-05-11 12:05:26 [main] INFO  bibliotecaudb.pruebas.PruebasModuloBiblioteca - --- INICIO DE PRUEBAS DEL MODULO BIBLIOTECA ---
+2025-05-11 12:05:26 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de login para el correo: alumno1@udb.com
+2025-05-11 12:05:26 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuración cargada: URL=[jdbc:mysql://localhost:3306/biblioteca], User=[root]
+2025-05-11 12:05:26 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión es null o está cerrada. Intentando establecer conexión...
+2025-05-11 12:05:26 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a URL=[jdbc:mysql://localhost:3306/biblioteca] con User=[root]
+2025-05-11 12:05:27 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión establecida exitosamente a: jdbc:mysql://localhost:3306/biblioteca
+2025-05-11 12:05:27 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Login exitoso para el usuario: Alumno1 (alumno1@udb.com)
+2025-05-11 12:05:27 [main] INFO  bibliotecaudb.pruebas.PruebasModuloBiblioteca - Usuario de prueba para préstamos obtenido: Alumno1
+2025-05-11 12:05:27 [main] INFO  bibliotecaudb.dao.biblioteca.ConfiguracionSistemaDAO - Configuración del sistema actualizada.
+2025-05-11 12:05:27 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Configuracion del sistema actualizada.
+2025-05-11 12:05:27 [main] INFO  bibliotecaudb.dao.biblioteca.ConfiguracionSistemaDAO - Configuración del sistema actualizada.
+2025-05-11 12:05:27 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Configuracion del sistema actualizada.
+2025-05-11 12:05:27 [main] INFO  bibliotecaudb.dao.biblioteca.TipoDocumentoDAO - Se obtuvieron 6 tipos de documento.
+2025-05-11 12:05:27 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Documento creado con ID: 8, Título: El Gran Libro de Java 1746986727369
+2025-05-11 12:05:27 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Documento ingresado: El Gran Libro de Java 1746986727369
+2025-05-11 12:05:27 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Búsqueda por 'Gran Libro de Java' encontró 2 documentos.
+2025-05-11 12:05:27 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar creado con ID: 10 para Documento ID: 8
+2025-05-11 12:05:27 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Ejemplar ingresado ID: 10 para Documento ID: 8
+2025-05-11 12:05:27 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Se obtuvieron 1 ejemplares para el documento ID: 8
+2025-05-11 12:05:27 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Intento de préstamo: Usuario ID 3, Ejemplar ID 10
+2025-05-11 12:05:27 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Se obtuvieron 0 prestamos activos para el usuario ID: 3
+2025-05-11 12:05:27 [main] ERROR bibliotecaudb.dao.biblioteca.PrestamoDAO - Error al crear Prestamo
+java.sql.SQLSyntaxErrorException: Table 'biblioteca.prestamo' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1103)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1450)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1086)
+	at bibliotecaudb.dao.biblioteca.PrestamoDAO.crear(PrestamoDAO.java:126)
+	at bibliotecaudb.servicio.ServicioBiblioteca.realizarPrestamo(ServicioBiblioteca.java:361)
+	at bibliotecaudb.pruebas.PruebasModuloBiblioteca.main(PruebasModuloBiblioteca.java:221)
+2025-05-11 12:05:27 [main] ERROR bibliotecaudb.servicio.ServicioBiblioteca - Error de BD al realizar préstamo
+java.sql.SQLSyntaxErrorException: Table 'biblioteca.prestamo' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1168)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1103)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1450)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1086)
+	at bibliotecaudb.dao.biblioteca.PrestamoDAO.crear(PrestamoDAO.java:126)
+	at bibliotecaudb.servicio.ServicioBiblioteca.realizarPrestamo(ServicioBiblioteca.java:361)
+	at bibliotecaudb.pruebas.PruebasModuloBiblioteca.main(PruebasModuloBiblioteca.java:221)
+2025-05-11 12:05:27 [main] INFO  bibliotecaudb.pruebas.PruebasModuloBiblioteca - --- FIN DE PRUEBAS DEL MODULO BIBLIOTECA ---
+2025-05-11 12:05:27 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando la conexión a la BD...
+2025-05-11 12:05:27 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión cerrada correctamente.
+2025-05-11 13:55:24 [main] INFO  bibliotecaudb.pruebas.PruebasModuloBiblioteca - --- INICIO DE PRUEBAS DEL MODULO BIBLIOTECA ---
+2025-05-11 13:55:24 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de login para el correo: alumno1@udb.com
+2025-05-11 13:55:24 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuración cargada: URL=[jdbc:mysql://localhost:3306/biblioteca], User=[root]
+2025-05-11 13:55:24 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión es null o está cerrada. Intentando establecer conexión...
+2025-05-11 13:55:24 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a URL=[jdbc:mysql://localhost:3306/biblioteca] con User=[root]
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión establecida exitosamente a: jdbc:mysql://localhost:3306/biblioteca
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Login exitoso para el usuario: Alumno1 (alumno1@udb.com)
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.pruebas.PruebasModuloBiblioteca - Usuario de prueba para préstamos obtenido: Alumno1
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.dao.biblioteca.ConfiguracionSistemaDAO - Configuración del sistema actualizada.
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Configuracion del sistema actualizada.
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.dao.biblioteca.ConfiguracionSistemaDAO - Configuración del sistema actualizada.
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Configuracion del sistema actualizada.
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.dao.biblioteca.TipoDocumentoDAO - Se obtuvieron 6 tipos de documento.
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Documento creado con ID: 9, Título: El Gran Libro de Java 1746993325363
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Documento ingresado: El Gran Libro de Java 1746993325363
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Búsqueda por 'Gran Libro de Java' encontró 3 documentos.
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar creado con ID: 11 para Documento ID: 9
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Ejemplar ingresado ID: 11 para Documento ID: 9
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Se obtuvieron 1 ejemplares para el documento ID: 9
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Intento de préstamo: Usuario ID 3, Ejemplar ID 11
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Se obtuvieron 0 prestamos activos para el usuario ID: 3
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Prestamo creado con ID: 9
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar actualizado con ID: 11
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Préstamo ID: 9 realizado exitosamente.
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Intento de préstamo: Usuario ID 3, Ejemplar ID 11
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Intento de devolución para Préstamo ID: 9
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Prestamo actualizado con ID: 9
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar actualizado con ID: 11
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.dao.biblioteca.DevolucionDAO - Devolucion creada con ID: 3 para Prestamo ID: 9
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Devolución ID: 3 registrada. Mora calculada: 0.0
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.pruebas.PruebasModuloBiblioteca - --- FIN DE PRUEBAS DEL MODULO BIBLIOTECA ---
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando la conexión a la BD...
+2025-05-11 13:55:25 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión cerrada correctamente.
+2025-05-11 15:06:01 [main] INFO  bibliotecaudb.pruebas.PruebasModuloBiblioteca - --- INICIO DE PRUEBAS DEL MODULO BIBLIOTECA ---
+2025-05-11 15:06:01 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de login para el correo: alumno1@udb.com
+2025-05-11 15:06:01 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuración cargada: URL=[jdbc:mysql://localhost:3306/biblioteca], User=[root]
+2025-05-11 15:06:01 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión es null o está cerrada. Intentando establecer conexión...
+2025-05-11 15:06:01 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a URL=[jdbc:mysql://localhost:3306/biblioteca] con User=[root]
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión establecida exitosamente a: jdbc:mysql://localhost:3306/biblioteca
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Login exitoso para el usuario: Alumno1 (alumno1@udb.com)
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.pruebas.PruebasModuloBiblioteca - Usuario de prueba para préstamos obtenido: Alumno1
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.dao.biblioteca.ConfiguracionSistemaDAO - Configuración del sistema actualizada.
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Configuracion del sistema actualizada.
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.dao.biblioteca.ConfiguracionSistemaDAO - Configuración del sistema actualizada.
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Configuracion del sistema actualizada.
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.dao.biblioteca.TipoDocumentoDAO - Se obtuvieron 6 tipos de documento.
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Documento creado con ID: 10, Título: El Gran Libro de Java 1746997562370
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Documento ingresado: El Gran Libro de Java 1746997562370
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Búsqueda por 'Gran Libro de Java' encontró 4 documentos.
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar creado con ID: 12 para Documento ID: 10
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Ejemplar ingresado ID: 12 para Documento ID: 10
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Se obtuvieron 1 ejemplares para el documento ID: 10
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Intento de préstamo: Usuario ID 3, Ejemplar ID 12
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Se obtuvieron 0 prestamos activos para el usuario ID: 3
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Prestamo creado con ID: 10
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar actualizado con ID: 12
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Préstamo ID: 10 realizado exitosamente.
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Intento de préstamo: Usuario ID 3, Ejemplar ID 12
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Intento de devolución para Préstamo ID: 10
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Prestamo actualizado con ID: 10
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar actualizado con ID: 12
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.dao.biblioteca.DevolucionDAO - Devolucion creada con ID: 4 para Prestamo ID: 10
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Devolución ID: 4 registrada. Mora calculada: 0.0
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.pruebas.PruebasModuloBiblioteca - --- FIN DE PRUEBAS DEL MODULO BIBLIOTECA ---
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando la conexión a la BD...
+2025-05-11 15:06:02 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión cerrada correctamente.
+2025-05-11 21:08:22 [main] INFO  bibliotecaudb.pruebas.PruebasModuloBiblioteca - --- INICIO DE PRUEBAS DEL MODULO BIBLIOTECA ---
+2025-05-11 21:08:22 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de login para el correo: alumno1@udb.com
+2025-05-11 21:08:22 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuración cargada: URL=[jdbc:mysql://localhost:3306/biblioteca], User=[root]
+2025-05-11 21:08:22 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión es null o está cerrada. Intentando establecer conexión...
+2025-05-11 21:08:22 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a URL=[jdbc:mysql://localhost:3306/biblioteca] con User=[root]
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión establecida exitosamente a: jdbc:mysql://localhost:3306/biblioteca
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Login exitoso para el usuario: Alumno1 (alumno1@udb.com)
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.pruebas.PruebasModuloBiblioteca - Usuario de prueba para préstamos obtenido: Alumno1
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.dao.biblioteca.ConfiguracionSistemaDAO - Configuración del sistema actualizada.
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Configuracion del sistema actualizada.
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.dao.biblioteca.ConfiguracionSistemaDAO - Configuración del sistema actualizada.
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Configuracion del sistema actualizada.
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.dao.biblioteca.TipoDocumentoDAO - Se obtuvieron 6 tipos de documento.
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Documento creado con ID: 11, Título: El Gran Libro de Java 1747019303398
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Documento ingresado: El Gran Libro de Java 1747019303398
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Búsqueda por 'Gran Libro de Java' encontró 5 documentos.
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar creado con ID: 13 para Documento ID: 11
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Ejemplar ingresado ID: 13 para Documento ID: 11
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Se obtuvieron 1 ejemplares para el documento ID: 11
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Intento de préstamo: Usuario ID 3, Ejemplar ID 13
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Se obtuvieron 0 prestamos activos para el usuario ID: 3
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Prestamo creado con ID: 11
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar actualizado con ID: 13
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Préstamo ID: 11 realizado exitosamente.
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Intento de préstamo: Usuario ID 3, Ejemplar ID 13
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Intento de devolución para Préstamo ID: 11
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Prestamo actualizado con ID: 11
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar actualizado con ID: 13
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.dao.biblioteca.DevolucionDAO - Devolucion creada con ID: 5 para Prestamo ID: 11
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.servicio.ServicioBiblioteca - Devolución ID: 5 registrada. Mora calculada: 0.0
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.pruebas.PruebasModuloBiblioteca - --- FIN DE PRUEBAS DEL MODULO BIBLIOTECA ---
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando la conexión a la BD...
+2025-05-11 21:08:23 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión cerrada correctamente.
+2025-05-11 21:08:51 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- INICIO DE PRUEBAS MANUALES ---
+2025-05-11 21:08:51 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuración cargada: URL=[jdbc:mysql://localhost:3306/biblioteca], User=[root]
+2025-05-11 21:08:51 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión es null o está cerrada. Intentando establecer conexión...
+2025-05-11 21:08:51 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a URL=[jdbc:mysql://localhost:3306/biblioteca] con User=[root]
+2025-05-11 21:08:52 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión establecida exitosamente a: jdbc:mysql://localhost:3306/biblioteca
+2025-05-11 21:08:52 [main] INFO  bibliotecaudb.dao.usuario.TipoUsuarioDAO - Se obtuvieron 3 tipos de usuario.
+2025-05-11 21:08:52 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- FIN DE PRUEBAS MANUALES ---
+2025-05-11 21:08:52 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando la conexión a la BD...
+2025-05-11 21:08:52 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión cerrada correctamente.
+2025-05-11 21:09:24 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- INICIO DE PRUEBAS MANUALES ---
+2025-05-11 21:09:24 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuración cargada: URL=[jdbc:mysql://localhost:3306/biblioteca], User=[root]
+2025-05-11 21:09:24 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión es null o está cerrada. Intentando establecer conexión...
+2025-05-11 21:09:24 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a URL=[jdbc:mysql://localhost:3306/biblioteca] con User=[root]
+2025-05-11 21:09:25 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión establecida exitosamente a: jdbc:mysql://localhost:3306/biblioteca
+2025-05-11 21:09:25 [main] INFO  bibliotecaudb.dao.usuario.TipoUsuarioDAO - Se obtuvieron 3 tipos de usuario.
+2025-05-11 21:09:25 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de login para correo: admin@udb.com
+2025-05-11 21:09:25 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Login exitoso para: admin@udb.com
+2025-05-11 21:09:25 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de login para correo: alumno1@udb.com
+2025-05-11 21:09:25 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de login para correo: noexiste@udb.com
+2025-05-11 21:09:25 [main] WARN  bibliotecaudb.dao.usuario.UsuarioDAO - No se encontró usuario activo con correo: noexiste@udb.com
+2025-05-11 21:09:25 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- FIN DE PRUEBAS MANUALES ---
+2025-05-11 21:09:25 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando la conexión a la BD...
+2025-05-11 21:09:25 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión cerrada correctamente.
+2025-05-11 21:17:59 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- INICIO DE PRUEBAS MANUALES ---
+2025-05-11 21:17:59 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuración cargada: URL=[jdbc:mysql://localhost:3306/biblioteca], User=[root]
+2025-05-11 21:17:59 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión es null o está cerrada. Intentando establecer conexión...
+2025-05-11 21:17:59 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a URL=[jdbc:mysql://localhost:3306/biblioteca] con User=[root]
+2025-05-11 21:18:00 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión establecida exitosamente a: jdbc:mysql://localhost:3306/biblioteca
+2025-05-11 21:18:00 [main] INFO  bibliotecaudb.dao.usuario.TipoUsuarioDAO - Se obtuvieron 3 tipos de usuario.
+2025-05-11 21:18:00 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de login para correo: admin@udb.com
+2025-05-11 21:18:00 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Login exitoso para: admin@udb.com
+2025-05-11 21:18:00 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de login para correo: alumno1@udb.com
+2025-05-11 21:18:00 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de login para correo: noexiste@udb.com
+2025-05-11 21:18:00 [main] WARN  bibliotecaudb.dao.usuario.UsuarioDAO - No se encontró usuario activo con correo: noexiste@udb.com
+2025-05-11 21:18:00 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- FIN DE PRUEBAS MANUALES ---
+2025-05-11 21:18:00 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando la conexión a la BD...
+2025-05-11 21:18:00 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexión cerrada correctamente.
+2025-05-11 21:21:11 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- INICIO DE PRUEBAS MANUALES ---
+2025-05-11 21:21:11 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuracion de BD cargada.
+2025-05-11 21:21:11 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a BD: jdbc:mysql://localhost:3306/biblioteca
+2025-05-11 21:21:12 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion establecida exitosamente.
+2025-05-11 21:21:12 [main] INFO  bibliotecaudb.dao.usuario.TipoUsuarioDAO - Se obtuvieron 3 tipos de usuario.
+2025-05-11 21:21:12 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de login para correo: admin@udb.com
+2025-05-11 21:21:12 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Login exitoso para: admin@udb.com
+2025-05-11 21:21:12 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de login para correo: alumno1@udb.com
+2025-05-11 21:21:12 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Servicio: Intento de login para correo: noexiste@udb.com
+2025-05-11 21:21:12 [main] WARN  bibliotecaudb.dao.usuario.UsuarioDAO - No se encontró usuario activo con correo: noexiste@udb.com
+2025-05-11 21:21:12 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - --- FIN DE PRUEBAS MANUALES ---
+2025-05-11 21:21:12 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando conexion a la BD...
+2025-05-11 21:21:12 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion cerrada.
+2025-05-12 11:02:48 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuracion de BD cargada.
+2025-05-12 11:02:48 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a BD: jdbc:mysql://localhost:3306/biblioteca
+2025-05-12 11:02:49 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion establecida exitosamente.
+2025-05-12 11:02:49 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - Prueba de conexión exitosa.
+2025-05-12 11:02:49 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: admin@udb.com
+2025-05-12 11:02:49 [main] WARN  bibliotecaudb.servicio.ServicioUsuario - Credenciales incorrectas para: admin@udb.com
+2025-05-12 11:02:49 [main] WARN  bibliotecaudb.servicio.ServicioUsuario - Credenciales incorrectas para: error@udb.com
+2025-05-12 11:02:49 [main] INFO  bibliotecaudb.dao.usuario.UsuarioDAO - Usuario insertado: nuevo@udb.com
+2025-05-12 11:02:49 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Usuario creado exitosamente: nuevo@udb.com
+2025-05-12 11:02:49 [main] WARN  bibliotecaudb.servicio.ServicioUsuario - Intento de crear usuario con correo ya existente: admin@udb.com
+2025-05-12 11:02:49 [main] INFO  bibliotecaudb.dao.usuario.UsuarioDAO - Usuario actualizado: ID=7, Correo=nuevo@udb.com
+2025-05-12 11:02:49 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Datos de usuario actualizados para: nuevo@udb.com
+2025-05-12 11:02:49 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: admin@udb.com
+2025-05-12 11:02:49 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: profesor1@udb.com
+2025-05-12 11:02:49 [main] INFO  bibliotecaudb.dao.usuario.UsuarioDAO - Usuario actualizado: ID=3, Correo=alumno1@udb.com
+2025-05-12 11:02:49 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Contraseña restablecida para alumno1@udb.com por admin@udb.com
+2025-05-12 11:02:49 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: alumno1@udb.com
+2025-05-12 11:02:49 [main] WARN  bibliotecaudb.servicio.ServicioUsuario - Intento de restablecer contraseña para usuario no existente: noexiste@udb.com
+2025-05-12 11:02:49 [main] WARN  bibliotecaudb.servicio.ServicioUsuario - Intento no autorizado de restablecer contraseña por usuario: profesor1@udb.com
+2025-05-12 11:02:49 [main] INFO  bibliotecaudb.dao.usuario.UsuarioDAO - Usuario eliminado: ID=7
+2025-05-12 11:02:49 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Usuario eliminado con ID: 7
+2025-05-12 11:02:49 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando conexion a la BD...
+2025-05-12 11:02:49 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion cerrada.
+2025-05-12 11:02:55 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuracion de BD cargada.
+2025-05-12 11:02:55 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a BD: jdbc:mysql://localhost:3306/biblioteca
+2025-05-12 11:02:55 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion establecida exitosamente.
+2025-05-12 11:02:55 [main] INFO  bibliotecaudb.pruebas.PruebasModuloUsuario - Prueba de conexión exitosa.
+2025-05-12 11:02:56 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: admin@udb.com
+2025-05-12 11:02:56 [main] WARN  bibliotecaudb.servicio.ServicioUsuario - Credenciales incorrectas para: admin@udb.com
+2025-05-12 11:02:56 [main] WARN  bibliotecaudb.servicio.ServicioUsuario - Credenciales incorrectas para: error@udb.com
+2025-05-12 11:02:56 [main] INFO  bibliotecaudb.dao.usuario.UsuarioDAO - Usuario insertado: nuevo@udb.com
+2025-05-12 11:02:56 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Usuario creado exitosamente: nuevo@udb.com
+2025-05-12 11:02:56 [main] WARN  bibliotecaudb.servicio.ServicioUsuario - Intento de crear usuario con correo ya existente: admin@udb.com
+2025-05-12 11:02:56 [main] INFO  bibliotecaudb.dao.usuario.UsuarioDAO - Usuario actualizado: ID=8, Correo=nuevo@udb.com
+2025-05-12 11:02:56 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Datos de usuario actualizados para: nuevo@udb.com
+2025-05-12 11:02:56 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: admin@udb.com
+2025-05-12 11:02:56 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: profesor1@udb.com
+2025-05-12 11:02:56 [main] INFO  bibliotecaudb.dao.usuario.UsuarioDAO - Usuario actualizado: ID=3, Correo=alumno1@udb.com
+2025-05-12 11:02:56 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Contraseña restablecida para alumno1@udb.com por admin@udb.com
+2025-05-12 11:02:56 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: alumno1@udb.com
+2025-05-12 11:02:56 [main] WARN  bibliotecaudb.servicio.ServicioUsuario - Intento de restablecer contraseña para usuario no existente: noexiste@udb.com
+2025-05-12 11:02:56 [main] WARN  bibliotecaudb.servicio.ServicioUsuario - Intento no autorizado de restablecer contraseña por usuario: profesor1@udb.com
+2025-05-12 11:02:56 [main] INFO  bibliotecaudb.dao.usuario.UsuarioDAO - Usuario eliminado: ID=8
+2025-05-12 11:02:56 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Usuario eliminado con ID: 8
+2025-05-12 11:02:56 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando conexion a la BD...
+2025-05-12 11:02:56 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion cerrada.
+2025-05-12 12:39:20 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuracion de BD cargada.
+2025-05-12 12:47:17 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuracion de BD cargada.
+2025-05-12 12:49:23 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuracion de BD cargada.
+2025-05-12 12:49:23 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a BD: jdbc:mysql://localhost:3306/biblioteca
+2025-05-12 12:49:24 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion establecida exitosamente.
+2025-05-12 12:49:24 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: admin@udb.com
+2025-05-12 12:49:24 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: profesor1@udb.com
+2025-05-12 12:49:24 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: alumno1@udb.com
+2025-05-12 12:49:24 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Documento creado con ID: 12, Título: Microservicios con Spring Boot
+2025-05-12 12:49:24 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar creado con ID: 14 para Documento ID: 12
+2025-05-12 12:49:24 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar creado con ID: 15 para Documento ID: 12
+2025-05-12 12:49:24 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionDocumentosServicio - Documento ID 12 y 2 ejemplares creados por admin@udb.com
+2025-05-12 12:49:24 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Se obtuvieron 2 ejemplares para el documento ID: 12
+2025-05-12 12:49:24 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Busqueda por 'Java' encontro 6 documentos.
+2025-05-12 12:49:24 [main] ERROR bibliotecaudb.dao.biblioteca.MoraAnualDAO - Error al obtener MoraAnual para el año: 2025
+java.sql.SQLSyntaxErrorException: Table 'biblioteca.mora_anual' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1058)
+	at bibliotecaudb.dao.biblioteca.MoraAnualDAO.obtenerPorAnio(MoraAnualDAO.java:37)
+	at bibliotecaudb.dao.biblioteca.MoraAnualDAO.crearOActualizar(MoraAnualDAO.java:81)
+	at bibliotecaudb.servicio.biblioteca.ConfiguracionBibliotecaServicio.establecerOActualizarMoraAnual(ConfiguracionBibliotecaServicio.java:126)
+	at bibliotecaudb.pruebas.PruebasModuloBiblioteca.main(PruebasModuloBiblioteca.java:131)
+2025-05-12 12:49:24 [main] ERROR bibliotecaudb.servicio.biblioteca.ConfiguracionBibliotecaServicio - Error de BD al establecer/actualizar mora anual para el año: 2025
+java.sql.SQLSyntaxErrorException: Table 'biblioteca.mora_anual' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1058)
+	at bibliotecaudb.dao.biblioteca.MoraAnualDAO.obtenerPorAnio(MoraAnualDAO.java:37)
+	at bibliotecaudb.dao.biblioteca.MoraAnualDAO.crearOActualizar(MoraAnualDAO.java:81)
+	at bibliotecaudb.servicio.biblioteca.ConfiguracionBibliotecaServicio.establecerOActualizarMoraAnual(ConfiguracionBibliotecaServicio.java:126)
+	at bibliotecaudb.pruebas.PruebasModuloBiblioteca.main(PruebasModuloBiblioteca.java:131)
+2025-05-12 12:49:24 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Estado de Ejemplar ID=14 actualizado a: DISPONIBLE
+2025-05-12 12:49:24 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionPrestamosServicio - Iniciando proceso de préstamo para Usuario ID: 3, Ejemplar ID: 14
+2025-05-12 12:49:24 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Se obtuvieron 2 prestamos activos para el usuario ID: 3
+2025-05-12 12:49:24 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando conexion a la BD...
+2025-05-12 12:49:24 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion cerrada.
+2025-05-12 13:54:27 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuracion de BD cargada.
+2025-05-12 13:54:27 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a BD: jdbc:mysql://localhost:3306/biblioteca
+2025-05-12 13:54:28 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion establecida exitosamente.
+2025-05-12 13:54:28 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: admin@udb.com
+2025-05-12 13:54:28 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: profesor1@udb.com
+2025-05-12 13:54:28 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: alumno1@udb.com
+2025-05-12 13:54:28 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Documento creado con ID: 13, Título: Microservicios con Spring Boot
+2025-05-12 13:54:28 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar creado con ID: 16 para Documento ID: 13
+2025-05-12 13:54:28 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar creado con ID: 17 para Documento ID: 13
+2025-05-12 13:54:28 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionDocumentosServicio - Documento ID 13 y 2 ejemplares creados por admin@udb.com
+2025-05-12 13:54:28 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Se obtuvieron 2 ejemplares para el documento ID: 13
+2025-05-12 13:54:28 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Busqueda por 'Java' encontro 6 documentos.
+2025-05-12 13:54:28 [main] ERROR bibliotecaudb.dao.biblioteca.MoraAnualDAO - Error al obtener MoraAnual para el año: 2025
+java.sql.SQLSyntaxErrorException: Table 'biblioteca.mora_anual' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1058)
+	at bibliotecaudb.dao.biblioteca.MoraAnualDAO.obtenerPorAnio(MoraAnualDAO.java:37)
+	at bibliotecaudb.dao.biblioteca.MoraAnualDAO.crearOActualizar(MoraAnualDAO.java:81)
+	at bibliotecaudb.servicio.biblioteca.ConfiguracionBibliotecaServicio.establecerOActualizarMoraAnual(ConfiguracionBibliotecaServicio.java:126)
+	at bibliotecaudb.pruebas.PruebasModuloBiblioteca.main(PruebasModuloBiblioteca.java:131)
+2025-05-12 13:54:28 [main] ERROR bibliotecaudb.servicio.biblioteca.ConfiguracionBibliotecaServicio - Error de BD al establecer/actualizar mora anual para el año: 2025
+java.sql.SQLSyntaxErrorException: Table 'biblioteca.mora_anual' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:990)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1058)
+	at bibliotecaudb.dao.biblioteca.MoraAnualDAO.obtenerPorAnio(MoraAnualDAO.java:37)
+	at bibliotecaudb.dao.biblioteca.MoraAnualDAO.crearOActualizar(MoraAnualDAO.java:81)
+	at bibliotecaudb.servicio.biblioteca.ConfiguracionBibliotecaServicio.establecerOActualizarMoraAnual(ConfiguracionBibliotecaServicio.java:126)
+	at bibliotecaudb.pruebas.PruebasModuloBiblioteca.main(PruebasModuloBiblioteca.java:131)
+2025-05-12 13:54:28 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Estado de Ejemplar ID=16 actualizado a: DISPONIBLE
+2025-05-12 13:54:28 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionPrestamosServicio - Iniciando proceso de préstamo para Usuario ID: 3, Ejemplar ID: 16
+2025-05-12 13:54:28 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Se obtuvieron 2 prestamos activos para el usuario ID: 3
+2025-05-12 13:54:28 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando conexion a la BD...
+2025-05-12 13:54:28 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion cerrada.
+2025-05-12 14:07:26 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuracion de BD cargada.
+2025-05-12 14:07:26 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a BD: jdbc:mysql://localhost:3306/biblioteca
+2025-05-12 14:07:26 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion establecida exitosamente.
+2025-05-12 14:07:26 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: admin@udb.com
+2025-05-12 14:07:26 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: profesor1@udb.com
+2025-05-12 14:07:26 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: alumno1@udb.com
+2025-05-12 14:07:26 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Documento creado con ID: 14, Título: Microservicios con Spring Boot
+2025-05-12 14:07:27 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar creado con ID: 18 para Documento ID: 14
+2025-05-12 14:07:27 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar creado con ID: 19 para Documento ID: 14
+2025-05-12 14:07:27 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionDocumentosServicio - Documento ID 14 y 2 ejemplares creados por admin@udb.com
+2025-05-12 14:07:27 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Se obtuvieron 2 ejemplares para el documento ID: 14
+2025-05-12 14:07:27 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Busqueda por 'Java' encontro 6 documentos.
+2025-05-12 14:07:27 [main] INFO  bibliotecaudb.dao.biblioteca.MoraAnualDAO - MoraAnual actualizada para el año: 2025
+2025-05-12 14:07:27 [main] INFO  bibliotecaudb.servicio.biblioteca.ConfiguracionBibliotecaServicio - Mora anual para 2025 establecida/actualizada a: 0.30 por admin@udb.com
+2025-05-12 14:07:27 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Estado de Ejemplar ID=18 actualizado a: DISPONIBLE
+2025-05-12 14:07:27 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionPrestamosServicio - Iniciando proceso de préstamo para Usuario ID: 3, Ejemplar ID: 18
+2025-05-12 14:07:27 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Se obtuvieron 2 prestamos activos para el usuario ID: 3
+2025-05-12 14:07:27 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando conexion a la BD...
+2025-05-12 14:07:27 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion cerrada.
+2025-05-12 14:11:29 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuracion de BD cargada.
+2025-05-12 14:11:29 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a BD: jdbc:mysql://localhost:3306/biblioteca
+2025-05-12 14:11:30 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion establecida exitosamente.
+2025-05-12 14:11:30 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: admin@udb.com
+2025-05-12 14:11:30 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: profesor1@udb.com
+2025-05-12 14:11:30 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: alumno1@udb.com
+2025-05-12 14:11:30 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Documento creado con ID: 15, Título: Microservicios con Spring Boot
+2025-05-12 14:11:30 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar creado con ID: 20 para Documento ID: 15
+2025-05-12 14:11:30 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar creado con ID: 21 para Documento ID: 15
+2025-05-12 14:11:30 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionDocumentosServicio - Documento ID 15 y 2 ejemplares creados por admin@udb.com
+2025-05-12 14:11:30 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Se obtuvieron 2 ejemplares para el documento ID: 15
+2025-05-12 14:11:30 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Busqueda por 'Java' encontro 6 documentos.
+2025-05-12 14:11:30 [main] INFO  bibliotecaudb.dao.biblioteca.MoraAnualDAO - MoraAnual actualizada para el año: 2025
+2025-05-12 14:11:30 [main] INFO  bibliotecaudb.servicio.biblioteca.ConfiguracionBibliotecaServicio - Mora anual para 2025 establecida/actualizada a: 0.30 por admin@udb.com
+2025-05-12 14:11:30 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Estado de Ejemplar ID=20 actualizado a: DISPONIBLE
+2025-05-12 14:11:30 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionPrestamosServicio - Iniciando proceso de préstamo para Usuario ID: 3, Ejemplar ID: 20
+2025-05-12 14:11:30 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Se obtuvieron 2 prestamos activos para el usuario ID: 3
+2025-05-12 14:11:30 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando conexion a la BD...
+2025-05-12 14:11:30 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion cerrada.
+2025-05-12 14:16:07 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuracion de BD cargada.
+2025-05-12 14:16:07 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a BD: jdbc:mysql://localhost:3306/biblioteca
+2025-05-12 14:16:08 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion establecida exitosamente.
+2025-05-12 14:16:08 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: admin@udb.com
+2025-05-12 14:16:08 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: profesor1@udb.com
+2025-05-12 14:16:08 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: alumno1@udb.com
+2025-05-12 14:16:08 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Documento creado con ID: 16, Título: Microservicios con Spring Boot
+2025-05-12 14:16:08 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar creado con ID: 22 para Documento ID: 16
+2025-05-12 14:16:08 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar creado con ID: 23 para Documento ID: 16
+2025-05-12 14:16:08 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionDocumentosServicio - Documento ID 16 y 2 ejemplares creados por admin@udb.com
+2025-05-12 14:16:08 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Se obtuvieron 2 ejemplares para el documento ID: 16
+2025-05-12 14:16:08 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Busqueda por 'Java' encontro 6 documentos.
+2025-05-12 14:16:08 [main] INFO  bibliotecaudb.dao.biblioteca.MoraAnualDAO - MoraAnual actualizada para el año: 2025
+2025-05-12 14:16:08 [main] INFO  bibliotecaudb.servicio.biblioteca.ConfiguracionBibliotecaServicio - Mora anual para 2025 establecida/actualizada a: 0.30 por admin@udb.com
+2025-05-12 14:16:08 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Estado de Ejemplar ID=22 actualizado a: DISPONIBLE
+2025-05-12 14:16:08 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionPrestamosServicio - Iniciando proceso de préstamo para Usuario ID: 3, Ejemplar ID: 22
+2025-05-12 14:16:08 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Se obtuvieron 2 prestamos activos para el usuario ID: 3
+2025-05-12 14:16:08 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando conexion a la BD...
+2025-05-12 14:16:08 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion cerrada.
+2025-05-12 14:22:25 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuracion de BD cargada.
+2025-05-12 14:22:25 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a BD: jdbc:mysql://localhost:3306/biblioteca
+2025-05-12 14:22:26 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion establecida exitosamente.
+2025-05-12 14:22:27 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: admin@udb.com
+2025-05-12 14:22:27 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: profesor1@udb.com
+2025-05-12 14:22:27 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: alumno1@udb.com
+2025-05-12 14:22:27 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Documento creado con ID: 17, Título: Microservicios con Spring Boot
+2025-05-12 14:22:27 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar creado con ID: 24 para Documento ID: 17
+2025-05-12 14:22:27 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar creado con ID: 25 para Documento ID: 17
+2025-05-12 14:22:27 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionDocumentosServicio - Documento ID 17 y 2 ejemplares creados por admin@udb.com
+2025-05-12 14:22:27 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Se obtuvieron 2 ejemplares para el documento ID: 17
+2025-05-12 14:22:27 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Busqueda por 'Java' encontro 6 documentos.
+2025-05-12 14:22:27 [main] INFO  bibliotecaudb.dao.biblioteca.MoraAnualDAO - MoraAnual actualizada para el año: 2025
+2025-05-12 14:22:27 [main] INFO  bibliotecaudb.servicio.biblioteca.ConfiguracionBibliotecaServicio - Mora anual para 2025 establecida/actualizada a: 0.30 por admin@udb.com
+2025-05-12 14:22:27 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Estado de Ejemplar ID=24 actualizado a: DISPONIBLE
+2025-05-12 14:22:27 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionPrestamosServicio - Iniciando proceso de préstamo para Usuario ID: 3, Ejemplar ID: 24
+2025-05-12 14:22:27 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Se obtuvieron 2 prestamos activos para el usuario ID: 3
+2025-05-12 14:22:27 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando conexion a la BD...
+2025-05-12 14:22:27 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion cerrada.
+2025-05-12 14:30:56 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuracion de BD cargada.
+2025-05-12 14:30:56 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a BD: jdbc:mysql://localhost:3306/biblioteca
+2025-05-12 14:30:57 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion establecida exitosamente.
+2025-05-12 14:30:57 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: admin@udb.com
+2025-05-12 14:30:57 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: profesor1@udb.com
+2025-05-12 14:30:57 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: alumno1@udb.com
+2025-05-12 14:30:57 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Documento creado con ID: 18, Título: Microservicios con Spring Boot
+2025-05-12 14:30:57 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar creado con ID: 26 para Documento ID: 18
+2025-05-12 14:30:57 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar creado con ID: 27 para Documento ID: 18
+2025-05-12 14:30:57 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionDocumentosServicio - Documento ID 18 y 2 ejemplares creados por admin@udb.com
+2025-05-12 14:30:57 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Se obtuvieron 2 ejemplares para el documento ID: 18
+2025-05-12 14:30:57 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Busqueda por 'Java' encontro 6 documentos.
+2025-05-12 14:30:57 [main] INFO  bibliotecaudb.dao.biblioteca.MoraAnualDAO - MoraAnual actualizada para el año: 2025
+2025-05-12 14:30:57 [main] INFO  bibliotecaudb.servicio.biblioteca.ConfiguracionBibliotecaServicio - Mora anual para 2025 establecida/actualizada a: 0.30 por admin@udb.com
+2025-05-12 14:30:57 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Estado de Ejemplar ID=26 actualizado a: DISPONIBLE
+2025-05-12 14:30:57 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionPrestamosServicio - Iniciando proceso de préstamo para Usuario ID: 3, Ejemplar ID: 26
+2025-05-12 14:30:57 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Se obtuvieron 2 prestamos activos para el usuario ID: 3
+2025-05-12 14:30:57 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando conexion a la BD...
+2025-05-12 14:30:58 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion cerrada.
+2025-05-12 14:41:27 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuracion de BD cargada.
+2025-05-12 14:41:27 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a BD: jdbc:mysql://localhost:3306/biblioteca
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion establecida exitosamente.
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: admin@udb.com
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: profesor1@udb.com
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: alumno1@udb.com
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Documento creado con ID: 19, Título: Microservicios con Spring Boot
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar creado con ID: 28 para Documento ID: 19
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar creado con ID: 29 para Documento ID: 19
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionDocumentosServicio - Documento ID 19 y 2 ejemplares creados por admin@udb.com
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Se obtuvieron 2 ejemplares para el documento ID: 19
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Busqueda por 'Java' encontro 6 documentos.
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.dao.biblioteca.MoraAnualDAO - MoraAnual actualizada para el año: 2025
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.servicio.biblioteca.ConfiguracionBibliotecaServicio - Mora anual para 2025 establecida/actualizada a: 0.30 por admin@udb.com
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Estado de Ejemplar ID=28 actualizado a: DISPONIBLE
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionPrestamosServicio - Iniciando proceso de préstamo para Usuario ID: 3, Ejemplar ID: 28
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Se obtuvieron 0 prestamos activos para el usuario ID: 3
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionPrestamosServicio - Aplicando políticas de préstamo para Alumno.
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Prestamo creado con ID: 12
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Estado de Ejemplar ID=28 actualizado a: PRESTADO
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionPrestamosServicio - Préstamo ID 12 realizado. Fecha límite: 2025-05-19
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Se obtuvieron 2 ejemplares para el documento ID: 19
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Se obtuvieron 1 prestamos activos para el usuario ID: 3
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionPrestamosServicio - Iniciando proceso de préstamo para Usuario ID: 3, Ejemplar ID: 29
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Se obtuvieron 1 prestamos activos para el usuario ID: 3
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionPrestamosServicio - Aplicando políticas de préstamo para Alumno.
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Prestamo creado con ID: 13
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Estado de Ejemplar ID=29 actualizado a: PRESTADO
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionPrestamosServicio - Préstamo ID 13 realizado. Fecha límite: 2025-05-19
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Se obtuvieron 2 prestamos activos para el usuario ID: 3
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Se obtuvieron 2 prestamos activos para el usuario ID: 3
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionPrestamosServicio - Iniciando proceso de devolución para Préstamo ID: 12
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Prestamo actualizado con ID: 12
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.dao.biblioteca.DevolucionDAO - Devolucion creada con ID: 6 para Prestamo ID: 12
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Estado de Ejemplar ID=28 actualizado a: DISPONIBLE
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionPrestamosServicio - Devolución ID 6 registrada exitosamente para Préstamo ID: 12
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando conexion a la BD...
+2025-05-12 14:41:29 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion cerrada.
+2025-05-12 14:57:11 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuracion de BD cargada.
+2025-05-12 14:57:11 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a BD: jdbc:mysql://localhost:3306/biblioteca
+2025-05-12 14:57:12 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion establecida exitosamente.
+2025-05-12 14:57:12 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: admin@udb.com
+2025-05-12 14:57:12 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: profesor1@udb.com
+2025-05-12 14:57:12 [main] INFO  bibliotecaudb.servicio.ServicioUsuario - Login exitoso para: alumno1@udb.com
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Documento creado con ID: 20, Título: Microservicios con Spring Boot
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar creado con ID: 30 para Documento ID: 20
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Ejemplar creado con ID: 31 para Documento ID: 20
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionDocumentosServicio - Documento ID 20 y 2 ejemplares creados por admin@udb.com
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Se obtuvieron 2 ejemplares para el documento ID: 20
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.dao.biblioteca.DocumentoDAO - Busqueda por 'Java' encontro 3 documentos.
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.dao.biblioteca.MoraAnualDAO - MoraAnual actualizada para el año: 2025
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.servicio.biblioteca.ConfiguracionBibliotecaServicio - Mora anual para 2025 establecida/actualizada a: 0.30 por admin@udb.com
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Estado de Ejemplar ID=30 actualizado a: DISPONIBLE
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionPrestamosServicio - Iniciando proceso de préstamo para Usuario ID: 3, Ejemplar ID: 30
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Se obtuvieron 0 prestamos activos para el usuario ID: 3
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionPrestamosServicio - Aplicando políticas de préstamo para Alumno.
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Prestamo creado con ID: 14
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Estado de Ejemplar ID=30 actualizado a: PRESTADO
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionPrestamosServicio - Préstamo ID 14 realizado. Fecha límite: 2025-05-19
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Se obtuvieron 2 ejemplares para el documento ID: 20
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Se obtuvieron 1 prestamos activos para el usuario ID: 3
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionPrestamosServicio - Iniciando proceso de préstamo para Usuario ID: 3, Ejemplar ID: 31
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Se obtuvieron 1 prestamos activos para el usuario ID: 3
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionPrestamosServicio - Aplicando políticas de préstamo para Alumno.
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Prestamo creado con ID: 15
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Estado de Ejemplar ID=31 actualizado a: PRESTADO
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionPrestamosServicio - Préstamo ID 15 realizado. Fecha límite: 2025-05-19
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Se obtuvieron 2 prestamos activos para el usuario ID: 3
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Se obtuvieron 2 prestamos activos para el usuario ID: 3
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionPrestamosServicio - Iniciando proceso de devolución para Préstamo ID: 14
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.dao.biblioteca.PrestamoDAO - Prestamo actualizado con ID: 14
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.dao.biblioteca.DevolucionDAO - Devolucion creada con ID: 7 para Prestamo ID: 14
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.dao.biblioteca.EjemplarDAO - Estado de Ejemplar ID=30 actualizado a: DISPONIBLE
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionPrestamosServicio - Devolución ID 7 registrada exitosamente para Préstamo ID: 14
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando conexion a la BD...
+2025-05-12 14:57:13 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion cerrada.

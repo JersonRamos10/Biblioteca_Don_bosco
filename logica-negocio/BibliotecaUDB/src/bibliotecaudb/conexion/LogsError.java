@@ -11,7 +11,7 @@ import org.apache.log4j.Logger;
  */
 public class LogsError {
     // --- Métodos de Logging Estáticos ---
-    // Pasan el mensaje al logger de Log4j correspondiente a la clase que llama.
+   
 
     public static void debug(Class<?> clazz, String mensaje) {
         Logger.getLogger(clazz).debug(mensaje);

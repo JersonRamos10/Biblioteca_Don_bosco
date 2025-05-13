@@ -1,263 +1,298 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package bibliotecaudb.dao.usuario;
+package bibliotecaudb.dao.usuario; 
 
-import bibliotecaudb.conexion.ConexionBD;
+// Importa los modelos y utilidades necesarias
 import bibliotecaudb.modelo.usuario.Usuario;
 import bibliotecaudb.modelo.usuario.TipoUsuario;
-import bibliotecaudb.conexion.LogsError;
-/**
- *
- * @author jerson_ramos
- */
+import bibliotecaudb.conexion.ConexionBD;
+import bibliotecaudb.conexion.LogsError; 
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement; // Para obtener el ID generado
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * Implementación del DAO para la entidad Usuario.
+ * Accede directamente a la base de datos usando JDBC.
+ */
 public class UsuarioDAO {
-    public Usuario obtenerPorCorreo(String correo) throws SQLException {
-        Usuario usuario = null;
-        String sql = "SELECT u.id, u.nombre, u.correo, u.contrasena, u.estado, " +
-                     "tu.id AS id_tipo_usuario, tu.tipo AS nombre_tipo_usuario " +
-                     "FROM usuarios u " +
-                     "INNER JOIN tipo_usuario tu ON u.id_tipo_usuario = tu.id " +
-                     "WHERE u.correo = ? AND u.estado = 1";
+
+    // Sentencias SQL para las operaciones CRUD y otras consultas
+    private static final String SQL_INSERT = "INSERT INTO usuarios (nombre, correo, contrasena, id_tipo_usuario, estado) VALUES (?, ?, ?, ?, ?)";
+    private static final String SQL_UPDATE = "UPDATE usuarios SET nombre = ?, correo = ?, contrasena = ?, id_tipo_usuario = ?, estado = ? WHERE id = ?";
+    private static final String SQL_DELETE = "DELETE FROM usuarios WHERE id = ?";
+    private static final String SQL_SELECT_ALL = "SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios ORDER BY id";
+    private static final String SQL_SELECT_BY_ID = "SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE id = ?";
+    private static final String SQL_SELECT_BY_CORREO = "SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE correo = ?";
+    // Consulta para el login (basada en ConsultasComunes.sql)
+  
+    private static final String SQL_SELECT_LOGIN = "SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE correo = ? AND contrasena = ?";
+
+    // Dependencia del DAO de TipoUsuario para obtener el objeto completo
+    // Se instancia aquí.
+    private TipoUsuarioDAO tipoUsuarioDAO = new TipoUsuarioDAO();
+
+    /**
+     * Inserta un nuevo usuario en la base de datos.
+     *
+     * @param usuario El objeto Usuario a insertar (sin ID, ya que es autoincremental).
+     * @throws SQLException Si ocurre un error durante el acceso a la base de datos.
+     */
+    public void insertar(Usuario usuario) throws SQLException {
         Connection conn = null;
         PreparedStatement pstmt = null;
-        ResultSet rs = null;
 
         try {
             conn = ConexionBD.getConexion();
-            pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, correo);
-            rs = pstmt.executeQuery();
+            pstmt = conn.prepareStatement(SQL_INSERT);
 
-            if (rs.next()) {
-                // ... mapeo como antes ...
-                 usuario = new Usuario();
-                 usuario.setId(rs.getInt("id"));
-                 usuario.setNombre(rs.getString("nombre"));
-                 usuario.setCorreo(rs.getString("correo"));
-                 usuario.setContrasena(rs.getString("contrasena"));
-                 usuario.setEstado(rs.getBoolean("estado"));
-                 TipoUsuario tipo = new TipoUsuario();
-                 tipo.setId(rs.getInt("id_tipo_usuario"));
-                 tipo.setTipo(rs.getString("nombre_tipo_usuario"));
-                 usuario.setTipoUsuario(tipo);
-                // LogsError.info(UsuarioDAO.class, "Usuario encontrado por correo: " + correo); // Opcional
+            pstmt.setString(1, usuario.getNombre());
+            pstmt.setString(2, usuario.getCorreo());
+            pstmt.setString(3, usuario.getContrasena()); // Guardando contraseña en texto plano
+            // condicional para asegurarse que el objeto tipoUsuario no sea null antes de obtener su ID
+            if (usuario.getTipoUsuario() != null) {
+                pstmt.setInt(4, usuario.getTipoUsuario().getId());
             } else {
-                LogsError.warn(UsuarioDAO.class, "No se encontró usuario activo con correo: " + correo);
+                // Lanzar error o asignar un tipo por defecto si es necesario
+                throw new SQLException("El tipo de usuario no puede ser nulo para insertar.");
             }
-        } catch (SQLException e) {
-             LogsError.error(UsuarioDAO.class, "Error al obtener usuario por correo: " + correo, e);
-            throw e;
+            pstmt.setBoolean(5, usuario.isEstado()); // true para 1, false para 0
+
+            pstmt.executeUpdate();
+            LogsError.info(UsuarioDAO.class, "Usuario insertado: " + usuario.getCorreo());
+
         } finally {
-            try { if (rs != null) rs.close(); } catch (SQLException e) { LogsError.warn(UsuarioDAO.class, "Error al cerrar ResultSet", e); }
-            try { if (pstmt != null) pstmt.close(); } catch (SQLException e) { LogsError.warn(UsuarioDAO.class, "Error al cerrar PreparedStatement", e); }
+            ConexionBD.close(pstmt);
+           
         }
-        return usuario;
     }
 
-    public Usuario obtenerPorId(int id) throws SQLException {
-         Usuario usuario = null;
-         String sql = "SELECT u.id, u.nombre, u.correo, u.contrasena, u.estado, " +
-                      "tu.id AS id_tipo_usuario, tu.tipo AS nombre_tipo_usuario " +
-                      "FROM usuarios u " +
-                      "INNER JOIN tipo_usuario tu ON u.id_tipo_usuario = tu.id " +
-                      "WHERE u.id = ?";
+    /**
+     * Actualiza un usuario existente en la base de datos.
+     *
+     * @param usuario El objeto Usuario a actualizar (debe tener un ID valido).
+     * @throws SQLException Si ocurre un error durante el acceso a la base de datos.
+     */
+    public void actualizar(Usuario usuario) throws SQLException {
         Connection conn = null;
         PreparedStatement pstmt = null;
-        ResultSet rs = null;
 
         try {
             conn = ConexionBD.getConexion();
-            pstmt = conn.prepareStatement(sql);
+            pstmt = conn.prepareStatement(SQL_UPDATE);
+
+            pstmt.setString(1, usuario.getNombre());
+            pstmt.setString(2, usuario.getCorreo());
+            pstmt.setString(3, usuario.getContrasena());
+            if (usuario.getTipoUsuario() != null) {
+                pstmt.setInt(4, usuario.getTipoUsuario().getId());
+            } else {
+                 throw new SQLException("El tipo de usuario no puede ser nulo para actualizar.");
+            }
+            pstmt.setBoolean(5, usuario.isEstado());
+            pstmt.setInt(6, usuario.getId()); // ID para la cláusula WHERE
+
+            int rowsAffected = pstmt.executeUpdate();
+            if (rowsAffected > 0) {
+                 LogsError.info(UsuarioDAO.class, "Usuario actualizado: ID=" + usuario.getId() + ", Correo=" + usuario.getCorreo());
+            } else {
+                 LogsError.warn(UsuarioDAO.class, "No se actualizo ningun usuario con ID: " + usuario.getId());
+            }
+
+        } finally {
+            ConexionBD.close(pstmt);
+
+        }
+    }
+
+     /**
+     * Elimina un usuario de la base de datos basado en su ID.
+     *
+     * @param id El ID del usuario a eliminar.
+     * @throws SQLException Si ocurre un error durante el acceso a la base de datos.
+     */
+    public void eliminar(int id) throws SQLException {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+
+        try {
+            conn = ConexionBD.getConexion();
+            pstmt = conn.prepareStatement(SQL_DELETE);
+            pstmt.setInt(1, id);
+
+            int rowsAffected = pstmt.executeUpdate();
+             if (rowsAffected > 0) {
+                 LogsError.info(UsuarioDAO.class, "Usuario eliminado: ID=" + id);
+            } else {
+                 LogsError.warn(UsuarioDAO.class, "No se elimino ningún usuario con ID: " + id);
+            }
+
+        } finally {
+            ConexionBD.close(pstmt);
+          
+        }
+    }
+
+    /**
+     * Obtiene un Usuario de la base de datos basado en su ID.
+     *
+     * @param id El ID del usuario a buscar.
+     * @return El objeto Usuario encontrado, o null si no se encuentra.
+     * @throws SQLException Si ocurre un error durante el acceso a la base de datos.
+     */
+    public Usuario obtenerPorId(int id) throws SQLException {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        Usuario usuario = null;
+
+        try {
+            conn = ConexionBD.getConexion();
+            pstmt = conn.prepareStatement(SQL_SELECT_BY_ID);
             pstmt.setInt(1, id);
             rs = pstmt.executeQuery();
 
             if (rs.next()) {
-                 // ... mapeo como antes ...
-                 usuario = new Usuario();
-                 usuario.setId(rs.getInt("id"));
-                 usuario.setNombre(rs.getString("nombre"));
-                 usuario.setCorreo(rs.getString("correo"));
-                 usuario.setContrasena(rs.getString("contrasena"));
-                 usuario.setEstado(rs.getBoolean("estado"));
-                 TipoUsuario tipo = new TipoUsuario();
-                 tipo.setId(rs.getInt("id_tipo_usuario"));
-                 tipo.setTipo(rs.getString("nombre_tipo_usuario"));
-                 usuario.setTipoUsuario(tipo);
-                 // LogsError.info(UsuarioDAO.class, "Usuario encontrado por ID: " + id); // Opcional
-            } else {
-                  LogsError.warn(UsuarioDAO.class, "No se encontró usuario con ID: " + id);
+                usuario = mapResultSetToUsuario(rs); //  metodo helper
             }
-        } catch (SQLException e) {
-             LogsError.error(UsuarioDAO.class, "Error al obtener usuario por ID: " + id, e);
-             throw e;
+
         } finally {
-             try { if (rs != null) rs.close(); } catch (SQLException e) { LogsError.warn(UsuarioDAO.class, "Error al cerrar ResultSet", e); }
-             try { if (pstmt != null) pstmt.close(); } catch (SQLException e) { LogsError.warn(UsuarioDAO.class, "Error al cerrar PreparedStatement", e); }
-         }
-         return usuario;
+            ConexionBD.close(rs);
+            ConexionBD.close(pstmt);
+        
+        }
+        return usuario;
     }
 
-    public Usuario crearUsuario(Usuario usuario) throws SQLException {
-        String sql = "INSERT INTO usuarios (nombre, correo, contrasena, id_tipo_usuario, estado) VALUES (?, ?, ?, ?, ?)";
-        Connection conn = null;
-        PreparedStatement pstmt = null;
-
-        if (usuario.getTipoUsuario() == null || usuario.getTipoUsuario().getId() <= 0) { // ID 0 o negativo no válido
-            String errorMsg = "Intento de crear usuario sin TipoUsuario válido: " + usuario.getCorreo();
-             LogsError.error(UsuarioDAO.class, errorMsg); // Usar error si es una condición que impide continuar
-            throw new SQLException("Tipo de usuario no especificado o inválido para el nuevo usuario.");
-        }
-
-        try {
-            conn = ConexionBD.getConexion();
-            pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            pstmt.setString(1, usuario.getNombre());
-            pstmt.setString(2, usuario.getCorreo());
-            pstmt.setString(3, usuario.getContrasena());
-            pstmt.setInt(4, usuario.getTipoUsuario().getId());
-            pstmt.setBoolean(5, usuario.isEstado());
-
-            int filasAfectadas = pstmt.executeUpdate();
-            if (filasAfectadas > 0) {
-                try (ResultSet generatedKeys = pstmt.getGeneratedKeys()) {
-                    if (generatedKeys.next()) {
-                        usuario.setId(generatedKeys.getInt(1));
-                         LogsError.info(UsuarioDAO.class, "Usuario creado exitosamente con ID: " + usuario.getId() + " para el correo: " + usuario.getCorreo());
-                        return usuario;
-                    } else {
-                         // Esto no debería pasar si filasAfectadas > 0 y la tabla tiene AI PK
-                         String errorMsg = "Fallo al crear usuario, no se obtuvo ID generado para: " + usuario.getCorreo();
-                         LogsError.error(UsuarioDAO.class, errorMsg);
-                         throw new SQLException(errorMsg);
-                    }
-                }
-            } else {
-                 // Esto tampoco debería pasar si el INSERT era válido, pero lo logueamos por si acaso
-                 LogsError.warn(UsuarioDAO.class, "El comando INSERT no afectó filas para el correo: " + usuario.getCorreo());
-            }
-        } catch (SQLException e) {
-             LogsError.error(UsuarioDAO.class, "Error SQL al crear usuario: " + usuario.getCorreo(), e);
-            throw e;
-        } finally {
-            try { if (pstmt != null) pstmt.close(); } catch (SQLException e) { LogsError.warn(UsuarioDAO.class, "Error al cerrar PreparedStatement", e); }
-        }
-        return null; // Retorna null si la inserción falló o no se obtuvo ID
-    }
-
-    public boolean actualizarContrasena(String correo, String nuevaContrasena) throws SQLException {
-        String sql = "UPDATE usuarios SET contrasena = ? WHERE correo = ?";
-        Connection conn = null;
-        PreparedStatement pstmt = null;
-        boolean exito = false;
-
-        try {
-            conn = ConexionBD.getConexion();
-            pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, nuevaContrasena);
-            pstmt.setString(2, correo);
-
-            int filasAfectadas = pstmt.executeUpdate();
-            exito = filasAfectadas > 0;
-            if (exito) {
-                 LogsError.info(UsuarioDAO.class, "Contraseña actualizada para el usuario: " + correo);
-            } else {
-                 LogsError.warn(UsuarioDAO.class, "No se encontró el usuario o no se actualizó la contraseña para: " + correo);
-            }
-        } catch (SQLException e) {
-             LogsError.error(UsuarioDAO.class, "Error SQL al actualizar contraseña para: " + correo, e);
-            throw e;
-        } finally {
-            try { if (pstmt != null) pstmt.close(); } catch (SQLException e) { LogsError.warn(UsuarioDAO.class, "Error al cerrar PreparedStatement", e); }
-        }
-        return exito;
-    }
-
-    public boolean actualizarUsuario(Usuario usuario) throws SQLException {
-        String sql = "UPDATE usuarios SET nombre = ?, correo = ?, id_tipo_usuario = ?, estado = ? WHERE id = ?";
-        Connection conn = null;
-        PreparedStatement pstmt = null;
-        boolean exito = false;
-
-        if (usuario.getTipoUsuario() == null || usuario.getTipoUsuario().getId() <= 0) {
-             String errorMsg = "Intento de actualizar usuario sin TipoUsuario válido: " + usuario.getCorreo();
-             LogsError.error(UsuarioDAO.class, errorMsg);
-             throw new SQLException("Tipo de usuario no especificado o inválido para la actualización.");
-        }
-
-        try {
-            conn = ConexionBD.getConexion();
-            pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, usuario.getNombre());
-            pstmt.setString(2, usuario.getCorreo());
-            pstmt.setInt(3, usuario.getTipoUsuario().getId());
-            pstmt.setBoolean(4, usuario.isEstado());
-            pstmt.setInt(5, usuario.getId());
-
-            int filasAfectadas = pstmt.executeUpdate();
-            exito = filasAfectadas > 0;
-            if (exito) {
-                 LogsError.info(UsuarioDAO.class, "Usuario actualizado: " + usuario.getCorreo());
-            } else {
-                 LogsError.warn(UsuarioDAO.class, "No se actualizó el usuario (ID no encontrado?): " + usuario.getId());
-            }
-        } catch (SQLException e) {
-             LogsError.error(UsuarioDAO.class, "Error SQL al actualizar usuario: " + usuario.getCorreo(), e);
-            throw e;
-        } finally {
-            try { if (pstmt != null) pstmt.close(); } catch (SQLException e) { LogsError.warn(UsuarioDAO.class, "Error al cerrar PreparedStatement", e); }
-        }
-        return exito;
-    }
-
-    public List<Usuario> obtenerTodos() throws SQLException {
-        List<Usuario> usuarios = new ArrayList<>();
-        String sql = "SELECT u.id, u.nombre, u.correo, u.contrasena, u.estado, " +
-                     "tu.id AS id_tipo_usuario, tu.tipo AS nombre_tipo_usuario " +
-                     "FROM usuarios u " +
-                     "INNER JOIN tipo_usuario tu ON u.id_tipo_usuario = tu.id " +
-                     "ORDER BY u.nombre";
+    /**
+     * Obtiene un Usuario de la base de datos basado en su correo electrónico.
+     *
+     * @param correo El correo del usuario a buscar.
+     * @return El objeto Usuario encontrado, o null si no se encuentra.
+     * @throws SQLException Si ocurre un error durante el acceso a la base de datos.
+     */
+    public Usuario obtenerPorCorreo(String correo) throws SQLException {
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
+        Usuario usuario = null;
 
         try {
             conn = ConexionBD.getConexion();
-            pstmt = conn.prepareStatement(sql);
+            pstmt = conn.prepareStatement(SQL_SELECT_BY_CORREO);
+            pstmt.setString(1, correo);
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                 usuario = mapResultSetToUsuario(rs); // metodo helper
+            }
+
+        } finally {
+            ConexionBD.close(rs);
+            ConexionBD.close(pstmt);
+            
+        }
+        return usuario;
+    }
+
+     /**
+     * Obtiene una lista de todos los Usuarios de la base de datos.
+     *
+     * @return Una lista de objetos Usuario. La lista estara vacia si no hay usuarios.
+     * @throws SQLException Si ocurre un error durante el acceso a la base de datos.
+     */
+    public List<Usuario> listarTodos() throws SQLException {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        List<Usuario> usuarios = new ArrayList<>();
+
+        try {
+            conn = ConexionBD.getConexion();
+            pstmt = conn.prepareStatement(SQL_SELECT_ALL);
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                 // ... mapeo como antes ...
-                 Usuario usuario = new Usuario();
-                 usuario.setId(rs.getInt("id"));
-                 usuario.setNombre(rs.getString("nombre"));
-                 usuario.setCorreo(rs.getString("correo"));
-                 usuario.setContrasena(rs.getString("contrasena"));
-                 usuario.setEstado(rs.getBoolean("estado"));
-                 TipoUsuario tipo = new TipoUsuario();
-                 tipo.setId(rs.getInt("id_tipo_usuario"));
-                 tipo.setTipo(rs.getString("nombre_tipo_usuario"));
-                 usuario.setTipoUsuario(tipo);
-                 usuarios.add(usuario);
+                Usuario usuario = mapResultSetToUsuario(rs); //  metodo helper
+                if (usuario != null) { // Verificacion extra por si el mapeo falla
+                    usuarios.add(usuario);
+                }
             }
-             LogsError.info(UsuarioDAO.class, "Se obtuvieron " + usuarios.size() + " usuarios.");
-        } catch (SQLException e) {
-             LogsError.error(UsuarioDAO.class, "Error al obtener todos los usuarios", e);
-            throw e;
+
         } finally {
-            try { if (rs != null) rs.close(); } catch (SQLException e) { LogsError.warn(UsuarioDAO.class, "Error al cerrar ResultSet", e); }
-            try { if (pstmt != null) pstmt.close(); } catch (SQLException e) { LogsError.warn(UsuarioDAO.class, "Error al cerrar PreparedStatement", e); }
+            ConexionBD.close(rs);
+            ConexionBD.close(pstmt);
+            
         }
         return usuarios;
     }
+
+    /**
+     * Intenta obtener un usuario basado en correo y contraseña (para login).
+     * @param correo El correo del usuario.
+     * @param contrasena La contraseña proporcionada por el usuario.
+     * @return El objeto Usuario si las credenciales son correctas, null en caso contrario.
+     * @throws SQLException Si ocurre un error durante el acceso a la base de datos.
+     */
+    public Usuario obtenerPorCorreoYContrasena(String correo, String contrasena) throws SQLException {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        Usuario usuario = null;
+
+        try {
+            conn = ConexionBD.getConexion();
+            pstmt = conn.prepareStatement(SQL_SELECT_LOGIN);
+            pstmt.setString(1, correo);
+            pstmt.setString(2, contrasena); // Comparando texto plano
+            rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                usuario = mapResultSetToUsuario(rs); // metodo helper
+            }
+
+        } finally {
+            ConexionBD.close(rs);
+            ConexionBD.close(pstmt);
+       
+        }
+        return usuario;
+    }
+
+
+    // --- Metodo Helper Privado ---
+
+    /**
+     * Mapea una fila del ResultSet a un objeto Usuario.
+     * Incluye la obtencion del objeto TipoUsuario asociado.
+     *
+     * @param rs El ResultSet posicionado en la fila a mapear.
+     * @return Un objeto Usuario completo.
+     * @throws SQLException Si ocurre un error al leer el ResultSet o al buscar el TipoUsuario.
+     */
+    private Usuario mapResultSetToUsuario(ResultSet rs) throws SQLException {
+        Usuario usuario = new Usuario();
+        usuario.setId(rs.getInt("id"));
+        usuario.setNombre(rs.getString("nombre"));
+        usuario.setCorreo(rs.getString("correo"));
+        usuario.setContrasena(rs.getString("contrasena")); // Leemos la contraseña (texto plano)
+        usuario.setEstado(rs.getBoolean("estado"));
+
+        // Obtener el TipoUsuario asociado usando TipoUsuarioDAO
+        int idTipoUsuario = rs.getInt("id_tipo_usuario");
+        TipoUsuario tipoUsuario = tipoUsuarioDAO.obtenerPorId(idTipoUsuario); // Llamada al otro DAO
+
+        if (tipoUsuario == null) {
+            // Manejar el caso donde el id_tipo_usuario en la BD es invalido o no existe
+             LogsError.warn(UsuarioDAO.class, "No se encontro TipoUsuario con ID: " + idTipoUsuario + " para Usuario ID: " + usuario.getId());
+             usuario.setTipoUsuario(null);
+            
+        } else {
+            usuario.setTipoUsuario(tipoUsuario);
+        }
+        return usuario;
+    }
+
 }

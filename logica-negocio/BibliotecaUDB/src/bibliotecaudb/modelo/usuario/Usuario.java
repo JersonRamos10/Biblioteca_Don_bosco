@@ -100,7 +100,6 @@ public class Usuario {
                "id=" + id +
                ", nombre='" + nombre + '\'' +
                ", correo='" + correo + '\'' +
-               // Por seguridad, generalmente no se incluye la contraseña en toString()
                ", tipoUsuario=" + (tipoUsuario != null ? tipoUsuario.getTipo() : "N/A") +
                ", estado=" + estado +
                '}';

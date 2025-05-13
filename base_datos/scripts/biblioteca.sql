@@ -11,6 +11,9 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+-- Ejecuta esto en tu cliente SQL ANTES de correr las pruebas Java
+
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -23,6 +26,9 @@ SET time_zone = "+00:00";
 CREATE DATABASE IF NOT EXISTS `biblioteca` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `biblioteca`;
 
+UPDATE prestamos 
+SET fecha_limite = '2025-05-30' -- Una fecha futura a tu fecha de prueba
+WHERE id_usuario = 3 AND fecha_devolucion IS NULL;
 -- --------------------------------------------------------
 
 --
@@ -30,9 +36,10 @@ USE `biblioteca`;
 --
 
 CREATE TABLE `configuracion_sistema` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `maximo_ejemplares` int(11) DEFAULT 3,
-  `mora_diaria` decimal(5,2) DEFAULT 1.00
+  `mora_diaria` decimal(5,2) DEFAULT 1.00,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -49,10 +56,11 @@ INSERT INTO `configuracion_sistema` (`id`, `maximo_ejemplares`, `mora_diaria`) V
 --
 
 CREATE TABLE `devoluciones` (
-  `id` int(11) NOT NULL,
-  `id_prestamo` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_prestamo` int(11) NOT NULL, -- FK a prestamos.id
   `fecha_devolucion` date NOT NULL,
-  `mora_pagada` decimal(10,2) DEFAULT NULL
+  `mora_pagada` decimal(10,2) DEFAULT NULL, -- Puede ser NULL
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -84,13 +92,14 @@ DELIMITER ;
 --
 
 CREATE TABLE `documentos` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `titulo` varchar(200) NOT NULL,
   `autor` varchar(150) DEFAULT NULL,
   `editorial` varchar(100) DEFAULT NULL,
   `anio_publicacion` int(11) DEFAULT NULL,
-  `id_tipo_documento` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `id_tipo_documento` int(11) NOT NULL, -- FK a tipo_documento.id
+  PRIMARY KEY (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `documentos`
@@ -111,11 +120,13 @@ INSERT INTO `documentos` (`id`, `titulo`, `autor`, `editorial`, `anio_publicacio
 --
 
 CREATE TABLE `ejemplares` (
-  `id` int(11) NOT NULL,
-  `id_documento` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_documento` int(11) NOT NULL, -- FK a documentos.id
   `ubicacion` varchar(100) DEFAULT NULL,
-  `estado` enum('Disponible','Prestado') DEFAULT 'Disponible'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `estado` enum('Disponible','Prestado') DEFAULT 'Disponible',
+  PRIMARY KEY (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 --
 -- Volcado de datos para la tabla `ejemplares`
@@ -135,17 +146,28 @@ INSERT INTO `ejemplares` (`id`, `id_documento`, `ubicacion`, `estado`) VALUES
 
 --
 -- Estructura de tabla para la tabla `prestamos`
---
+CREATE TABLE IF NOT EXISTS prestamos (
+    id              INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario      INT NOT NULL,
+    id_ejemplar     INT NOT NULL,
+    fecha_prestamo  DATE NOT NULL,
+    fecha_devolucion DATE DEFAULT NULL,
+    fecha_limite    DATE NOT NULL,
+    mora            DECIMAL(10,2) DEFAULT 0.00,
+    
+  -- ...constraints y indexes
+    CONSTRAINT fk_pres_usuario
+        FOREIGN KEY (id_usuario)  REFERENCES usuarios(id)
+        ON DELETE RESTRICT
+        ON UPDATE CASCADE,
 
-CREATE TABLE `prestamos` (
-  `id` int(11) NOT NULL,
-  `id_usuario` int(11) NOT NULL,
-  `id_ejemplar` int(11) NOT NULL,
-  `fecha_prestamo` date NOT NULL,
-  `fecha_devolucion` date DEFAULT NULL,
-  `fecha_limite` date NOT NULL,
-  `mora` decimal(10,2) DEFAULT 0.00
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+    CONSTRAINT fk_pres_ejemplar
+        FOREIGN KEY (id_ejemplar) REFERENCES ejemplares(id)
+        ON DELETE RESTRICT
+        ON UPDATE CASCADE,
+
+    INDEX idx_pres_user_estado (id_usuario, fecha_devolucion)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `prestamos`
@@ -158,15 +180,18 @@ INSERT INTO `prestamos` (`id`, `id_usuario`, `id_ejemplar`, `fecha_prestamo`, `f
 --
 -- Disparadores `prestamos`
 --
+DROP TRIGGER IF EXISTS tg_update_ejemplar_estado_prestado;
 DELIMITER $$
-CREATE TRIGGER `tg_update_ejemplar_estado_prestado` AFTER INSERT ON `prestamos` FOR EACH ROW begin 
-declare id_ultimo_prestamo int;
-set id_ultimo_prestamo = (select max(id) from prestamos);
-update ejemplares set estado = "Prestado"
-WHERE id = (select id_ejemplar from prestamos where id = id_ultimo_prestamo);
-end
-$$
+CREATE TRIGGER tg_update_ejemplar_estado_prestado
+AFTER INSERT ON prestamos
+FOR EACH ROW
+BEGIN
+    UPDATE ejemplares
+    SET    estado = 'Prestado'
+    WHERE  id = NEW.id_ejemplar;
+END $$
 DELIMITER ;
+
 
 -- --------------------------------------------------------
 
@@ -175,10 +200,14 @@ DELIMITER ;
 --
 
 CREATE TABLE `tipo_documento` (
-  `id` int(11) NOT NULL,
-  `tipo` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tipo` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `unq_tipo_documento` (`tipo`)
+);
+-- evitar duplicados en tipo_documento
+ALTER TABLE tipo_documento
+  ADD CONSTRAINT unq_tipo_documento UNIQUE (tipo);
 --
 -- Volcado de datos para la tabla `tipo_documento`
 --
@@ -234,6 +263,17 @@ INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `contrasena`, `id_tipo_usuario
 (1, 'admin', 'admin@udb.com', 'AdminUdb2025.', 1, 1),
 (2, 'Profesor1', 'profesor1@udb.com', 'ProfesorUDB2025.', 2, 1),
 (3, 'Alumno1', 'alumno1@udb.com', 'AlumnoUDB2025.', 3, 1);
+
+-- -------------------------------------------------------------------
+-- Tabla de mora diaria por año --------------------------
+
+CREATE TABLE IF NOT EXISTS mora_anual (
+    anio        INT PRIMARY KEY,
+    mora_diaria DECIMAL(8,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT IGNORE INTO mora_anual (anio, mora_diaria) VALUES (2025, 0.15);
+-- --------------------------------------------
 
 --
 -- Índices para tablas volcadas
