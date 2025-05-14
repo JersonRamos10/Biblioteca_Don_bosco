@@ -10,12 +10,12 @@ package bibliotecaudb.modelo.usuario;
  */
 public class Usuario {
     
-     private int id;                 // Corresponde a 'id' (INT, PK)
+    private int id;                 // Corresponde a 'id' (INT, PK)
     private String nombre;          // Corresponde a 'nombre' (VARCHAR(100))
     private String correo;          // Corresponde a 'correo' (VARCHAR(100))
     private String contrasena;      // Corresponde a 'contrasena' (VARCHAR(255))
     private TipoUsuario tipoUsuario; // Objeto para representar la relación con 'tipo_usuario'
-                                    // En la BD es 'id_tipo_usuario' (INT, FK)
+    private int idTipoUsuario;      // En la BD es 'id_tipo_usuario' (INT, FK)
     private boolean estado;         // Corresponde a 'estado' (TINYINT(1)). true si es 1 (activo), false si es 0 (inactivo).
 
     /**
@@ -24,25 +24,16 @@ public class Usuario {
     public Usuario() {
     }
 
-    /**
-     * Constructor para crear un Usuario con todos sus atributos.
-     * @param id El ID del usuario.
-     * @param nombre El nombre completo del usuario.
-     * @param correo El correo electrónico del usuario.
-     * @param contrasena La contraseña del usuario (en un sistema real, sería un hash).
-     * @param tipoUsuario El objeto TipoUsuario asociado a este usuario.
-     * @param estado El estado del usuario (activo/inactivo).
-     */
-    public Usuario(int id, String nombre, String correo, String contrasena, TipoUsuario tipoUsuario, boolean estado) {
+    // Constructor completo
+    public Usuario(int id, String nombre, String correo, String contrasena, int idTipoUsuario, boolean estado) {
         this.id = id;
         this.nombre = nombre;
         this.correo = correo;
         this.contrasena = contrasena;
-        this.tipoUsuario = tipoUsuario;
+        this.idTipoUsuario = idTipoUsuario;
         this.estado = estado;
     }
 
-    // --- Getters y Setters ---
 
     public int getId() {
         return id;
@@ -76,15 +67,26 @@ public class Usuario {
         this.contrasena = contrasena;
     }
 
+    public int getIdTipoUsuario() {
+        return idTipoUsuario;
+    }
+
+    public void setIdTipoUsuario(int idTipoUsuario) {
+        this.idTipoUsuario = idTipoUsuario;
+    }
+
     public TipoUsuario getTipoUsuario() {
         return tipoUsuario;
     }
 
     public void setTipoUsuario(TipoUsuario tipoUsuario) {
         this.tipoUsuario = tipoUsuario;
+        if (tipoUsuario != null) {
+            this.idTipoUsuario = tipoUsuario.getId();
+        }
     }
 
-    public boolean isEstado() { 
+    public boolean isEstado() {
         return estado;
     }
 
@@ -92,14 +94,13 @@ public class Usuario {
         this.estado = estado;
     }
 
-    // --- Métodos adicionales ---
-
     @Override
     public String toString() {
         return "Usuario{" +
                "id=" + id +
                ", nombre='" + nombre + '\'' +
                ", correo='" + correo + '\'' +
+               ", idTipoUsuario=" + idTipoUsuario +
                ", tipoUsuario=" + (tipoUsuario != null ? tipoUsuario.getTipo() : "N/A") +
                ", estado=" + estado +
                '}';

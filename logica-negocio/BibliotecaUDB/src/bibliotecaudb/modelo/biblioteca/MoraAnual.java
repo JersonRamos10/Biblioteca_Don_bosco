@@ -1,7 +1,7 @@
 package bibliotecaudb.modelo.biblioteca; 
 
 import java.math.BigDecimal;
-import java.util.Objects;
+
 
 /**
  * Modelo para representar la tabla 'mora_anual'.
@@ -44,18 +44,4 @@ public class MoraAnual {
                '}';
     }
 
-    // --- equals() y hashCode() generados por el IDE (basados en 'anio') ---
-    // 'anio' es la clave primaria de esta tabla.
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        MoraAnual moraAnual = (MoraAnual) o;
-        return anio == moraAnual.anio;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(anio);
-    }
 }

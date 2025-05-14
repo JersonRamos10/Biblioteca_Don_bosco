@@ -1,30 +1,22 @@
-package bibliotecaudb.modelo.biblioteca; 
+package bibliotecaudb.modelo.biblioteca;
 
 import java.math.BigDecimal;
-import java.sql.Date;
-import java.util.Objects;
+import java.time.LocalDate;
 
 /**
- * Modelo para representar la tabla 'devoluciones'.
+ * Representa la devolucion de un prestamo.
+ * Corresponde a la tabla 'devoluciones'.
  */
 public class Devolucion {
-    private int id;                 // Corresponde a 'id' (INT, PK, AI)
-    private Prestamo prestamo;      // Objeto Prestamo (FK id_prestamo)
-    private Date fechaDevolucion;   // Corresponde a 'fecha_devolucion' (DATE)
-    private BigDecimal moraPagada;  // Corresponde a 'mora_pagada' 
+    private int id;
+    private int idPrestamo;
+    private Prestamo prestamo; 
+    private LocalDate fechaDevolucion;
+    private BigDecimal moraPagada; // Puede ser NULL o 0.00
 
-    // Constructores
     public Devolucion() {
     }
 
-    public Devolucion(int id, Prestamo prestamo, Date fechaDevolucion, BigDecimal moraPagada) {
-        this.id = id;
-        this.prestamo = prestamo;
-        this.fechaDevolucion = fechaDevolucion;
-        this.moraPagada = moraPagada; 
-    }
-
-    // Getters y Setters
     public int getId() {
         return id;
     }
@@ -33,19 +25,30 @@ public class Devolucion {
         this.id = id;
     }
 
+    public int getIdPrestamo() {
+        return idPrestamo;
+    }
+
+    public void setIdPrestamo(int idPrestamo) {
+        this.idPrestamo = idPrestamo;
+    }
+
     public Prestamo getPrestamo() {
         return prestamo;
     }
 
     public void setPrestamo(Prestamo prestamo) {
         this.prestamo = prestamo;
+        if (prestamo != null) {
+            this.idPrestamo = prestamo.getId();
+        }
     }
 
-    public Date getFechaDevolucion() {
+    public LocalDate getFechaDevolucion() {
         return fechaDevolucion;
     }
 
-    public void setFechaDevolucion(Date fechaDevolucion) {
+    public void setFechaDevolucion(LocalDate fechaDevolucion) {
         this.fechaDevolucion = fechaDevolucion;
     }
 
@@ -61,23 +64,9 @@ public class Devolucion {
     public String toString() {
         return "Devolucion{" +
                "id=" + id +
-               ", idPrestamo=" + (prestamo != null ? prestamo.getId() : "N/A") +
+               ", idPrestamo=" + idPrestamo +
                ", fechaDevolucion=" + fechaDevolucion +
                ", moraPagada=" + moraPagada +
                '}';
-    }
-
-    // --- equals() y hashCode() generados por el IDE (basados en 'id') ---
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Devolucion that = (Devolucion) o;
-        return id == that.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
     }
 }

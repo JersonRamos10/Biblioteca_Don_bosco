@@ -11,8 +11,6 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
--- Ejecuta esto en tu cliente SQL ANTES de correr las pruebas Java
-
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -26,9 +24,7 @@ SET time_zone = "+00:00";
 CREATE DATABASE IF NOT EXISTS `biblioteca` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `biblioteca`;
 
-UPDATE prestamos 
-SET fecha_limite = '2025-05-30' -- Una fecha futura a tu fecha de prueba
-WHERE id_usuario = 3 AND fecha_devolucion IS NULL;
+
 -- --------------------------------------------------------
 
 --
@@ -264,8 +260,29 @@ INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `contrasena`, `id_tipo_usuario
 (2, 'Profesor1', 'profesor1@udb.com', 'ProfesorUDB2025.', 2, 1),
 (3, 'Alumno1', 'alumno1@udb.com', 'AlumnoUDB2025.', 3, 1);
 
+-- --------------------------------------------------------
+-- Estructura de tabla para la tabla `politicas_prestamo`
+-- --------------------------------------------------------
+
+CREATE TABLE `politicas_prestamo` (
+  `id_politica` int(11) NOT NULL AUTO_INCREMENT,
+  `id_tipo_usuario` int(11) NOT NULL,
+  `max_ejemplares_prestamo` int(11) NOT NULL DEFAULT 1,
+  `dias_prestamo_default` int(11) NOT NULL DEFAULT 7,
+  PRIMARY KEY (`id_politica`),
+  UNIQUE KEY `unq_politica_tipo_usuario` (`id_tipo_usuario`), -- Asegura una política por tipo de usuario
+  CONSTRAINT `fk_politica_tipo_usuario` FOREIGN KEY (`id_tipo_usuario`) REFERENCES `tipo_usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Volcado de datos inicial para la tabla `politicas_prestamo`---- 
+INSERT INTO `politicas_prestamo` (`id_tipo_usuario`, `max_ejemplares_prestamo`, `dias_prestamo_default`) VALUES
+(1, 10, 30), 
+(2, 5, 15),  
+(3, 3, 7);
+
+
 -- -------------------------------------------------------------------
--- Tabla de mora diaria por año --------------------------
+-- Estrucutra de la tabla de mora diaria por año --------------------------
 
 CREATE TABLE IF NOT EXISTS mora_anual (
     anio        INT PRIMARY KEY,

@@ -1,29 +1,21 @@
-package bibliotecaudb.modelo.biblioteca; 
+package bibliotecaudb.modelo.biblioteca;
 
 import java.math.BigDecimal;
-import java.util.Objects;
 
 /**
- * Modelo para representar la tabla 'configuracion_sistema'.
+ * Representa la configuración global del sistema.
+ * Corresponde a la tabla 'configuracion_sistema'.
+ * NOTA: maximo_ejemplares ahora se gestiona principalmente por 'politicas_prestamo'.
+ * Esta clase puede mantener mora_diaria global u otros parámetros futuros.
  */
 public class ConfiguracionSistema {
-    private int id;                     // Corresponde a 'id' (INT, PK, AI)
-    private Integer maximoEjemplares;   // Corresponde a 'maximo_ejemplares' (INT) 
-    
-    // BigDecimal para mora_diaria para evitar problemas de precision con double/float
-    private BigDecimal moraDiaria;      // Corresponde a 'mora_diaria' 
+    private int id;
+    private Integer maximoEjemplaresGlobal; // Podría ser un fallback o no usarse si todo es por tipo_usuario
+    private BigDecimal moraDiariaGlobal;
 
-    // Constructores
     public ConfiguracionSistema() {
     }
 
-    public ConfiguracionSistema(int id, Integer maximoEjemplares, BigDecimal moraDiaria) {
-        this.id = id;
-        this.maximoEjemplares = maximoEjemplares;
-        this.moraDiaria = moraDiaria;
-    }
-
-    // Getters y Setters
     public int getId() {
         return id;
     }
@@ -32,42 +24,28 @@ public class ConfiguracionSistema {
         this.id = id;
     }
 
-    public Integer getMaximoEjemplares() {
-        return maximoEjemplares;
+    public Integer getMaximoEjemplaresGlobal() {
+        return maximoEjemplaresGlobal;
     }
 
-    public void setMaximoEjemplares(Integer maximoEjemplares) {
-        this.maximoEjemplares = maximoEjemplares;
+    public void setMaximoEjemplaresGlobal(Integer maximoEjemplaresGlobal) {
+        this.maximoEjemplaresGlobal = maximoEjemplaresGlobal;
     }
 
-    public BigDecimal getMoraDiaria() {
-        return moraDiaria;
+    public BigDecimal getMoraDiariaGlobal() {
+        return moraDiariaGlobal;
     }
 
-    public void setMoraDiaria(BigDecimal moraDiaria) {
-        this.moraDiaria = moraDiaria;
+    public void setMoraDiariaGlobal(BigDecimal moraDiariaGlobal) {
+        this.moraDiariaGlobal = moraDiariaGlobal;
     }
 
     @Override
     public String toString() {
         return "ConfiguracionSistema{" +
                "id=" + id +
-               ", maximoEjemplares=" + maximoEjemplares +
-               ", moraDiaria=" + moraDiaria +
+               ", maximoEjemplaresGlobal=" + maximoEjemplaresGlobal +
+               ", moraDiariaGlobal=" + moraDiariaGlobal +
                '}';
-    }
-
-    // --- equals() y hashCode() generados por el IDE (basados en 'id') ---
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ConfiguracionSistema that = (ConfiguracionSistema) o;
-        return id == that.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
     }
 }

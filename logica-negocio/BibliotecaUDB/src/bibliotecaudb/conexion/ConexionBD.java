@@ -13,7 +13,9 @@ import java.util.Properties;
 
 
 public class ConexionBD {
-    private static Connection conexion = null;
+    //variable que guarda el estado de la conexion en la BD
+    private static Connection conexion ;
+    //creamos una variable para crear una sola instancia
     private static final Properties props = new Properties(); // Para leer config.properties
 
     // Bloque estatico para cargar config.properties una sola vez al inicio.

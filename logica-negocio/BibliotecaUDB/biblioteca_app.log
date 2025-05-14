@@ -798,3 +798,499 @@ java.sql.SQLSyntaxErrorException: Table 'biblioteca.mora_anual' doesn't exist
 2025-05-12 14:57:13 [main] INFO  bibliotecaudb.servicio.biblioteca.GestionPrestamosServicio - Devolución ID 7 registrada exitosamente para Préstamo ID: 14
 2025-05-12 14:57:13 [main] INFO  bibliotecaudb.conexion.ConexionBD - Cerrando conexion a la BD...
 2025-05-12 14:57:13 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion cerrada.
+2025-05-12 21:28:27 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuracion de BD cargada.
+2025-05-12 21:28:27 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a BD: jdbc:mysql://localhost:3306/biblioteca
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion establecida exitosamente.
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario ORDER BY id
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 1
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE tipo = ? con nombre: Alumno
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: INSERT INTO usuarios (nombre, correo, contrasena, id_tipo_usuario, estado) VALUES (?, ?, ?, ?, ?)
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Usuario insertado con ID: 9. Filas afectadas: 1
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE correo = ? para correo: profesor.junit@udb.edu.sv
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 2
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query de login para correo: admin@udb.com
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Login exitoso para: admin@udb.com, Usuario: admin, Tipo: Administrador
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query de login para correo: admin@udb.com
+2025-05-12 21:28:28 [main] WARN  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Login fallido para correo: admin@udb.com. Usuario no encontrado o contraseña incorrecta o usuario inactivo.
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: UPDATE usuarios SET nombre = ?, correo = ?, contrasena = ?, id_tipo_usuario = ?, estado = ? WHERE id = ? para ID: 9
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Usuario actualizado. Filas afectadas: 1
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query de login para correo: profesor.junit@udb.edu.sv
+2025-05-12 21:28:28 [main] WARN  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Login fallido para correo: profesor.junit@udb.edu.sv. Usuario no encontrado o contraseña incorrecta o usuario inactivo.
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: UPDATE usuarios SET nombre = ?, correo = ?, contrasena = ?, id_tipo_usuario = ?, estado = ? WHERE id = ? para ID: 9
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Usuario actualizado. Filas afectadas: 1
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: UPDATE usuarios SET nombre = ?, correo = ?, contrasena = ?, id_tipo_usuario = ?, estado = ? WHERE id = ? para ID: 9
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Usuario actualizado. Filas afectadas: 1
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE id = ? para ID: 9
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 2
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE correo = ? para correo: alumno1@udb.com
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: UPDATE usuarios SET contrasena = ? WHERE correo = ? para correo: alumno1@udb.com
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Contraseña actualizada para el correo alumno1@udb.com. Filas afectadas: 1
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query de login para correo: alumno1@udb.com
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Login exitoso para: alumno1@udb.com, Usuario: Alumno1, Tipo: Alumno
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: UPDATE usuarios SET contrasena = ? WHERE correo = ? para correo: alumno1@udb.com
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Contraseña actualizada para el correo alumno1@udb.com. Filas afectadas: 1
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios ORDER BY nombre
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 1
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 2
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 2
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: DELETE FROM usuarios WHERE id = ? para ID: 9
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Usuario eliminado. Filas afectadas: 1
+2025-05-12 21:28:28 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE id = ? para ID: 9
+2025-05-13 21:53:16 [main] INFO  bibliotecaudb.pruebas.PruebaConexionBD - Intentando obtener conexión a la base de datos...
+2025-05-13 21:53:16 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuracion de BD cargada.
+2025-05-13 21:53:16 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a BD: jdbc:mysql://localhost:3306/biblioteca
+2025-05-13 21:53:16 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion establecida exitosamente.
+2025-05-13 21:53:16 [main] INFO  bibliotecaudb.pruebas.PruebaConexionBD - ¡Conexión a la base de datos establecida exitosamente!
+2025-05-13 21:53:16 [main] INFO  bibliotecaudb.pruebas.PruebaConexionBD - URL de la BD: jdbc:mysql://localhost:3306/biblioteca
+2025-05-13 21:53:16 [main] INFO  bibliotecaudb.pruebas.PruebaConexionBD - Usuario de la BD: root@localhost
+2025-05-13 21:59:39 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - === INICIO DE PRUEBAS DEL SERVICIO DE BIBLIOTECA ===
+2025-05-13 21:59:39 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+--- Configuración: Autenticando Usuarios ---
+2025-05-13 21:59:39 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuracion de BD cargada.
+2025-05-13 21:59:39 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a BD: jdbc:mysql://localhost:3306/biblioteca
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion establecida exitosamente.
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query de login para correo: admin@udb.com
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Login exitoso para: admin@udb.com, Usuario: admin, Tipo: Administrador
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.servicios.impl.UsuarioServiceImpl - Usuario autenticado: admin@udb.com, Tipo: Administrador
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - Admin autenticado: admin
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE correo = ? para correo: alumno1@udb.com
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - Alumno de prueba ('alumno1@udb.com') obtenido: Alumno1
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+--- Pruebas de Catálogo ---
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Ejecutando query: INSERT INTO documentos (titulo, autor, editorial, anio_publicacion, id_tipo_documento) VALUES (?, ?, ?, ?, ?)
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Documento insertado con ID: 21
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejecutando query: INSERT INTO ejemplares (id_documento, ubicacion, estado) VALUES (?, ?, ?)
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejemplar insertado con ID: 32
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejecutando query: INSERT INTO ejemplares (id_documento, ubicacion, estado) VALUES (?, ?, ?)
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejemplar insertado con ID: 33
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.servicios.impl.BibliotecaServiceImpl - Documento y 2 ejemplares registrados exitosamente.
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - ÉXITO: Documento y ejemplares registrados. ID Documento: 21
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - ID del primer ejemplar para prestar: 32
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+[Prueba Catálogo 2: Buscar Documentos ('Java Service')]
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Ejecutando búsqueda general de documentos con término: Java Service
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.TipoDocumentoDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_documento WHERE id = ? con ID: 1
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - Documentos encontrados: 1
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+--- Pruebas de Préstamos (Usuario: Alumno1, Ejemplar ID: 32) ---
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+[Prueba Préstamo 3: Realizar Préstamo Exitoso]
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE id = ? para ID: 3
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejecutando query: SELECT id, id_documento, ubicacion, estado FROM ejemplares WHERE id = ? con ID: 32
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Ejecutando query: SELECT id, titulo, autor, editorial, anio_publicacion, id_tipo_documento FROM documentos WHERE id = ? con ID: 21
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.TipoDocumentoDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_documento WHERE id = ? con ID: 1
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Ejecutando query: SELECT id, id_usuario, id_ejemplar, fecha_prestamo, fecha_devolucion, fecha_limite, mora FROM prestamos WHERE id_usuario = ? AND fecha_devolucion IS NULL AND fecha_limite < CURDATE() con parámetro: 3
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PoliticasPrestamosDAOImpl - Ejecutando query: SELECT id_politica, id_tipo_usuario, max_ejemplares_prestamo, dias_prestamo_default FROM politicas_prestamo WHERE id_tipo_usuario = ? con idTipoUsuario: 3
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Ejecutando query: SELECT COUNT(*) FROM prestamos WHERE id_usuario = ? AND fecha_devolucion IS NULL para idUsuario: 3
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Ejecutando query: INSERT INTO prestamos (id_usuario, id_ejemplar, fecha_prestamo, fecha_limite, mora) VALUES (?, ?, ?, ?, ?)
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Préstamo insertado con ID: 16
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.servicios.impl.BibliotecaServiceImpl - Préstamo realizado exitosamente ID: 16 para usuario ID: 3, ejemplar ID: 32
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Ejecutando query: SELECT id, id_usuario, id_ejemplar, fecha_prestamo, fecha_devolucion, fecha_limite, mora FROM prestamos WHERE id = ? con ID: 16
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE id = ? para ID: 3
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejecutando query: SELECT id, id_documento, ubicacion, estado FROM ejemplares WHERE id = ? con ID: 32
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Ejecutando query: SELECT id, titulo, autor, editorial, anio_publicacion, id_tipo_documento FROM documentos WHERE id = ? con ID: 21
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.TipoDocumentoDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_documento WHERE id = ? con ID: 1
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - ÉXITO: Préstamo realizado. ID: 16, Límite: 2025-05-20
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+[Prueba Préstamo 4: Intentar Prestar Mismo Ejemplar de Nuevo]
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE id = ? para ID: 3
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejecutando query: SELECT id, id_documento, ubicacion, estado FROM ejemplares WHERE id = ? con ID: 32
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Ejecutando query: SELECT id, titulo, autor, editorial, anio_publicacion, id_tipo_documento FROM documentos WHERE id = ? con ID: 21
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.TipoDocumentoDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_documento WHERE id = ? con ID: 1
+2025-05-13 21:59:40 [main] ERROR bibliotecaudb.servicios.impl.BibliotecaServiceImpl - Rollback realizado (préstamo).
+bibliotecaudb.excepciones.BibliotecaException: El ejemplar 'Aventuras en Java Service' (ID: 32) no está disponible.
+	at bibliotecaudb.servicios.impl.BibliotecaServiceImpl.realizarPrestamo(BibliotecaServiceImpl.java:167)
+	at bibliotecaudb.pruebas.PruebasBibliotecaService.main(PruebasBibliotecaService.java:140)
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - ÉXITO: No se pudo prestar ejemplar no disponible: El ejemplar 'Aventuras en Java Service' (ID: 32) no está disponible.
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+--- Pruebas de Devoluciones (Préstamo ID: 16) ---
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+[Prueba Devolución 5: Registrar Devolución con Mora Simulada]
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Ejecutando query: SELECT id, id_usuario, id_ejemplar, fecha_prestamo, fecha_devolucion, fecha_limite, mora FROM prestamos WHERE id = ? con ID: 16
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE id = ? para ID: 3
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejecutando query: SELECT id, id_documento, ubicacion, estado FROM ejemplares WHERE id = ? con ID: 32
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Ejecutando query: SELECT id, titulo, autor, editorial, anio_publicacion, id_tipo_documento FROM documentos WHERE id = ? con ID: 21
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.TipoDocumentoDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_documento WHERE id = ? con ID: 1
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Ejecutando query: SELECT id, id_usuario, id_ejemplar, fecha_prestamo, fecha_devolucion, fecha_limite, mora FROM prestamos WHERE id = ? con ID: 16
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE id = ? para ID: 3
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejecutando query: SELECT id, id_documento, ubicacion, estado FROM ejemplares WHERE id = ? con ID: 32
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Ejecutando query: SELECT id, titulo, autor, editorial, anio_publicacion, id_tipo_documento FROM documentos WHERE id = ? con ID: 21
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.TipoDocumentoDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_documento WHERE id = ? con ID: 1
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.MoraAnualDAOImpl - Ejecutando query: SELECT anio, mora_diaria FROM mora_anual WHERE anio = ? para año: 2025
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.servicios.impl.BibliotecaServiceImpl - Mora calculada para préstamo ID 16: 1.50
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Registrando devolución en tabla prestamos para ID: 16
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Devolución registrada en préstamo. Filas afectadas: 1
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DevolucionDAOImpl - Ejecutando query: INSERT INTO devoluciones (id_prestamo, fecha_devolucion, mora_pagada) VALUES (?, ?, ?)
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DevolucionDAOImpl - Devolución insertada con ID: 8
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.servicios.impl.BibliotecaServiceImpl - Devolución registrada exitosamente ID: 8 para préstamo ID: 16
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DevolucionDAOImpl - Ejecutando query: SELECT id, id_prestamo, fecha_devolucion, mora_pagada FROM devoluciones WHERE id = ? con ID: 8
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Ejecutando query: SELECT id, id_usuario, id_ejemplar, fecha_prestamo, fecha_devolucion, fecha_limite, mora FROM prestamos WHERE id = ? con ID: 16
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE id = ? para ID: 3
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejecutando query: SELECT id, id_documento, ubicacion, estado FROM ejemplares WHERE id = ? con ID: 32
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Ejecutando query: SELECT id, titulo, autor, editorial, anio_publicacion, id_tipo_documento FROM documentos WHERE id = ? con ID: 21
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.TipoDocumentoDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_documento WHERE id = ? con ID: 1
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - ÉXITO: Devolución registrada. ID: 8, Mora Pagada: 1.50
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejecutando query: SELECT id, id_documento, ubicacion, estado FROM ejemplares WHERE id = ? con ID: 32
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Ejecutando query: SELECT id, titulo, autor, editorial, anio_publicacion, id_tipo_documento FROM documentos WHERE id = ? con ID: 21
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.TipoDocumentoDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_documento WHERE id = ? con ID: 1
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - Verificación: Ejemplar ID 32 está ahora DISPONIBLE.
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+--- Pruebas de Configuración (Admin) ---
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+[Prueba Config 6: Actualizar Política Alumnos]
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PoliticasPrestamosDAOImpl - Ejecutando query: SELECT id_politica, id_tipo_usuario, max_ejemplares_prestamo, dias_prestamo_default FROM politicas_prestamo ORDER BY id_tipo_usuario
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 1
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 2
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PoliticasPrestamosDAOImpl - Actualizando política para tipo_usuario ID: 3
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PoliticasPrestamosDAOImpl - Política de préstamo actualizada. Filas afectadas: 1
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PoliticasPrestamosDAOImpl - Ejecutando query: SELECT id_politica, id_tipo_usuario, max_ejemplares_prestamo, dias_prestamo_default FROM politicas_prestamo ORDER BY id_tipo_usuario
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 1
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 2
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - ÉXITO: Política de alumnos actualizada. Nuevo max: 4
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PoliticasPrestamosDAOImpl - Actualizando política para tipo_usuario ID: 3
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PoliticasPrestamosDAOImpl - Política de préstamo actualizada. Filas afectadas: 1
+2025-05-13 21:59:40 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+=== FIN DE PRUEBAS DEL SERVICIO DE BIBLIOTECA ===
+2025-05-13 22:01:51 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuracion de BD cargada.
+2025-05-13 22:01:51 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a BD: jdbc:mysql://localhost:3306/biblioteca
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion establecida exitosamente.
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario ORDER BY id
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 1
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE tipo = ? con nombre: Alumno
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: INSERT INTO usuarios (nombre, correo, contrasena, id_tipo_usuario, estado) VALUES (?, ?, ?, ?, ?)
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Usuario insertado con ID: 10. Filas afectadas: 1
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE correo = ? para correo: profesor.junit@udb.edu.sv
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 2
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query de login para correo: admin@udb.com
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Login exitoso para: admin@udb.com, Usuario: admin, Tipo: Administrador
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query de login para correo: admin@udb.com
+2025-05-13 22:01:52 [main] WARN  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Login fallido para correo: admin@udb.com. Usuario no encontrado o contraseña incorrecta o usuario inactivo.
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: UPDATE usuarios SET nombre = ?, correo = ?, contrasena = ?, id_tipo_usuario = ?, estado = ? WHERE id = ? para ID: 10
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Usuario actualizado. Filas afectadas: 1
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query de login para correo: profesor.junit@udb.edu.sv
+2025-05-13 22:01:52 [main] WARN  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Login fallido para correo: profesor.junit@udb.edu.sv. Usuario no encontrado o contraseña incorrecta o usuario inactivo.
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: UPDATE usuarios SET nombre = ?, correo = ?, contrasena = ?, id_tipo_usuario = ?, estado = ? WHERE id = ? para ID: 10
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Usuario actualizado. Filas afectadas: 1
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: UPDATE usuarios SET nombre = ?, correo = ?, contrasena = ?, id_tipo_usuario = ?, estado = ? WHERE id = ? para ID: 10
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Usuario actualizado. Filas afectadas: 1
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE id = ? para ID: 10
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 2
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE correo = ? para correo: alumno1@udb.com
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: UPDATE usuarios SET contrasena = ? WHERE correo = ? para correo: alumno1@udb.com
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Contraseña actualizada para el correo alumno1@udb.com. Filas afectadas: 1
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query de login para correo: alumno1@udb.com
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Login exitoso para: alumno1@udb.com, Usuario: Alumno1, Tipo: Alumno
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: UPDATE usuarios SET contrasena = ? WHERE correo = ? para correo: alumno1@udb.com
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Contraseña actualizada para el correo alumno1@udb.com. Filas afectadas: 1
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios ORDER BY nombre
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 1
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 2
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 2
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: DELETE FROM usuarios WHERE id = ? para ID: 10
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Usuario eliminado. Filas afectadas: 1
+2025-05-13 22:01:52 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE id = ? para ID: 10
+2025-05-13 22:04:59 [main] INFO  bibliotecaudb.pruebas.PruebasUsuarioService - === INICIO DE PRUEBAS DEL SERVICIO DE USUARIOS ===
+2025-05-13 22:04:59 [main] INFO  bibliotecaudb.pruebas.PruebasUsuarioService - 
+[Prueba 1: Autenticar Admin]
+2025-05-13 22:04:59 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuracion de BD cargada.
+2025-05-13 22:04:59 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a BD: jdbc:mysql://localhost:3306/biblioteca
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion establecida exitosamente.
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query de login para correo: admin@udb.com
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Login exitoso para: admin@udb.com, Usuario: admin, Tipo: Administrador
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.servicios.impl.UsuarioServiceImpl - Usuario autenticado: admin@udb.com, Tipo: Administrador
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.pruebas.PruebasUsuarioService - Admin autenticado: admin, Tipo: Administrador
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.pruebas.PruebasUsuarioService - 
+[Prueba 2: Autenticar Usuario Inexistente]
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query de login para correo: noexiste@udb.com
+2025-05-13 22:05:00 [main] WARN  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Login fallido para correo: noexiste@udb.com. Usuario no encontrado o contraseña incorrecta o usuario inactivo.
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.pruebas.PruebasUsuarioService - ÉXITO: No se autenticó usuario inexistente: Correo o contraseña incorrectos, o usuario inactivo.
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.pruebas.PruebasUsuarioService - 
+[Prueba 3: Registrar Nuevo Usuario (por Admin)]
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE correo = ? para correo: testuser1747195500658@example.com
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.servicios.impl.UsuarioServiceImpl - Registrando nuevo usuario: testuser1747195500658@example.com
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: INSERT INTO usuarios (nombre, correo, contrasena, id_tipo_usuario, estado) VALUES (?, ?, ?, ?, ?)
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Usuario insertado con ID: 11. Filas afectadas: 1
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.pruebas.PruebasUsuarioService - ÉXITO: Nuevo usuario registrado: testuser1747195500658@example.com con ID: 11
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.pruebas.PruebasUsuarioService - 
+[Prueba 3.1: Intentar Registrar Mismo Correo]
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE correo = ? para correo: testuser1747195500658@example.com
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.pruebas.PruebasUsuarioService - ÉXITO: No se registró correo duplicado: El correo 'testuser1747195500658@example.com' ya está registrado.
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.pruebas.PruebasUsuarioService - 
+[Prueba 3.2: Cambiar Contraseña (por Admin)]
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE correo = ? para correo: testuser1747195500658@example.com
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.servicios.impl.UsuarioServiceImpl - Cambiando contraseña para usuario: testuser1747195500658@example.com por actor: admin@udb.com
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: UPDATE usuarios SET contrasena = ? WHERE correo = ? para correo: testuser1747195500658@example.com
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Contraseña actualizada para el correo testuser1747195500658@example.com. Filas afectadas: 1
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.pruebas.PruebasUsuarioService - ÉXITO: Contraseña cambiada para testuser1747195500658@example.com
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query de login para correo: testuser1747195500658@example.com
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Login exitoso para: testuser1747195500658@example.com, Usuario: Usuario Prueba Servicio, Tipo: Alumno
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.servicios.impl.UsuarioServiceImpl - Usuario autenticado: testuser1747195500658@example.com, Tipo: Alumno
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.pruebas.PruebasUsuarioService - Autenticación con nueva contraseña exitosa para: Usuario Prueba Servicio
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.pruebas.PruebasUsuarioService - 
+[Prueba 4: Obtener Todos los Usuarios (por Admin)]
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios ORDER BY nombre
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 1
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 2
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.pruebas.PruebasUsuarioService - Total de usuarios obtenidos: 4
+2025-05-13 22:05:00 [main] INFO  bibliotecaudb.pruebas.PruebasUsuarioService - 
+=== FIN DE PRUEBAS DEL SERVICIO DE USUARIOS ===
+2025-05-13 22:07:11 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - === INICIO DE PRUEBAS DEL SERVICIO DE BIBLIOTECA ===
+2025-05-13 22:07:11 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+--- Configuración: Autenticando Usuarios ---
+2025-05-13 22:07:11 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuracion de BD cargada.
+2025-05-13 22:07:11 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a BD: jdbc:mysql://localhost:3306/biblioteca
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion establecida exitosamente.
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query de login para correo: admin@udb.com
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Login exitoso para: admin@udb.com, Usuario: admin, Tipo: Administrador
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.servicios.impl.UsuarioServiceImpl - Usuario autenticado: admin@udb.com, Tipo: Administrador
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - Admin autenticado: admin
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE correo = ? para correo: alumno1@udb.com
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - Alumno de prueba ('alumno1@udb.com') obtenido: Alumno1
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+--- Pruebas de Catálogo ---
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Ejecutando query: INSERT INTO documentos (titulo, autor, editorial, anio_publicacion, id_tipo_documento) VALUES (?, ?, ?, ?, ?)
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Documento insertado con ID: 22
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejecutando query: INSERT INTO ejemplares (id_documento, ubicacion, estado) VALUES (?, ?, ?)
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejemplar insertado con ID: 34
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejecutando query: INSERT INTO ejemplares (id_documento, ubicacion, estado) VALUES (?, ?, ?)
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejemplar insertado con ID: 35
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.servicios.impl.BibliotecaServiceImpl - Documento y 2 ejemplares registrados exitosamente.
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - ÉXITO: Documento y ejemplares registrados. ID Documento: 22
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - ID del primer ejemplar para prestar: 34
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+[Prueba Catálogo 2: Buscar Documentos ('Java Service')]
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Ejecutando búsqueda general de documentos con término: Java Service
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.TipoDocumentoDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_documento WHERE id = ? con ID: 1
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.TipoDocumentoDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_documento WHERE id = ? con ID: 1
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - Documentos encontrados: 2
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+--- Pruebas de Préstamos (Usuario: Alumno1, Ejemplar ID: 34) ---
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+[Prueba Préstamo 3: Realizar Préstamo Exitoso]
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE id = ? para ID: 3
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejecutando query: SELECT id, id_documento, ubicacion, estado FROM ejemplares WHERE id = ? con ID: 34
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Ejecutando query: SELECT id, titulo, autor, editorial, anio_publicacion, id_tipo_documento FROM documentos WHERE id = ? con ID: 22
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.TipoDocumentoDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_documento WHERE id = ? con ID: 1
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Ejecutando query: SELECT id, id_usuario, id_ejemplar, fecha_prestamo, fecha_devolucion, fecha_limite, mora FROM prestamos WHERE id_usuario = ? AND fecha_devolucion IS NULL AND fecha_limite < CURDATE() con parámetro: 3
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PoliticasPrestamosDAOImpl - Ejecutando query: SELECT id_politica, id_tipo_usuario, max_ejemplares_prestamo, dias_prestamo_default FROM politicas_prestamo WHERE id_tipo_usuario = ? con idTipoUsuario: 3
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Ejecutando query: SELECT COUNT(*) FROM prestamos WHERE id_usuario = ? AND fecha_devolucion IS NULL para idUsuario: 3
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Ejecutando query: INSERT INTO prestamos (id_usuario, id_ejemplar, fecha_prestamo, fecha_limite, mora) VALUES (?, ?, ?, ?, ?)
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Préstamo insertado con ID: 17
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.servicios.impl.BibliotecaServiceImpl - Préstamo realizado exitosamente ID: 17 para usuario ID: 3, ejemplar ID: 34
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Ejecutando query: SELECT id, id_usuario, id_ejemplar, fecha_prestamo, fecha_devolucion, fecha_limite, mora FROM prestamos WHERE id = ? con ID: 17
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE id = ? para ID: 3
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejecutando query: SELECT id, id_documento, ubicacion, estado FROM ejemplares WHERE id = ? con ID: 34
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Ejecutando query: SELECT id, titulo, autor, editorial, anio_publicacion, id_tipo_documento FROM documentos WHERE id = ? con ID: 22
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.TipoDocumentoDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_documento WHERE id = ? con ID: 1
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - ÉXITO: Préstamo realizado. ID: 17, Límite: 2025-05-20
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+[Prueba Préstamo 4: Intentar Prestar Mismo Ejemplar de Nuevo]
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE id = ? para ID: 3
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejecutando query: SELECT id, id_documento, ubicacion, estado FROM ejemplares WHERE id = ? con ID: 34
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Ejecutando query: SELECT id, titulo, autor, editorial, anio_publicacion, id_tipo_documento FROM documentos WHERE id = ? con ID: 22
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.TipoDocumentoDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_documento WHERE id = ? con ID: 1
+2025-05-13 22:07:12 [main] ERROR bibliotecaudb.servicios.impl.BibliotecaServiceImpl - Rollback realizado (préstamo).
+bibliotecaudb.excepciones.BibliotecaException: El ejemplar 'Aventuras en Java Service' (ID: 34) no está disponible.
+	at bibliotecaudb.servicios.impl.BibliotecaServiceImpl.realizarPrestamo(BibliotecaServiceImpl.java:167)
+	at bibliotecaudb.pruebas.PruebasBibliotecaService.main(PruebasBibliotecaService.java:140)
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - ÉXITO: No se pudo prestar ejemplar no disponible: El ejemplar 'Aventuras en Java Service' (ID: 34) no está disponible.
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+--- Pruebas de Devoluciones (Préstamo ID: 17) ---
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+[Prueba Devolución 5: Registrar Devolución con Mora Simulada]
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Ejecutando query: SELECT id, id_usuario, id_ejemplar, fecha_prestamo, fecha_devolucion, fecha_limite, mora FROM prestamos WHERE id = ? con ID: 17
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE id = ? para ID: 3
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejecutando query: SELECT id, id_documento, ubicacion, estado FROM ejemplares WHERE id = ? con ID: 34
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Ejecutando query: SELECT id, titulo, autor, editorial, anio_publicacion, id_tipo_documento FROM documentos WHERE id = ? con ID: 22
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.TipoDocumentoDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_documento WHERE id = ? con ID: 1
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Ejecutando query: SELECT id, id_usuario, id_ejemplar, fecha_prestamo, fecha_devolucion, fecha_limite, mora FROM prestamos WHERE id = ? con ID: 17
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE id = ? para ID: 3
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejecutando query: SELECT id, id_documento, ubicacion, estado FROM ejemplares WHERE id = ? con ID: 34
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Ejecutando query: SELECT id, titulo, autor, editorial, anio_publicacion, id_tipo_documento FROM documentos WHERE id = ? con ID: 22
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.TipoDocumentoDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_documento WHERE id = ? con ID: 1
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.MoraAnualDAOImpl - Ejecutando query: SELECT anio, mora_diaria FROM mora_anual WHERE anio = ? para año: 2025
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.servicios.impl.BibliotecaServiceImpl - Mora calculada para préstamo ID 17: 1.50
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Registrando devolución en tabla prestamos para ID: 17
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Devolución registrada en préstamo. Filas afectadas: 1
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DevolucionDAOImpl - Ejecutando query: INSERT INTO devoluciones (id_prestamo, fecha_devolucion, mora_pagada) VALUES (?, ?, ?)
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DevolucionDAOImpl - Devolución insertada con ID: 9
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.servicios.impl.BibliotecaServiceImpl - Devolución registrada exitosamente ID: 9 para préstamo ID: 17
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DevolucionDAOImpl - Ejecutando query: SELECT id, id_prestamo, fecha_devolucion, mora_pagada FROM devoluciones WHERE id = ? con ID: 9
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Ejecutando query: SELECT id, id_usuario, id_ejemplar, fecha_prestamo, fecha_devolucion, fecha_limite, mora FROM prestamos WHERE id = ? con ID: 17
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE id = ? para ID: 3
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejecutando query: SELECT id, id_documento, ubicacion, estado FROM ejemplares WHERE id = ? con ID: 34
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Ejecutando query: SELECT id, titulo, autor, editorial, anio_publicacion, id_tipo_documento FROM documentos WHERE id = ? con ID: 22
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.TipoDocumentoDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_documento WHERE id = ? con ID: 1
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - ÉXITO: Devolución registrada. ID: 9, Mora Pagada: 1.50
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejecutando query: SELECT id, id_documento, ubicacion, estado FROM ejemplares WHERE id = ? con ID: 34
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Ejecutando query: SELECT id, titulo, autor, editorial, anio_publicacion, id_tipo_documento FROM documentos WHERE id = ? con ID: 22
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.TipoDocumentoDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_documento WHERE id = ? con ID: 1
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - Verificación: Ejemplar ID 34 está ahora DISPONIBLE.
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+--- Pruebas de Configuración (Admin) ---
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+[Prueba Config 6: Actualizar Política Alumnos]
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PoliticasPrestamosDAOImpl - Ejecutando query: SELECT id_politica, id_tipo_usuario, max_ejemplares_prestamo, dias_prestamo_default FROM politicas_prestamo ORDER BY id_tipo_usuario
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 1
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 2
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PoliticasPrestamosDAOImpl - Actualizando política para tipo_usuario ID: 3
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PoliticasPrestamosDAOImpl - Política de préstamo actualizada. Filas afectadas: 1
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PoliticasPrestamosDAOImpl - Ejecutando query: SELECT id_politica, id_tipo_usuario, max_ejemplares_prestamo, dias_prestamo_default FROM politicas_prestamo ORDER BY id_tipo_usuario
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 1
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 2
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - ÉXITO: Política de alumnos actualizada. Nuevo max: 4
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PoliticasPrestamosDAOImpl - Actualizando política para tipo_usuario ID: 3
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PoliticasPrestamosDAOImpl - Política de préstamo actualizada. Filas afectadas: 1
+2025-05-13 22:07:12 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+=== FIN DE PRUEBAS DEL SERVICIO DE BIBLIOTECA ===
+2025-05-14 08:31:33 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - === INICIO DE PRUEBAS DEL SERVICIO DE BIBLIOTECA ===
+2025-05-14 08:31:33 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+--- Configuración: Autenticando Usuarios ---
+2025-05-14 08:31:33 [main] INFO  bibliotecaudb.conexion.ConexionBD - Configuracion de BD cargada.
+2025-05-14 08:31:33 [main] INFO  bibliotecaudb.conexion.ConexionBD - Intentando conectar a BD: jdbc:mysql://localhost:3306/biblioteca
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.conexion.ConexionBD - Conexion establecida exitosamente.
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query de login para correo: admin@udb.com
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Login exitoso para: admin@udb.com, Usuario: admin, Tipo: Administrador
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.servicios.impl.UsuarioServiceImpl - Usuario autenticado: admin@udb.com, Tipo: Administrador
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - Admin autenticado: admin
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE correo = ? para correo: alumno1@udb.com
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - Alumno de prueba ('alumno1@udb.com') obtenido: Alumno1
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+--- Pruebas de Catálogo ---
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Ejecutando query: INSERT INTO documentos (titulo, autor, editorial, anio_publicacion, id_tipo_documento) VALUES (?, ?, ?, ?, ?)
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Documento insertado con ID: 23
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejecutando query: INSERT INTO ejemplares (id_documento, ubicacion, estado) VALUES (?, ?, ?)
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejemplar insertado con ID: 36
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejecutando query: INSERT INTO ejemplares (id_documento, ubicacion, estado) VALUES (?, ?, ?)
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejemplar insertado con ID: 37
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.servicios.impl.BibliotecaServiceImpl - Documento y 2 ejemplares registrados exitosamente. ID Documento: 23
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - ÉXITO: Documento y ejemplares registrados. ID Documento: 23
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - ID del primer ejemplar para prestar: 36
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+[Prueba Catálogo 2: Buscar Documentos ('Java Service')]
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Ejecutando busqueda general de documentos con termino: Java Service
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.TipoDocumentoDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_documento WHERE id = ? con ID: 1
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.TipoDocumentoDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_documento WHERE id = ? con ID: 1
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.TipoDocumentoDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_documento WHERE id = ? con ID: 1
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - Documentos encontrados: 3
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+--- Pruebas de Préstamos (Usuario: Alumno1, Ejemplar ID: 36) ---
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+[Prueba Préstamo 3: Realizar Préstamo Exitoso]
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE id = ? para ID: 3
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejecutando query: SELECT id, id_documento, ubicacion, estado FROM ejemplares WHERE id = ? con ID: 36
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Ejecutando query: SELECT id, titulo, autor, editorial, anio_publicacion, id_tipo_documento FROM documentos WHERE id = ? con ID: 23
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.TipoDocumentoDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_documento WHERE id = ? con ID: 1
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Ejecutando query: SELECT id, id_usuario, id_ejemplar, fecha_prestamo, fecha_devolucion, fecha_limite, mora FROM prestamos WHERE id_usuario = ? AND fecha_devolucion IS NULL AND fecha_limite < CURDATE() con parámetro: 3
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PoliticasPrestamosDAOImpl - Ejecutando query: SELECT id_politica, id_tipo_usuario, max_ejemplares_prestamo, dias_prestamo_default FROM politicas_prestamo WHERE id_tipo_usuario = ? con idTipoUsuario: 3
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Ejecutando query: SELECT COUNT(*) FROM prestamos WHERE id_usuario = ? AND fecha_devolucion IS NULL para idUsuario: 3
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Ejecutando query: INSERT INTO prestamos (id_usuario, id_ejemplar, fecha_prestamo, fecha_limite, mora) VALUES (?, ?, ?, ?, ?)
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Préstamo insertado con ID: 18
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.servicios.impl.BibliotecaServiceImpl - Préstamo realizado exitosamente ID: 18 para usuario ID: 3, ejemplar ID: 36
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Ejecutando query: SELECT id, id_usuario, id_ejemplar, fecha_prestamo, fecha_devolucion, fecha_limite, mora FROM prestamos WHERE id = ? con ID: 18
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE id = ? para ID: 3
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejecutando query: SELECT id, id_documento, ubicacion, estado FROM ejemplares WHERE id = ? con ID: 36
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Ejecutando query: SELECT id, titulo, autor, editorial, anio_publicacion, id_tipo_documento FROM documentos WHERE id = ? con ID: 23
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.TipoDocumentoDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_documento WHERE id = ? con ID: 1
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - ÉXITO: Préstamo realizado. ID: 18, Límite: 2025-05-21
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+[Prueba Préstamo 4: Intentar Prestar Mismo Ejemplar de Nuevo]
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE id = ? para ID: 3
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejecutando query: SELECT id, id_documento, ubicacion, estado FROM ejemplares WHERE id = ? con ID: 36
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Ejecutando query: SELECT id, titulo, autor, editorial, anio_publicacion, id_tipo_documento FROM documentos WHERE id = ? con ID: 23
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.TipoDocumentoDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_documento WHERE id = ? con ID: 1
+2025-05-14 08:31:34 [main] ERROR bibliotecaudb.servicios.impl.BibliotecaServiceImpl - Rollback realizado (préstamo).
+bibliotecaudb.excepciones.BibliotecaException: El ejemplar 'Aventuras en Java Service' (ID: 36) no está disponible.
+	at bibliotecaudb.servicios.impl.BibliotecaServiceImpl.realizarPrestamo(BibliotecaServiceImpl.java:192)
+	at bibliotecaudb.pruebas.PruebasBibliotecaService.main(PruebasBibliotecaService.java:140)
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - ÉXITO: No se pudo prestar ejemplar no disponible: El ejemplar 'Aventuras en Java Service' (ID: 36) no está disponible.
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+--- Pruebas de Devoluciones (Préstamo ID: 18) ---
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+[Prueba Devolución 5: Registrar Devolución con Mora Simulada]
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Ejecutando query: SELECT id, id_usuario, id_ejemplar, fecha_prestamo, fecha_devolucion, fecha_limite, mora FROM prestamos WHERE id = ? con ID: 18
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE id = ? para ID: 3
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejecutando query: SELECT id, id_documento, ubicacion, estado FROM ejemplares WHERE id = ? con ID: 36
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Ejecutando query: SELECT id, titulo, autor, editorial, anio_publicacion, id_tipo_documento FROM documentos WHERE id = ? con ID: 23
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.TipoDocumentoDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_documento WHERE id = ? con ID: 1
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Ejecutando query: SELECT id, id_usuario, id_ejemplar, fecha_prestamo, fecha_devolucion, fecha_limite, mora FROM prestamos WHERE id = ? con ID: 18
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE id = ? para ID: 3
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejecutando query: SELECT id, id_documento, ubicacion, estado FROM ejemplares WHERE id = ? con ID: 36
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Ejecutando query: SELECT id, titulo, autor, editorial, anio_publicacion, id_tipo_documento FROM documentos WHERE id = ? con ID: 23
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.TipoDocumentoDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_documento WHERE id = ? con ID: 1
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.MoraAnualDAOImpl - Ejecutando query: SELECT anio, mora_diaria FROM mora_anual WHERE anio = ? para año: 2025
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.servicios.impl.MoraServiceImpl - Tasa de mora anual (2025) encontrada: 0.30
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.servicios.impl.MoraServiceImpl - Calculo de mora para Prestamo ID 18: 5 dias * 0.30/día = 1.50
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Registrando devolución en tabla prestamos para ID: 18
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Devolución registrada en préstamo. Filas afectadas: 1
+2025-05-14 08:31:34 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DevolucionDAOImpl - Ejecutando query: INSERT INTO devoluciones (id_prestamo, fecha_devolucion, mora_pagada) VALUES (?, ?, ?)
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DevolucionDAOImpl - Devolucion insertada con ID: 10
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.servicios.impl.BibliotecaServiceImpl - Devolución registrada exitosamente ID: 10 para préstamo ID: 18
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DevolucionDAOImpl - Ejecutando query: SELECT id, id_prestamo, fecha_devolucion, mora_pagada FROM devoluciones WHERE id = ? con ID: 10
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PrestamoDAOImpl - Ejecutando query: SELECT id, id_usuario, id_ejemplar, fecha_prestamo, fecha_devolucion, fecha_limite, mora FROM prestamos WHERE id = ? con ID: 18
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.dao.usuario.impl.UsuarioDAOImpl - Ejecutando query: SELECT id, nombre, correo, contrasena, id_tipo_usuario, estado FROM usuarios WHERE id = ? para ID: 3
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejecutando query: SELECT id, id_documento, ubicacion, estado FROM ejemplares WHERE id = ? con ID: 36
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Ejecutando query: SELECT id, titulo, autor, editorial, anio_publicacion, id_tipo_documento FROM documentos WHERE id = ? con ID: 23
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.dao.biblioteca.impl.TipoDocumentoDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_documento WHERE id = ? con ID: 1
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - ÉXITO: Devolución registrada. ID: 10, Mora Pagada: 1.50
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.dao.biblioteca.impl.EjemplarDAOImpl - Ejecutando query: SELECT id, id_documento, ubicacion, estado FROM ejemplares WHERE id = ? con ID: 36
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.dao.biblioteca.impl.DocumentoDAOImpl - Ejecutando query: SELECT id, titulo, autor, editorial, anio_publicacion, id_tipo_documento FROM documentos WHERE id = ? con ID: 23
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.dao.biblioteca.impl.TipoDocumentoDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_documento WHERE id = ? con ID: 1
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - Verificación: Ejemplar ID 36 está ahora DISPONIBLE.
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+--- Pruebas de Configuración (Admin) ---
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+[Prueba Config 6: Actualizar Política Alumnos]
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PoliticasPrestamosDAOImpl - Ejecutando query: SELECT id_politica, id_tipo_usuario, max_ejemplares_prestamo, dias_prestamo_default FROM politicas_prestamo ORDER BY id_tipo_usuario
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 1
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 2
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PoliticasPrestamosDAOImpl - Actualizando política para tipo_usuario ID: 3
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PoliticasPrestamosDAOImpl - Política de préstamo actualizada. Filas afectadas: 1
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PoliticasPrestamosDAOImpl - Ejecutando query: SELECT id_politica, id_tipo_usuario, max_ejemplares_prestamo, dias_prestamo_default FROM politicas_prestamo ORDER BY id_tipo_usuario
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 1
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 2
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.dao.usuario.impl.TipoUsuarioDAOImpl - Ejecutando query: SELECT id, tipo FROM tipo_usuario WHERE id = ? con ID: 3
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - ÉXITO: Política de alumnos actualizada. Nuevo max: 4
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PoliticasPrestamosDAOImpl - Actualizando política para tipo_usuario ID: 3
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.dao.biblioteca.impl.PoliticasPrestamosDAOImpl - Política de préstamo actualizada. Filas afectadas: 1
+2025-05-14 08:31:35 [main] INFO  bibliotecaudb.pruebas.PruebasBibliotecaService - 
+=== FIN DE PRUEBAS DEL SERVICIO DE BIBLIOTECA ===

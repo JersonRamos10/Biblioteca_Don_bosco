@@ -1,40 +1,29 @@
-package bibliotecaudb.modelo.biblioteca; 
+package bibliotecaudb.modelo.biblioteca;
 
-// Importa los otros modelos necesarios
 import bibliotecaudb.modelo.usuario.Usuario;
-import java.math.BigDecimal; // Para la mora, que es DECIMAL en la BD
-import java.sql.Date;        // Usamos java.sql.Date para mapear DATE de SQL
-import java.util.Objects;
+import java.math.BigDecimal;
+import java.time.LocalDate; // Usaremos LocalDate para las fechas
 
 /**
- * Modelo para representar la tabla 'prestamos'.
+ * Representa un préstamo de un ejemplar a un usuario.
+ * Corresponde a la tabla 'prestamos'.
  */
 public class Prestamo {
-    private int id;                 // Corresponde a 'id' (INT, PK, AI)
-    private Usuario usuario;        // Objeto Usuario (FK id_usuario)
-    private Ejemplar ejemplar;      // Objeto Ejemplar (FK id_ejemplar)
-    private Date fechaPrestamo;     // Corresponde a 'fecha_prestamo' (DATE)
-    private Date fechaDevolucion;   // Corresponde a 'fecha_devolucion' (DATE), puede ser NULL
-    private Date fechaLimite;       // Corresponde a 'fecha_limite' (DATE)
-    private BigDecimal mora;        // Corresponde a 'mora' (DECIMAL(10,2)), por defecto 0.00
+    private int id;
+    private int idUsuario;
+    private Usuario usuario; // Objeto Usuario anidado
+    private int idEjemplar;
+    private Ejemplar ejemplar; // Objeto Ejemplar anidado
+    private LocalDate fechaPrestamo;
+    private LocalDate fechaDevolucion; // Puede ser NULL si aún no se ha devuelto
+    private LocalDate fechaLimite;
+    private BigDecimal mora;         // Puede ser NULL o 0.00
 
-    // Constructores
     public Prestamo() {
-        // Valor por defecto para mora
+        // Inicializar mora a 0.00 por defecto si es un nuevo préstamo
         this.mora = BigDecimal.ZERO;
     }
 
-    public Prestamo(int id, Usuario usuario, Ejemplar ejemplar, Date fechaPrestamo, Date fechaDevolucion, Date fechaLimite, BigDecimal mora) {
-        this.id = id;
-        this.usuario = usuario;
-        this.ejemplar = ejemplar;
-        this.fechaPrestamo = fechaPrestamo;
-        this.fechaDevolucion = fechaDevolucion;
-        this.fechaLimite = fechaLimite;
-        this.mora = (mora != null) ? mora : BigDecimal.ZERO;
-    }
-
-    // Getters y Setters
     public int getId() {
         return id;
     }
@@ -43,12 +32,31 @@ public class Prestamo {
         this.id = id;
     }
 
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
     public Usuario getUsuario() {
         return usuario;
     }
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+        if (usuario != null) {
+            this.idUsuario = usuario.getId();
+        }
+    }
+
+    public int getIdEjemplar() {
+        return idEjemplar;
+    }
+
+    public void setIdEjemplar(int idEjemplar) {
+        this.idEjemplar = idEjemplar;
     }
 
     public Ejemplar getEjemplar() {
@@ -57,29 +65,32 @@ public class Prestamo {
 
     public void setEjemplar(Ejemplar ejemplar) {
         this.ejemplar = ejemplar;
+        if (ejemplar != null) {
+            this.idEjemplar = ejemplar.getId();
+        }
     }
 
-    public Date getFechaPrestamo() {
+    public LocalDate getFechaPrestamo() {
         return fechaPrestamo;
     }
 
-    public void setFechaPrestamo(Date fechaPrestamo) {
+    public void setFechaPrestamo(LocalDate fechaPrestamo) {
         this.fechaPrestamo = fechaPrestamo;
     }
 
-    public Date getFechaDevolucion() {
+    public LocalDate getFechaDevolucion() {
         return fechaDevolucion;
     }
 
-    public void setFechaDevolucion(Date fechaDevolucion) {
+    public void setFechaDevolucion(LocalDate fechaDevolucion) {
         this.fechaDevolucion = fechaDevolucion;
     }
 
-    public Date getFechaLimite() {
+    public LocalDate getFechaLimite() {
         return fechaLimite;
     }
 
-    public void setFechaLimite(Date fechaLimite) {
+    public void setFechaLimite(LocalDate fechaLimite) {
         this.fechaLimite = fechaLimite;
     }
 
@@ -88,32 +99,29 @@ public class Prestamo {
     }
 
     public void setMora(BigDecimal mora) {
-        this.mora = (mora != null) ? mora : BigDecimal.ZERO;
+        this.mora = mora;
+    }
+
+    /**
+     * Indica si el prestamo esta actualmente activo (no devuelto).
+     * @return true si fechaDevolucion es NULL, false en caso contrario.
+     */
+    public boolean isActivo() {
+        return this.fechaDevolucion == null;
     }
 
     @Override
     public String toString() {
         return "Prestamo{" +
                "id=" + id +
+               ", idUsuario=" + idUsuario +
                ", usuario=" + (usuario != null ? usuario.getNombre() : "N/A") +
-               ", ejemplar=" + (ejemplar != null && ejemplar.getDocumento() != null ? ejemplar.getDocumento().getTitulo() : "N/A") +
+               ", idEjemplar=" + idEjemplar +
+               ", ejemplarTitulo=" + (ejemplar != null && ejemplar.getDocumento() != null ? ejemplar.getDocumento().getTitulo() : "N/A") +
                ", fechaPrestamo=" + fechaPrestamo +
+               ", fechaDevolucion=" + fechaDevolucion +
                ", fechaLimite=" + fechaLimite +
                ", mora=" + mora +
                '}';
-    }
-
-    // --- equals() y hashCode() generados por el IDE (basados en 'id') ---
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Prestamo prestamo = (Prestamo) o;
-        return id == prestamo.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
     }
 }

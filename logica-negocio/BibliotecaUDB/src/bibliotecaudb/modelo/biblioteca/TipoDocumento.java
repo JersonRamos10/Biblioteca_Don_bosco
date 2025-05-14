@@ -46,18 +46,4 @@ public class TipoDocumento {
                ", tipo='" + tipo + '\'' +
                '}';
     }
-
-    // --- equals() y hashCode() generados por el IDE (basados en 'id') ---
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true; // Si es la misma instancia, son iguales
-        if (o == null || getClass() != o.getClass()) return false; 
-        TipoDocumento that = (TipoDocumento) o; // cast seguro
-        return id == that.id; // Comparamos por el campo 'id'
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id); // Genera un hash basado en el campo 'id'
-    }
 }

@@ -11,7 +11,7 @@ package bibliotecaudb.excepciones;
 public class UsuarioException extends Exception {
     
     public UsuarioException (String message) {
-        super(message);// Llama al constructor de la clase padre (Exceptio
+        super(message);// Llama al constructor de la clase padre (Exception)
     }
 
     public UsuarioException(String message, Throwable cause) {
