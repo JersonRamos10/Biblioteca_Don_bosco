@@ -11,17 +11,17 @@ import java.sql.SQLException;
 
 public interface BibliotecaService {
 
-    // --- Gestión de Catálogo (Documentos y Ejemplares) ---
-    boolean registrarNuevoDocumentoConEjemplares(Documento documento, List<Ejemplar> ejemplares) throws SQLException, BibliotecaException; // CAMBIO AQUÍ
-    boolean agregarEjemplarADocumentoExistente(int idDocumento, Ejemplar ejemplar) throws SQLException, BibliotecaException; // CAMBIO AQUÍ
+    // --- Gestion de Catalogo (Documentos y Ejemplares) ---
+    boolean registrarNuevoDocumentoConEjemplares(Documento documento, List<Ejemplar> ejemplares) throws SQLException, BibliotecaException; 
+    boolean agregarEjemplarADocumentoExistente(int idDocumento, Ejemplar ejemplar) throws SQLException, BibliotecaException; 
     List<Documento> buscarDocumentos(String termino) throws SQLException;
-    Map<String, Object> consultarDetalleDocumento(int idDocumento) throws SQLException, BibliotecaException; // CAMBIO AQUÍ
+    Map<String, Object> consultarDetalleDocumento(int idDocumento) throws SQLException, BibliotecaException; 
 
-    // --- Gestión de Préstamos ---
-    Prestamo realizarPrestamo(int idUsuario, int idEjemplar) throws SQLException, BibliotecaException; // CAMBIO AQUÍ
+    // --- Gestion de Prestamos ---
+    Prestamo realizarPrestamo(int idUsuario, int idEjemplar) throws SQLException, BibliotecaException; 
 
-    // --- Gestión de Devoluciones ---
-    Devolucion registrarDevolucion(int idPrestamo, LocalDate fechaDevolucionActual) throws SQLException, BibliotecaException; // CAMBIO AQUÍ
+    // --- Gestion de Devoluciones ---
+    Devolucion registrarDevolucion(int idPrestamo, LocalDate fechaDevolucionActual) throws SQLException, BibliotecaException; 
 
     // --- Consultas ---
     List<Prestamo> obtenerPrestamosActivosUsuario(int idUsuario) throws SQLException;
@@ -29,13 +29,13 @@ public interface BibliotecaService {
     List<Prestamo> obtenerTodosLosPrestamosActivos() throws SQLException;
     List<Usuario> obtenerUsuariosConMora() throws SQLException;
 
-    // --- Administración de Configuración ---
+    // --- Administracion de Configuracion ---
     List<PoliticasPrestamo> obtenerTodasLasPoliticasPrestamo() throws SQLException;
-    boolean actualizarPoliticaPrestamo(PoliticasPrestamo politica) throws SQLException, BibliotecaException; // CAMBIO AQUÍ
+    boolean actualizarPoliticaPrestamo(PoliticasPrestamo politica) throws SQLException, BibliotecaException; 
     
     List<MoraAnual> obtenerTodasLasMorasAnuales() throws SQLException;
-    boolean guardarMoraAnual(MoraAnual moraAnual) throws SQLException, BibliotecaException; // CAMBIO AQUÍ
+    boolean guardarMoraAnual(MoraAnual moraAnual) throws SQLException, BibliotecaException; 
     
     ConfiguracionSistema obtenerConfiguracionGlobal() throws SQLException;
-    boolean actualizarConfiguracionGlobal(ConfiguracionSistema config) throws SQLException, BibliotecaException; // CAMBIO AQUÍ
+    boolean actualizarConfiguracionGlobal(ConfiguracionSistema config) throws SQLException, BibliotecaException; //
 }

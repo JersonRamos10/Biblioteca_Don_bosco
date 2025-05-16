@@ -22,136 +22,142 @@ public class MoraAnualDAOImpl implements MoraAnualDAO {
 
     @Override
     public boolean insertar(MoraAnual moraAnual) throws SQLException {
-        Connection conn = null;
-        PreparedStatement pstmt = null;
-        int rowsAffected = 0;
+        // Este metodo sirve para guardar una nueva configuracion de mora anual.
+        Connection conn = null; // Variable para la conexion
+        PreparedStatement pstmt = null; // Variable para la consulta SQL
+        int rowsAffected = 0; // Para saber cuantas filas se afectaron
         try {
-            conn = ConexionBD.getConexion();//abre la conexion a la BD
+            conn = ConexionBD.getConexion(); // Abre la conexion a la BD
             pstmt = conn.prepareStatement(SQL_INSERT);
-            pstmt.setInt(1, moraAnual.getAnio());
-            pstmt.setBigDecimal(2, moraAnual.getMoraDiaria());
+            pstmt.setInt(1, moraAnual.getAnio()); // El anio de la mora
+            pstmt.setBigDecimal(2, moraAnual.getMoraDiaria()); // El valor de la mora diaria para ese anio
 
-            LogsError.info(this.getClass(), "Ejecutando query: " + SQL_INSERT);
-            rowsAffected = pstmt.executeUpdate();
-            LogsError.info(this.getClass(), "MoraAnual insertada para el año: " + moraAnual.getAnio() + ". Filas afectadas: " + rowsAffected);
+            LogsError.info(this.getClass(), "Ejecutando consulta para insertar MoraAnual: " + SQL_INSERT);
+            rowsAffected = pstmt.executeUpdate(); // Ejecutamos la insercion
+            LogsError.info(this.getClass(), "MoraAnual insertada para el anio: " + moraAnual.getAnio() + ". Filas afectadas: " + rowsAffected);
         } catch (SQLException ex) {
             LogsError.error(this.getClass(), "Error al insertar MoraAnual: " + ex.getMessage(), ex);
-            // Podría fallar si el año ya existe (PK duplicada)
-            throw ex;
+            // Podria fallar si el anio ya existe (porque es llave primaria)
+            throw ex; // Relanzamos el error
         } finally {
-            ConexionBD.close(pstmt);
+            ConexionBD.close(pstmt); // Cerramos el PreparedStatement
         }
-        return rowsAffected > 0;
+        return rowsAffected > 0; // Devolvemos true si se inserto algo
     }
 
     @Override
     public boolean actualizar(MoraAnual moraAnual) throws SQLException {
-        Connection conn = null;
-        PreparedStatement pstmt = null;
-        int rowsAffected = 0;
+        // Este metodo sirve para actualizar el valor de la mora diaria para un anio especifico.
+        Connection conn = null; // Variable para la conexion
+        PreparedStatement pstmt = null; // Variable para la consulta
+        int rowsAffected = 0; // Filas afectadas
         try {
-            conn = ConexionBD.getConexion();//abre la conexion a la BD
+            conn = ConexionBD.getConexion(); // Abre la conexion a la BD
             pstmt = conn.prepareStatement(SQL_UPDATE);
-            pstmt.setBigDecimal(1, moraAnual.getMoraDiaria());
-            pstmt.setInt(2, moraAnual.getAnio()); // Condición WHERE
+            pstmt.setBigDecimal(1, moraAnual.getMoraDiaria()); // El nuevo valor de la mora
+            pstmt.setInt(2, moraAnual.getAnio()); // El anio que queremos actualizar (WHERE)
 
-            LogsError.info(this.getClass(), "Actualizando MoraAnual para el año: " + moraAnual.getAnio());
-            rowsAffected = pstmt.executeUpdate();
+            LogsError.info(this.getClass(), "Actualizando MoraAnual para el anio: " + moraAnual.getAnio());
+            rowsAffected = pstmt.executeUpdate(); // Ejecutamos la actualizacion
             if (rowsAffected > 0) {
                 LogsError.info(this.getClass(), "MoraAnual actualizada. Filas afectadas: " + rowsAffected);
             } else {
-                LogsError.warn(this.getClass(), "No se encontró MoraAnual para actualizar para el año: " + moraAnual.getAnio() + " o el valor era el mismo.");
+                LogsError.warn(this.getClass(), "No se encontro MoraAnual para actualizar para el anio: " + moraAnual.getAnio() + " o el valor era el mismo.");
             }
         } catch (SQLException ex) {
             LogsError.error(this.getClass(), "Error al actualizar MoraAnual: " + ex.getMessage(), ex);
-            throw ex;
+            throw ex; // Relanzamos el error
         } finally {
-            ConexionBD.close(pstmt);
+            ConexionBD.close(pstmt); // Cerramos el PreparedStatement
         }
-        return rowsAffected > 0;
+        return rowsAffected > 0; // Devolvemos true si se actualizo algo
     }
 
+    // Este metodo convierte los datos de la base de datos (ResultSet) a un objeto MoraAnual.
     private MoraAnual mapearResultSet(ResultSet rs) throws SQLException {
-        MoraAnual ma = new MoraAnual();
+        MoraAnual ma = new MoraAnual(); // Creamos un objeto MoraAnual vacio
         ma.setAnio(rs.getInt("anio"));
         ma.setMoraDiaria(rs.getBigDecimal("mora_diaria"));
-        return ma;
+        return ma; // Devolvemos el objeto con sus datos
     }
 
     @Override
     public MoraAnual obtenerPorAnio(int anio) throws SQLException {
-        Connection conn = null;
-        PreparedStatement pstmt = null;
-        ResultSet rs = null;
-        MoraAnual moraAnual = null;
+        // Este metodo busca y devuelve la configuracion de mora para un anio especifico.
+        Connection conn = null; // Variable para la conexion
+        PreparedStatement pstmt = null; // Variable para la consulta
+        ResultSet rs = null; // Para el resultado
+        MoraAnual moraAnual = null; // Variable para la mora anual
         try {
-            conn = ConexionBD.getConexion(); //abre la conexion a la BD
+            conn = ConexionBD.getConexion(); // Abre la conexion a la BD
             pstmt = conn.prepareStatement(SQL_SELECT_BY_ANIO);
-            pstmt.setInt(1, anio);
-            LogsError.info(this.getClass(), "Ejecutando query: " + SQL_SELECT_BY_ANIO + " para año: " + anio);
-            rs = pstmt.executeQuery();
-            if (rs.next()) {
-                moraAnual = mapearResultSet(rs);
+            pstmt.setInt(1, anio); // El anio que buscamos
+            LogsError.info(this.getClass(), "Ejecutando consulta para obtener MoraAnual por anio: " + SQL_SELECT_BY_ANIO + " para anio: " + anio);
+            rs = pstmt.executeQuery(); // Ejecutamos la consulta
+            if (rs.next()) { // Si encontramos la configuracion
+                moraAnual = mapearResultSet(rs); // Convertimos los datos a objeto
             } else {
-                LogsError.warn(this.getClass(), "No se encontro MoraAnual para el año: " + anio);
+                LogsError.warn(this.getClass(), "No se encontro MoraAnual para el anio: " + anio);
             }
         } catch (SQLException ex) {
-            LogsError.error(this.getClass(), "Error al obtener MoraAnual por año: " + ex.getMessage(), ex);
-            throw ex;
+            LogsError.error(this.getClass(), "Error al obtener MoraAnual por anio: " + ex.getMessage(), ex);
+            throw ex; // Relanzamos el error
         } finally {
-            ConexionBD.close(rs);
-            ConexionBD.close(pstmt);
+            ConexionBD.close(rs); // Cerramos el ResultSet
+            ConexionBD.close(pstmt); // Cerramos el PreparedStatement
         }
-        return moraAnual;
+        return moraAnual; // Devolvemos la mora (o null)
     }
 
     @Override
     public List<MoraAnual> obtenerTodas() throws SQLException {
-        Connection conn = null;
-        PreparedStatement pstmt = null;
-        ResultSet rs = null;
-        List<MoraAnual> morasAnuales = new ArrayList<>();
+        // Este metodo devuelve una lista con todas las configuraciones de mora anual.
+        Connection conn = null; // Variable para la conexion
+        PreparedStatement pstmt = null; // Variable para la consulta
+        ResultSet rs = null; // Para los resultados
+        List<MoraAnual> morasAnuales = new ArrayList<>(); // Lista para guardar las moras
         try {
-            conn = ConexionBD.getConexion();
+            conn = ConexionBD.getConexion(); // Obtenemos la conexion
             pstmt = conn.prepareStatement(SQL_SELECT_ALL);
-            LogsError.info(this.getClass(), "Ejecutando query: " + SQL_SELECT_ALL);
-            rs = pstmt.executeQuery();
-            while (rs.next()) {
-                morasAnuales.add(mapearResultSet(rs));
+            LogsError.info(this.getClass(), "Ejecutando consulta para obtener todas las MoraAnual: " + SQL_SELECT_ALL);
+            rs = pstmt.executeQuery(); // Ejecutamos la consulta
+            while (rs.next()) { // Mientras haya resultados
+                morasAnuales.add(mapearResultSet(rs)); // Agregamos la mora a la lista
             }
         } catch (SQLException ex) {
             LogsError.error(this.getClass(), "Error al obtener todas las MoraAnual: " + ex.getMessage(), ex);
-            throw ex;
+            throw ex; // Relanzamos el error
         } finally {
-            ConexionBD.close(rs);
-            ConexionBD.close(pstmt);
+            ConexionBD.close(rs); // Cerramos el ResultSet
+            ConexionBD.close(pstmt); // Cerramos el PreparedStatement
         }
-        return morasAnuales;
+        return morasAnuales; // Devolvemos la lista de moras
     }
-    
+
     @Override
     public boolean eliminar(int anio) throws SQLException {
-        Connection conn = null;
-        PreparedStatement pstmt = null;
-        int rowsAffected = 0;
+        // Este metodo sirve para eliminar la configuracion de mora para un anio especifico.
+        Connection conn = null; // Variable para la conexion
+        PreparedStatement pstmt = null; // Variable para la consulta
+        int rowsAffected = 0; // Filas afectadas
         try {
-            conn = ConexionBD.getConexion();
+            conn = ConexionBD.getConexion(); // Obtenemos la conexion
             pstmt = conn.prepareStatement(SQL_DELETE_BY_ANIO);
-            pstmt.setInt(1, anio);
+            pstmt.setInt(1, anio); // El anio de la mora a eliminar
 
-            LogsError.info(this.getClass(), "Ejecutando query: " + SQL_DELETE_BY_ANIO + " para año: " + anio);
-            rowsAffected = pstmt.executeUpdate();
+            LogsError.info(this.getClass(), "Ejecutando consulta para eliminar MoraAnual: " + SQL_DELETE_BY_ANIO + " para anio: " + anio);
+            rowsAffected = pstmt.executeUpdate(); // Ejecutamos la eliminacion
             if (rowsAffected > 0) {
-                LogsError.info(this.getClass(), "MoraAnual para el año " + anio + " eliminada. Filas afectadas: " + rowsAffected);
+                LogsError.info(this.getClass(), "MoraAnual para el anio " + anio + " eliminada. Filas afectadas: " + rowsAffected);
             } else {
-                 LogsError.warn(this.getClass(), "No se encontro MoraAnual para eliminar para el año: " + anio);
+                 LogsError.warn(this.getClass(), "No se encontro MoraAnual para eliminar para el anio: " + anio);
             }
         } catch (SQLException ex) {
             LogsError.error(this.getClass(), "Error al eliminar MoraAnual: " + ex.getMessage(), ex);
-            throw ex;
+            throw ex; // Relanzamos el error
         } finally {
-            ConexionBD.close(pstmt);
+            ConexionBD.close(pstmt); // Cerramos el PreparedStatement
         }
-        return rowsAffected > 0;
+        return rowsAffected > 0; // Devolvemos true si se elimino algo
     }
 }

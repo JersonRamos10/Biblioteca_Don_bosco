@@ -32,7 +32,7 @@ public interface MoraService {
      */
     BigDecimal calcularMoraParaPrestamo(Prestamo prestamo, LocalDate fechaDevolucionActual) throws SQLException, BibliotecaException;
 
-    // --- Gestion de Configuración de Mora ---
+    // --- Gestion de Configuracion de Mora ---
     List<MoraAnual> obtenerTodasLasMorasAnuales() throws SQLException;
     MoraAnual obtenerMoraPorAnio(int anio) throws SQLException;
     boolean guardarMoraAnual(MoraAnual moraAnual) throws SQLException, BibliotecaException; // Inserta o actualiza
